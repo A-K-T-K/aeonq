@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "2026-10-07T03:58:33.370268+00:00",
+  "python": "3.13.7",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "git_commit": null,
+  "source_snapshot_sha256": "76232c9a0b1fd29e9af858ed33a0b1e1505690d24d0ff5d3d4a6e93471f66d38",
+  "source_archive": "benchmarks/results/archives/source-76232c9a0b1fd29e9af858ed33a0b1e1505690d24d0ff5d3d4a6e93471f66d38.zip",
+  "seed_scheme": "sha256-condition-v1",
+  "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
+  "dependencies": {
+    "aeonq": "0.1.0.dev0",
+    "numpy": "2.3.3",
+    "scipy": "1.18.1",
+    "qiskit": "2.5.2",
+    "qiskit-aer": "0.17.2",
+    "cirq-core": "1.7.0",
+    "pennylane": "0.45.1",
+    "qdk": "1.32.3",
+    "qiskit-algorithms": "0.4.0"
+  }
+}

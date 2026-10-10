@@ -1,0 +1,50 @@
+0.0 bernoulli_0.25 iqae
+0.0 bernoulli_0.25 mlqae
+0.0 lognormal_tail_n2_k2_flag iqae
+0.0 lognormal_tail_n2_k2_flag mlqae
+0.0 lognormal_tail_n3_k5_flag iqae
+0.0 lognormal_tail_n3_k5_flag mlqae
+0.0001 bernoulli_0.25 iqae
+0.0001 bernoulli_0.25 mlqae
+0.0001 lognormal_tail_n2_k2_flag iqae
+0.0001 lognormal_tail_n2_k2_flag mlqae
+0.0001 lognormal_tail_n3_k5_flag iqae
+0.0001 lognormal_tail_n3_k5_flag mlqae
+0.001 bernoulli_0.25 iqae
+0.001 bernoulli_0.25 mlqae
+0.001 lognormal_tail_n2_k2_flag iqae
+0.001 lognormal_tail_n2_k2_flag mlqae
+0.001 lognormal_tail_n3_k5_flag iqae
+0.001 lognormal_tail_n3_k5_flag mlqae
+0.005 bernoulli_0.25 iqae
+0.005 bernoulli_0.25 mlqae
+0.005 lognormal_tail_n2_k2_flag iqae
+0.005 lognormal_tail_n2_k2_flag mlqae
+0.005 lognormal_tail_n3_k5_flag iqae
+0.005 lognormal_tail_n3_k5_flag mlqae
+0.01 bernoulli_0.25 iqae
+0.01 bernoulli_0.25 mlqae
+0.01 lognormal_tail_n2_k2_flag iqae
+0.01 lognormal_tail_n2_k2_flag mlqae
+0.01 lognormal_tail_n3_k5_flag iqae
+0.01 lognormal_tail_n3_k5_flag mlqae
+Traceback (most recent call last):
+  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\noise_study.py", line 166, in <module>
+    run(
+    ~~~^
+        Path(arguments.output),
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        workers=arguments.workers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\noise_study.py", line 152, in run
+    validate_extended(read_records(output), "noise_study", repetitions)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 198, in validate_extended
+    keys, expected = extended_expected(study, repetitions)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 173, in extended_expected
+    from benchmarks import noise_study as noise
+ModuleNotFoundError: No module named 'benchmarks'

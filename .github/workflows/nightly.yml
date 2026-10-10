@@ -1,0 +1,40 @@
+name: Nightly research validation
+
+on:
+  schedule:
+    - cron: '19 2 * * 0'
+  workflow_dispatch:
+
+jobs:
+  research:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Complete local test suite
+        run: python -m pytest -q
+      - name: Compiler comparison
+        run: python benchmarks/compiler_comparison.py
+      - name: Cross-SDK compiler comparison
+        run: python benchmarks/compiler_cross_sdk.py
+      - name: Local performance comparison
+        run: python benchmarks/performance_comparison.py
+      - name: Reference study
+        run: python benchmarks/pipeline/generate_all_results.py --profile publication_reference
+      - name: Reproducibility audit
+        run: python benchmarks/pipeline/audit_reproducibility.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: research-artifacts
+          path: |
+            benchmarks/results/raw/
+            benchmarks/results/processed/
+            benchmarks/results/tables/
+            benchmarks/results/environment/

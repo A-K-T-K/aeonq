@@ -1,0 +1,17 @@
+mutant,description,sdks_killed,failed_operator_checks,failed_measurement_checks,failed_sampling_checks,detected_by_shots,iqae_mae_change,canonical_qae_mae_change
+none,unmutated adapter (control),0/4,0,0,0,False,+0.000 / +0.000,+0.000 / +0.000
+drop_global_phase,global phases lowered as no-ops,4/4,13,0,0,False,+0.000 / +0.000,+0.382 / +0.108
+global_phase_sign,global phase sign convention flipped (exp(-i phi)),4/4,1,0,0,False,+0.000 / +0.000,+0.000 / +0.000
+drop_phase_under_control,global phase of a controlled block discarded,4/4,7,0,0,False,+0.000 / +0.000,+0.382 / +0.108
+rotation_sign,rotation angles negated,4/4,24,0,3,True,+0.000 / +0.000,+0.000 / +0.000
+rotation_half_angle,rotation angle convention off by a factor of two,4/4,25,0,15,True,+0.217 / +0.315,+0.204 / +0.253
+rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",4/4,4,0,0,False,+0.000 / +0.000,+0.000 / +0.000
+swap_cx_direction,CX control and target exchanged,4/4,5,0,3,True,+0.000 / +0.000,+0.000 / +0.000
+invert_first_control,first control value inverted,4/4,26,0,9,True,+0.000 / +0.056,+0.615 / +0.105
+adjoint_ignored,Adjoint(U) lowered as U,4/4,20,0,9,True,+0.050 / +0.039,+0.291 / +0.355
+grover_power_off_by_one,Q^k lowered as Q^(k+1),4/4,6,0,8,True,+0.044 / +0.075,+0.270 / +0.134
+zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,4/4,22,0,7,True,+0.000 / +0.050,+0.382 / +0.543
+objective_reflection_negated,S_chi lowered as -S_chi,4/4,18,0,0,False,+0.000 / +0.000,+0.382 / +0.108
+reverse_qubit_order,logical qubit q placed on native qubit n-1-q,4/4,21,4,8,True,+0.000 / +0.102,+0.675 / +0.072
+reverse_result_bits,result bitstrings read in the opposite order,4/4,0,4,8,True,+0.000 / +0.102,+0.675 / +0.072
+drop_one_shot,one shot lost from the returned counts,4/4,0,5,18,True,rejected / rejected,rejected / rejected

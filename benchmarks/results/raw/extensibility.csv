@@ -1,0 +1,6 @@
+adapter,module,source_lines,required_methods,required_method_names,optional_methods_added,declared_unitary_precision,battery_checks,battery_passed,battery_failed,battery_unsupported,operator_passed,measurement_passed,sampling_passed
+reference,aeonq/adapters/reference.py,75,7,capabilities compile execute lower normalize_result resource_metrics validate,unitary,1e-09,66,66,0,0,43/43,5/5,18/18
+qiskit,aeonq/adapters/qiskit.py,234,7,capabilities compile execute lower normalize_result resource_metrics validate,unitary statevector,1e-09,66,66,0,0,43/43,5/5,18/18
+cirq,aeonq/adapters/cirq.py,176,7,capabilities compile execute lower normalize_result resource_metrics validate,unitary statevector,1e-09,66,66,0,0,43/43,5/5,18/18
+pennylane,aeonq/adapters/pennylane.py,166,7,capabilities compile execute lower normalize_result resource_metrics validate,unitary statevector,1e-09,66,66,0,0,43/43,5/5,18/18
+qsharp,aeonq/adapters/qsharp.py,194,7,capabilities compile execute lower normalize_result resource_metrics validate,unitary,1e-06,66,66,0,0,43/43,5/5,18/18

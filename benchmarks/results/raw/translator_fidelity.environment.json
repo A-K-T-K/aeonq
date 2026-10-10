@@ -1,0 +1,36 @@
+{
+  "timestamp_utc": "2026-10-10T08:55:50.864254+00:00",
+  "python": "3.13.7",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "git_commit": null,
+  "source_snapshot_sha256": "feb29c1c48178654f9166bfb1c2d596c4947d5dd06b7d8bfc6b3f072a41ed06c",
+  "source_archive": "benchmarks/results/archives/source-feb29c1c48178654f9166bfb1c2d596c4947d5dd06b7d8bfc6b3f072a41ed06c.zip",
+  "seed_scheme": "sha256-condition-v1",
+  "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
+  "dependencies": {
+    "aeonq": "0.1.0.dev0",
+    "numpy": "2.3.3",
+    "scipy": "1.18.1",
+    "qiskit": "2.5.2",
+    "qiskit-aer": "0.17.2",
+    "cirq-core": "1.7.0",
+    "pennylane": "0.45.1",
+    "qdk": "1.32.3",
+    "qiskit-algorithms": "0.4.0"
+  },
+  "converters": {
+    "qiskit": "2.5.2",
+    "qiskit-qasm3-import": "0.6.0",
+    "openqasm3": "1.0.1",
+    "cirq-core": "1.7.0",
+    "ply": "3.11",
+    "pennylane": "0.45.1",
+    "qdk": "1.32.3",
+    "pytket": "2.18.5",
+    "pytket-qiskit": "0.78.0",
+    "pytket-cirq": "0.43.0",
+    "pennylane-qiskit": null
+  },
+  "seconds": 205.23360290005803
+}

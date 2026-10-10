@@ -1,0 +1,16 @@
+# Keep the build context small: the Dockerfile copies only named paths, but
+# Docker still uploads everything not excluded here.
+.venv/
+.git/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+paper/
+paper_build/
+manuscript*
+node_modules/

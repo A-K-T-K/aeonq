@@ -1,0 +1,66 @@
+{
+  "a_true": 0.1,
+  "injection": "all success on second circuit evaluation",
+  "seed": 19,
+  "estimate": 0.09851942469385762,
+  "interval": [
+    0.09347997332843336,
+    0.10355887605928188
+  ],
+  "powers_used": [
+    0,
+    3,
+    3
+  ],
+  "observations": [
+    {
+      "power": 0,
+      "shots": 512,
+      "successes": 48,
+      "seed": 19
+    },
+    {
+      "power": 3,
+      "shots": 512,
+      "successes": 512,
+      "seed": 21
+    },
+    {
+      "power": 3,
+      "shots": 512,
+      "successes": 318,
+      "seed": 22
+    }
+  ],
+  "alias_history": [
+    {
+      "chosen_power": 0,
+      "branch": 0,
+      "candidate_branches": [
+        0,
+        1
+      ],
+      "rejected_powers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "chosen_power": 3,
+      "branch": 1,
+      "candidate_branches": [
+        1
+      ],
+      "rejected_powers": [
+        2,
+        4,
+        5
+      ]
+    }
+  ],
+  "resampling_triggered": true,
+  "status": "THEORETICAL_GUARANTEE_SATISFIED"
+}

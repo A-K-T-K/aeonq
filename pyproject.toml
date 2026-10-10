@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aeonq"
+version = "0.1.0.dev0"
+description = "Semantic intermediate representation for amplitude estimation"
+readme = "README.md"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+dependencies = ["numpy==2.3.3", "scipy==1.18.1"]
+
+[project.scripts]
+aeonq = "aeonq.__main__:main"
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2", "pytest-cov==6.2.1"]
+research = ["matplotlib==3.11.2"]
+dev = ["ruff==0.13.3", "mypy==1.18.2"]
+qiskit = ["qiskit==2.5.2", "qiskit-aer==0.17.2"]
+cirq = ["cirq-core==1.7.0"]
+pennylane = ["pennylane==0.45.1"]
+qsharp = ["qdk==1.32.3"]
+# External baseline only; aeonq's own estimators never import it.
+baselines = ["qiskit-algorithms==0.4.0"]
+# Third-party circuit converters exercised by benchmarks/translator_fidelity.py;
+# aeonq itself never converts circuits through them.
+translators = [
+    "ply==3.11",
+    "qiskit-qasm3-import==0.6.0",
+    "openqasm3==1.0.1",
+    "pytket==2.18.5",
+    "pytket-qiskit==0.78.0",
+    "pytket-cirq==0.43.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["aeonq*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "silent"

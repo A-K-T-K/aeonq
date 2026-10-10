@@ -1,0 +1,6 @@
+# Evidence files are hashed byte-for-byte by archived trial records
+# (requirements_lock_sha256) and by benchmarks/pipeline/audit_reproducibility.py.
+# Store them exactly as written so every clone and tarball reproduces the hashes.
+requirements-lock.txt -text
+benchmarks/experiment_manifest.yaml -text
+benchmarks/results/** -text

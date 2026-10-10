@@ -1,0 +1,12 @@
+fault,observed_outcome,recovery_action,attempts,recovered,injected
+compilation_failure,RuntimeError,none,1,False,True
+timeout,BackendTimeout,timeout without automatic resubmission,1,False,True
+delayed_result,success,none,1,False,True
+dropped_connection,success,explicit idempotent retry,2,True,True
+job_cancellation,RuntimeError,none,1,False,True
+interrupted_job,InterruptedError,none,1,False,True
+backend_quota,BackendQuotaError,none,1,False,True
+unsupported_circuit,UnsupportedCircuitError,none,1,False,True
+malformed_result,ValueError,none,1,False,True
+partial_result,shot_count_mismatch,none,1,False,True
+missing_shots,shot_count_mismatch,none,1,False,True

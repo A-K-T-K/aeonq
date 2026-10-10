@@ -1,0 +1,170 @@
+bernoulli_0 iqae aeonq
+bernoulli_0 iqae qiskit_algorithms
+bernoulli_0 mlqae aeonq
+bernoulli_0 mlqae qiskit_algorithms
+bernoulli_0 mlqae qiskit_algorithms_lr
+bernoulli_0 faster_ae aeonq
+bernoulli_0 faster_ae qiskit_algorithms
+bernoulli_0 canonical_qae aeonq
+bernoulli_0 canonical_qae qiskit_algorithms
+bernoulli_1e-06 iqae aeonq
+bernoulli_1e-06 iqae qiskit_algorithms
+bernoulli_1e-06 mlqae aeonq
+bernoulli_1e-06 mlqae qiskit_algorithms
+bernoulli_1e-06 mlqae qiskit_algorithms_lr
+bernoulli_1e-06 faster_ae aeonq
+bernoulli_1e-06 faster_ae qiskit_algorithms
+bernoulli_1e-06 canonical_qae aeonq
+bernoulli_1e-06 canonical_qae qiskit_algorithms
+bernoulli_0.001 iqae aeonq
+bernoulli_0.001 iqae qiskit_algorithms
+bernoulli_0.001 mlqae aeonq
+bernoulli_0.001 mlqae qiskit_algorithms
+bernoulli_0.001 mlqae qiskit_algorithms_lr
+bernoulli_0.001 faster_ae aeonq
+bernoulli_0.001 faster_ae qiskit_algorithms
+bernoulli_0.001 canonical_qae aeonq
+bernoulli_0.001 canonical_qae qiskit_algorithms
+bernoulli_0.01 iqae aeonq
+bernoulli_0.01 iqae qiskit_algorithms
+bernoulli_0.01 mlqae aeonq
+bernoulli_0.01 mlqae qiskit_algorithms
+bernoulli_0.01 mlqae qiskit_algorithms_lr
+bernoulli_0.01 faster_ae aeonq
+bernoulli_0.01 faster_ae qiskit_algorithms
+bernoulli_0.01 canonical_qae aeonq
+bernoulli_0.01 canonical_qae qiskit_algorithms
+bernoulli_0.1 iqae aeonq
+bernoulli_0.1 iqae qiskit_algorithms
+bernoulli_0.1 mlqae aeonq
+bernoulli_0.1 mlqae qiskit_algorithms
+bernoulli_0.1 mlqae qiskit_algorithms_lr
+bernoulli_0.1 faster_ae aeonq
+bernoulli_0.1 faster_ae qiskit_algorithms
+bernoulli_0.1 canonical_qae aeonq
+bernoulli_0.1 canonical_qae qiskit_algorithms
+bernoulli_0.25 iqae aeonq
+bernoulli_0.25 iqae qiskit_algorithms
+bernoulli_0.25 mlqae aeonq
+bernoulli_0.25 mlqae qiskit_algorithms
+bernoulli_0.25 mlqae qiskit_algorithms_lr
+bernoulli_0.25 faster_ae aeonq
+bernoulli_0.25 faster_ae qiskit_algorithms
+bernoulli_0.25 canonical_qae aeonq
+bernoulli_0.25 canonical_qae qiskit_algorithms
+bernoulli_0.5 iqae aeonq
+bernoulli_0.5 iqae qiskit_algorithms
+bernoulli_0.5 mlqae aeonq
+bernoulli_0.5 mlqae qiskit_algorithms
+bernoulli_0.5 mlqae qiskit_algorithms_lr
+bernoulli_0.5 faster_ae aeonq
+bernoulli_0.5 faster_ae qiskit_algorithms
+bernoulli_0.5 canonical_qae aeonq
+bernoulli_0.5 canonical_qae qiskit_algorithms
+bernoulli_0.75 iqae aeonq
+bernoulli_0.75 iqae qiskit_algorithms
+bernoulli_0.75 mlqae aeonq
+bernoulli_0.75 mlqae qiskit_algorithms
+bernoulli_0.75 mlqae qiskit_algorithms_lr
+bernoulli_0.75 faster_ae aeonq
+bernoulli_0.75 faster_ae qiskit_algorithms
+bernoulli_0.75 canonical_qae aeonq
+bernoulli_0.75 canonical_qae qiskit_algorithms
+bernoulli_0.9 iqae aeonq
+bernoulli_0.9 iqae qiskit_algorithms
+bernoulli_0.9 mlqae aeonq
+bernoulli_0.9 mlqae qiskit_algorithms
+bernoulli_0.9 mlqae qiskit_algorithms_lr
+bernoulli_0.9 faster_ae aeonq
+bernoulli_0.9 faster_ae qiskit_algorithms
+bernoulli_0.9 canonical_qae aeonq
+bernoulli_0.9 canonical_qae qiskit_algorithms
+bernoulli_0.99 iqae aeonq
+bernoulli_0.99 iqae qiskit_algorithms
+bernoulli_0.99 mlqae aeonq
+bernoulli_0.99 mlqae qiskit_algorithms
+bernoulli_0.99 mlqae qiskit_algorithms_lr
+bernoulli_0.99 faster_ae aeonq
+bernoulli_0.99 faster_ae qiskit_algorithms
+bernoulli_0.99 canonical_qae aeonq
+bernoulli_0.99 canonical_qae qiskit_algorithms
+bernoulli_0.999 iqae aeonq
+bernoulli_0.999 iqae qiskit_algorithms
+bernoulli_0.999 mlqae aeonq
+bernoulli_0.999 mlqae qiskit_algorithms
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+bernoulli_0.999 mlqae qiskit_algorithms_lr
+bernoulli_0.999 faster_ae aeonq
+bernoulli_0.999 faster_ae qiskit_algorithms
+bernoulli_0.999 canonical_qae aeonq
+bernoulli_0.999 canonical_qae qiskit_algorithms
+bernoulli_0.999999 iqae aeonq
+bernoulli_0.999999 iqae qiskit_algorithms
+bernoulli_0.999999 mlqae aeonq
+C:\Users\AKTK\Desktop\aeonq\.venv\Lib\site-packages\qiskit_algorithms\amplitude_estimators\mlae.py:477: RuntimeWarning: divide by zero encountered in scalar divide
+  fisher_information /= a * (1 - a)
+bernoulli_0.999999 mlqae qiskit_algorithms
+bernoulli_0.999999 mlqae qiskit_algorithms_lr
+bernoulli_0.999999 faster_ae aeonq
+bernoulli_0.999999 faster_ae qiskit_algorithms
+bernoulli_0.999999 canonical_qae aeonq
+bernoulli_0.999999 canonical_qae qiskit_algorithms
+bernoulli_1 iqae aeonq
+bernoulli_1 iqae qiskit_algorithms
+bernoulli_1 mlqae aeonq
+bernoulli_1 mlqae qiskit_algorithms
+bernoulli_1 mlqae qiskit_algorithms_lr
+bernoulli_1 faster_ae aeonq
+bernoulli_1 faster_ae qiskit_algorithms
+bernoulli_1 canonical_qae aeonq
+bernoulli_1 canonical_qae qiskit_algorithms
+lognormal_tail_n3_k5_flag iqae aeonq
+lognormal_tail_n3_k5_flag iqae qiskit_algorithms
+lognormal_tail_n3_k5_flag mlqae aeonq
+lognormal_tail_n3_k5_flag mlqae qiskit_algorithms
+lognormal_tail_n3_k5_flag mlqae qiskit_algorithms_lr
+lognormal_tail_n3_k5_flag faster_ae aeonq
+lognormal_tail_n3_k5_flag faster_ae qiskit_algorithms
+lognormal_tail_n3_k5_flag canonical_qae aeonq
+lognormal_tail_n3_k5_flag canonical_qae qiskit_algorithms
+lognormal_tail_n4_k10_flag iqae aeonq
+lognormal_tail_n4_k10_flag iqae qiskit_algorithms
+lognormal_tail_n4_k10_flag mlqae aeonq
+lognormal_tail_n4_k10_flag mlqae qiskit_algorithms
+lognormal_tail_n4_k10_flag mlqae qiskit_algorithms_lr
+lognormal_tail_n4_k10_flag faster_ae aeonq
+lognormal_tail_n4_k10_flag faster_ae qiskit_algorithms
+lognormal_tail_n4_k10_flag canonical_qae aeonq
+lognormal_tail_n4_k10_flag canonical_qae qiskit_algorithms
+Traceback (most recent call last):
+  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\native_baselines.py", line 319, in <module>
+    run(
+    ~~~^
+        Path(arguments.output),
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        workers=arguments.workers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\native_baselines.py", line 305, in run
+    validate_extended(read_records(output), "native_baselines", repetitions)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 198, in validate_extended
+    elif not isclose(
+             ^^^^^^^^
+  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 140, in extended_expected
+    "canonical_qae": {"evaluation_qubits": 4, "shots": 256},
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'benchmarks'

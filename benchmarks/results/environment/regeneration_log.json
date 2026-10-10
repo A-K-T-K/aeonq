@@ -1,0 +1,157 @@
+{
+  "started_utc": "2026-10-07T03:08:33.779046+00:00",
+  "finished_utc": "2026-10-07T04:19:00.093832+00:00",
+  "cpu_count": 12,
+  "sessions": [
+    {
+      "started_utc": "2026-10-07T03:08:33.779058+00:00",
+      "resumed": false
+    },
+    {
+      "started_utc": "2026-10-07T04:18:23.817693+00:00",
+      "resumed": true
+    }
+  ],
+  "steps": [
+    {
+      "phase": "A: isolated timing",
+      "command": "benchmarks/performance_comparison.py",
+      "started_utc": "2026-10-07T03:08:33.780544+00:00",
+      "seconds": 9.20297019998543,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "A: isolated timing",
+      "command": "benchmarks/compiler_comparison.py",
+      "started_utc": "2026-10-07T03:08:42.983525+00:00",
+      "seconds": 2.572284599998966,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "A: isolated timing",
+      "command": "benchmarks/compiler_cross_sdk.py",
+      "started_utc": "2026-10-07T03:08:45.556879+00:00",
+      "seconds": 8.727444099960849,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "A: isolated timing",
+      "command": "benchmarks/overhead_study.py",
+      "started_utc": "2026-10-07T03:08:54.284294+00:00",
+      "seconds": 227.417554799933,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "A: isolated timing",
+      "command": "benchmarks/scaling_study.py",
+      "started_utc": "2026-10-07T03:12:41.651306+00:00",
+      "seconds": 187.7569745000219,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "A: isolated timing",
+      "command": "benchmarks/extensibility_report.py",
+      "started_utc": "2026-10-07T03:15:49.366604+00:00",
+      "seconds": 14.185381300048903,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "B: concurrent statistics",
+      "command": "publication_profiles",
+      "started_utc": "2026-10-07T03:16:03.550950+00:00",
+      "seconds": 3123.843736800016,
+      "concurrent_processes": 4,
+      "worker_processes": 1,
+      "exit_code": 0
+    },
+    {
+      "phase": "B: concurrent statistics",
+      "command": "native_baselines",
+      "started_utc": "2026-10-07T03:16:03.550950+00:00",
+      "recovered_utc": "2026-10-07T04:18:04.982051+00:00",
+      "original_exit_code": 1,
+      "recovery_exit_code": 0,
+      "recovery": "Data generation completed; fixed direct-CLI validation import path and validated complete original-source populations without resampling. Mutation battery and trial-level impact reruns completed separately.",
+      "verified_trial_counts": {
+        "publication_cross_sdk": 800,
+        "publication_scheduler_qiskit": 750,
+        "publication_case_study": 2400,
+        "publication_case_study_sdk": 900,
+        "publication_case_study_qsharp": 45,
+        "publication_reference": 23800,
+        "native_baselines": 27000,
+        "noise_study": 6000,
+        "equivalence_estimators": 10000
+      },
+      "logs": [
+        "benchmarks/results/logs/regeneration_native_baselines.log",
+        "benchmarks/results/logs/regeneration_mutation_recovered.log",
+        "benchmarks/results/logs/regeneration_mutation_impact_records.log"
+      ]
+    },
+    {
+      "phase": "B: concurrent statistics",
+      "command": "equivalence",
+      "started_utc": "2026-10-07T03:16:03.550950+00:00",
+      "recovered_utc": "2026-10-07T04:18:04.988650+00:00",
+      "original_exit_code": 1,
+      "recovery_exit_code": 0,
+      "recovery": "Data generation completed; fixed direct-CLI validation import path and validated complete original-source populations without resampling. Mutation battery and trial-level impact reruns completed separately.",
+      "verified_trial_counts": {
+        "publication_cross_sdk": 800,
+        "publication_scheduler_qiskit": 750,
+        "publication_case_study": 2400,
+        "publication_case_study_sdk": 900,
+        "publication_case_study_qsharp": 45,
+        "publication_reference": 23800,
+        "native_baselines": 27000,
+        "noise_study": 6000,
+        "equivalence_estimators": 10000
+      },
+      "logs": [
+        "benchmarks/results/logs/regeneration_equivalence.log",
+        "benchmarks/results/logs/regeneration_mutation_recovered.log",
+        "benchmarks/results/logs/regeneration_mutation_impact_records.log"
+      ]
+    },
+    {
+      "phase": "B: concurrent statistics",
+      "command": "noise_and_mutation",
+      "started_utc": "2026-10-07T03:16:03.550950+00:00",
+      "recovered_utc": "2026-10-07T04:18:04.994005+00:00",
+      "original_exit_code": 1,
+      "recovery_exit_code": 0,
+      "recovery": "Data generation completed; fixed direct-CLI validation import path and validated complete original-source populations without resampling. Mutation battery and trial-level impact reruns completed separately.",
+      "verified_trial_counts": {
+        "publication_cross_sdk": 800,
+        "publication_scheduler_qiskit": 750,
+        "publication_case_study": 2400,
+        "publication_case_study_sdk": 900,
+        "publication_case_study_qsharp": 45,
+        "publication_reference": 23800,
+        "native_baselines": 27000,
+        "noise_study": 6000,
+        "equivalence_estimators": 10000
+      },
+      "logs": [
+        "benchmarks/results/logs/regeneration_noise_and_mutation.log",
+        "benchmarks/results/logs/regeneration_mutation_recovered.log",
+        "benchmarks/results/logs/regeneration_mutation_impact_records.log"
+      ]
+    },
+    {
+      "phase": "C: derive and audit",
+      "command": "benchmarks/pipeline/generate_all_results.py",
+      "started_utc": "2026-10-07T04:18:23.819273+00:00",
+      "seconds": 22.932449999963865,
+      "concurrent_processes": 1
+    },
+    {
+      "phase": "C: derive and audit",
+      "command": "benchmarks/pipeline/audit_reproducibility.py",
+      "started_utc": "2026-10-07T04:18:46.751997+00:00",
+      "seconds": 13.341132399975322,
+      "concurrent_processes": 1
+    }
+  ]
+}

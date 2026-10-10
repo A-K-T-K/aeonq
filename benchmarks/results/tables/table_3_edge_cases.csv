@@ -1,0 +1,10 @@
+category,trial_count,successful_runs,status
+amplitude endpoints,2800,2800,measured
+near endpoints,8400,8400,measured
+interior amplitude,14695,14695,measured
+high Grover power,12010,12010,measured
+alias resampling,1,1,measured
+injected alias inconsistency and resampling,1,1,measured separately in alias_stress.json
+noise-model coverage,6000,6000,measured separately in noise_study.jsonl (table 13)
+dirty ancilla contract,0,0,not measured in this profile
+hardware timeout,0,0,not measured in this profile

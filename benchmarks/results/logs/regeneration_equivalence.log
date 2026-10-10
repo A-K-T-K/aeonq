@@ -1,0 +1,80 @@
+sampling bernoulli_0.25 0 reference
+sampling bernoulli_0.25 0 qiskit
+sampling bernoulli_0.25 0 cirq
+sampling bernoulli_0.25 0 pennylane
+sampling bernoulli_0.25 0 qsharp
+sampling bernoulli_0.25 1 reference
+sampling bernoulli_0.25 1 qiskit
+sampling bernoulli_0.25 1 cirq
+sampling bernoulli_0.25 1 pennylane
+sampling bernoulli_0.25 1 qsharp
+sampling bernoulli_0.25 2 reference
+sampling bernoulli_0.25 2 qiskit
+sampling bernoulli_0.25 2 cirq
+sampling bernoulli_0.25 2 pennylane
+sampling bernoulli_0.25 2 qsharp
+sampling bernoulli_0.25 4 reference
+sampling bernoulli_0.25 4 qiskit
+sampling bernoulli_0.25 4 cirq
+sampling bernoulli_0.25 4 pennylane
+sampling bernoulli_0.25 4 qsharp
+sampling lognormal_tail_n2_k2_flag 0 reference
+sampling lognormal_tail_n2_k2_flag 0 qiskit
+sampling lognormal_tail_n2_k2_flag 0 cirq
+sampling lognormal_tail_n2_k2_flag 0 pennylane
+sampling lognormal_tail_n2_k2_flag 0 qsharp
+sampling lognormal_tail_n2_k2_flag 1 reference
+sampling lognormal_tail_n2_k2_flag 1 qiskit
+sampling lognormal_tail_n2_k2_flag 1 cirq
+sampling lognormal_tail_n2_k2_flag 1 pennylane
+sampling lognormal_tail_n2_k2_flag 1 qsharp
+sampling lognormal_tail_n2_k2_flag 2 reference
+sampling lognormal_tail_n2_k2_flag 2 qiskit
+sampling lognormal_tail_n2_k2_flag 2 cirq
+sampling lognormal_tail_n2_k2_flag 2 pennylane
+sampling lognormal_tail_n2_k2_flag 2 qsharp
+sampling lognormal_tail_n2_k2_flag 4 reference
+sampling lognormal_tail_n2_k2_flag 4 qiskit
+sampling lognormal_tail_n2_k2_flag 4 cirq
+sampling lognormal_tail_n2_k2_flag 4 pennylane
+sampling lognormal_tail_n2_k2_flag 4 qsharp
+estimators bernoulli_0.25 iqae reference
+estimators bernoulli_0.25 iqae qiskit
+estimators bernoulli_0.25 iqae cirq
+estimators bernoulli_0.25 iqae pennylane
+estimators bernoulli_0.25 iqae qsharp
+estimators bernoulli_0.25 mlqae reference
+estimators bernoulli_0.25 mlqae qiskit
+estimators bernoulli_0.25 mlqae cirq
+estimators bernoulli_0.25 mlqae pennylane
+estimators bernoulli_0.25 mlqae qsharp
+estimators lognormal_tail_n2_k2_flag iqae reference
+estimators lognormal_tail_n2_k2_flag iqae qiskit
+estimators lognormal_tail_n2_k2_flag iqae cirq
+estimators lognormal_tail_n2_k2_flag iqae pennylane
+estimators lognormal_tail_n2_k2_flag iqae qsharp
+estimators lognormal_tail_n2_k2_flag mlqae reference
+estimators lognormal_tail_n2_k2_flag mlqae qiskit
+estimators lognormal_tail_n2_k2_flag mlqae cirq
+estimators lognormal_tail_n2_k2_flag mlqae pennylane
+estimators lognormal_tail_n2_k2_flag mlqae qsharp
+Traceback (most recent call last):
+  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\equivalence_study.py", line 218, in <module>
+    estimators(
+    ~~~~~~~~~~^
+        directory / "equivalence_estimators.jsonl",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        workers=arguments.workers,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\equivalence_study.py", line 199, in estimators
+    validate_extended(read_records(output), "equivalence_estimators", repetitions)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 198, in validate_extended
+    keys, expected = extended_expected(study, repetitions)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 156, in extended_expected
+    from benchmarks import equivalence_study as equiv
+ModuleNotFoundError: No module named 'benchmarks'

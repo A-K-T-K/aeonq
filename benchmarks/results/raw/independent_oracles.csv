@@ -1,0 +1,508 @@
+case,operator,kind,check,subject,compared_with,error,tolerance,expected_to_pass,passed
+bernoulli_0.25,A,closed_form,amplitude,aeonq problem builder a_true,analytic a,0.0,1e-12,True,True
+bernoulli_0.25,A,closed_form,amplitude,ir:reference amplitude,analytic a,0.0,1e-12,True,True
+bernoulli_0.25,A,closed_form,amplitude,numpy:handwritten,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,numpy:handwritten,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,numpy:handwritten,closed form,3.070775147355614e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,numpy:handwritten,closed form,1.5353875736778073e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:handwritten,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,closed_form,amplitude,ir:reference,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,ir:reference,closed form,1.1102230246251565e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,ir:reference,closed form,2.7755575615628914e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,ir:reference,closed form,1.1102230246251565e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,ir:reference,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,ir:reference,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,ir:reference,numpy:handwritten,1.0605752387249068e-16,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,ir:reference,numpy:handwritten,2.3941333530932234e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,ir:reference,numpy:handwritten,1.0605752387249068e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,qiskit:handwritten,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,qiskit:handwritten,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,qiskit:handwritten,closed form,2.220446049250313e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,qiskit:handwritten,closed form,3.4954508030677344e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:handwritten,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,2.1211504774498133e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,3.3306690738754696e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,cirq:handwritten,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,cirq:handwritten,closed form,1.1102230246251565e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,cirq:handwritten,closed form,2.220446049250313e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,cirq:handwritten,closed form,1.1102230246251565e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:handwritten,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,1.0605752387249068e-16,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,2.1211504774498133e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,1.0605752387249068e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,pennylane:handwritten,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,pennylane:handwritten,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,pennylane:handwritten,closed form,3.070775147355614e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,pennylane:handwritten,closed form,1.5353875736778073e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:handwritten,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,2.1211504774498136e-16,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,4.385169615459602e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,2.1211504774498136e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,qsharp:handwritten,closed form,0.0,2e-06,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,qsharp:handwritten,closed form,4.037844386628464e-07,2e-06,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,qsharp:handwritten,closed form,4.037844385518241e-07,2e-06,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,qsharp:handwritten,closed form,4.037844386628464e-07,4e-06,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:handwritten,closed form,3.4968704752946778e-06,1.2e-05,True,True
+bernoulli_0.25,A,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.037844385518241e-07,1e-06,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.037844385518241e-07,1e-06,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.037844383297795e-07,1e-06,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.037844385518241e-07,1e-06,True,True
+bernoulli_0.25,A,closed_form,amplitude,qiskit:adapter,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,qiskit:adapter,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,qiskit:adapter,closed form,2.220446049250313e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,qiskit:adapter,closed form,3.4954508030677344e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:adapter,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,2.1211504774498133e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,3.3306690738754696e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,numpy:qiskit-program,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,numpy:qiskit-program,closed form,4.3254391292488597e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,numpy:qiskit-program,closed form,5.226285155849319e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,numpy:qiskit-program,closed form,7.607316475777686e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:qiskit-program,closed form,1.5543122344752192e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,2.874494589599237e-16,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,2.874494589599236e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,7.607316475777686e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,cirq:adapter,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,cirq:adapter,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,cirq:adapter,closed form,3.070775147355614e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,cirq:adapter,closed form,1.5353875736778073e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:adapter,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,cirq:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,cirq:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,numpy:cirq-program,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,numpy:cirq-program,closed form,3.884972392790178e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,numpy:cirq-program,closed form,5.692816288963943e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,numpy:cirq-program,closed form,3.884972392790178e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:cirq-program,closed form,3.885780586188048e-16,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,2.7755575615628914e-17,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,2.662382634839339e-16,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,4.2056125982750964e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,2.662382634839339e-16,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,pennylane:adapter,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,pennylane:adapter,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,pennylane:adapter,closed form,3.070775147355614e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,pennylane:adapter,closed form,1.5353875736778073e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:adapter,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,1.1102230246251565e-16,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,numpy:pennylane-program,closed form,0.0,2e-09,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,numpy:pennylane-program,closed form,1.5353875736778073e-16,2e-09,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,numpy:pennylane-program,closed form,3.070775147355614e-16,2e-09,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,numpy:pennylane-program,closed form,1.5353875736778073e-16,4e-09,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:pennylane-program,closed form,1.1102230246251565e-15,1.2000000000000002e-08,True,True
+bernoulli_0.25,A,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+bernoulli_0.25,A,closed_form,amplitude,qsharp:adapter,closed form,0.0,2e-06,True,True
+bernoulli_0.25,Q,closed_form,rotation_2theta,qsharp:adapter,closed form,4.037844386628464e-07,2e-06,True,True
+bernoulli_0.25,Q_power_2,closed_form,rotation_4theta,qsharp:adapter,closed form,4.037844385518241e-07,2e-06,True,True
+bernoulli_0.25,controlled_Q,closed_form,identity_then_rotation,qsharp:adapter,closed form,4.037844386628464e-07,4e-06,True,True
+bernoulli_0.25,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:adapter,closed form,3.4968704752946778e-06,1.2e-05,True,True
+bernoulli_0.25,A,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.037844385518241e-07,1e-06,True,True
+bernoulli_0.25,Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.037844385518241e-07,1e-06,True,True
+bernoulli_0.25,Q_power_2,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.037844383297795e-07,1e-06,True,True
+bernoulli_0.25,controlled_Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.037844385518241e-07,1e-06,True,True
+bernoulli_0.25,Q,negative_control,rotation_2theta,negative:Q_without_global_phase,closed form,1.7320508075688772,2e-09,,False
+bernoulli_0.25,Q_power_2,negative_control,rotation_4theta,negative:Q_without_global_phase,closed form,2.220446049250313e-16,2e-09,,True
+bernoulli_0.25,controlled_Q,negative_control,identity_then_rotation,negative:Q_without_global_phase,closed form,1.7320508075688772,4e-09,,False
+bernoulli_0.25,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:Q_without_global_phase,closed form,1.1102230246251565e-15,1.2000000000000002e-08,,True
+bernoulli_0.25,Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,1.7320508075688772,1e-09,,False
+bernoulli_0.25,Q_power_2,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,2.1211504774498133e-16,1e-09,,True
+bernoulli_0.25,controlled_Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,1.7320508075688772,1e-09,,False
+bernoulli_0.25,A,negative_control,amplitude,negative:A_angle_negated,closed form,0.0,2e-09,,True
+bernoulli_0.25,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:A_angle_negated,closed form,0.7500000000000001,1.2000000000000002e-08,,False
+bernoulli_0.25,A,negative_control,entrywise_exact,negative:A_angle_negated,numpy:handwritten,1.0,1e-09,,False
+uniform_threshold_n2_k1,A,closed_form,amplitude,aeonq problem builder a_true,analytic a,0.0,1e-12,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,ir:reference amplitude,analytic a,3.3306690738754696e-16,1e-12,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,numpy:handwritten,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,numpy:handwritten,closed form,4.565779502726965e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,numpy:handwritten,closed form,7.867459744965053e-16,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,numpy:handwritten,closed form,4.565779502726965e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:handwritten,closed form,1.9984014443252818e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,ir:reference,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,ir:reference,closed form,4.440892098500626e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,ir:reference,closed form,7.771561172376096e-16,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,ir:reference,closed form,4.440892098500626e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,ir:reference,closed form,1.9984014443252818e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,ir:reference,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,ir:reference,numpy:handwritten,6.123233995736764e-17,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,ir:reference,numpy:handwritten,1.2246467991473522e-16,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,ir:reference,numpy:handwritten,6.123233995736764e-17,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,qiskit:handwritten,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,qiskit:handwritten,closed form,6.661338147750939e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,qiskit:handwritten,closed form,1.1102230246251565e-15,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,qiskit:handwritten,closed form,1.9984014443252818e-15,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:handwritten,closed form,2.9976021664879227e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,1.7743390503460954e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,3.0337237119109576e-16,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,1.9984014443252818e-15,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,cirq:handwritten,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,cirq:handwritten,closed form,5.551115123125783e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,cirq:handwritten,closed form,1.2212453270876722e-15,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,cirq:handwritten,closed form,5.551115123125783e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:handwritten,closed form,3.774758283725532e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,2.220446049250313e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,5.03338772845129e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,1.006677545690258e-15,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,5.03338772845129e-16,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,pennylane:handwritten,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,pennylane:handwritten,closed form,4.921463398066765e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,pennylane:handwritten,closed form,8.148386477495478e-16,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,pennylane:handwritten,closed form,4.921463398066765e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:handwritten,closed form,1.9984014443252818e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,1.8369701987210292e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,3.6739403974420574e-16,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,1.8369701987210292e-16,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,qsharp:handwritten,closed form,0.0,4e-06,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,qsharp:handwritten,closed form,2.220446049250313e-16,4e-06,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,qsharp:handwritten,closed form,4.996003610813204e-16,4e-06,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,qsharp:handwritten,closed form,2.220446049250313e-16,8e-06,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:handwritten,closed form,6.661338147750939e-16,2.4e-05,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,1.1102230246251565e-16,1e-06,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,1.7743390503460954e-16,1e-06,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,3.548678100692191e-16,1e-06,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,1.7743390503460954e-16,1e-06,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,qiskit:adapter,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,qiskit:adapter,closed form,6.745238747122173e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,qiskit:adapter,closed form,1.1102230246251565e-15,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,qiskit:adapter,closed form,2.220446049250313e-15,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:adapter,closed form,2.9976021664879227e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,1.6653345369377348e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,3.0337237119109576e-16,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,2.220446049250313e-15,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,numpy:qiskit-program,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,numpy:qiskit-program,closed form,8.556930800945924e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,numpy:qiskit-program,closed form,1.5159580211373744e-15,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,numpy:qiskit-program,closed form,2.9725052212501792e-15,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:qiskit-program,closed form,1.7763568394002505e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,2.535772158592562e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,6.722924538033684e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,1.1882847513375572e-15,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,2.9725052212501792e-15,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,cirq:adapter,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,cirq:adapter,closed form,5.584784602458831e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,cirq:adapter,closed form,1.2395293229340447e-15,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,cirq:adapter,closed form,5.584784602458831e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:adapter,closed form,3.774758283725532e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,cirq:adapter,numpy:handwritten,2.220446049250313e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,4.996003610813204e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,cirq:adapter,numpy:handwritten,9.992007221626409e-16,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,4.996003610813204e-16,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,numpy:cirq-program,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,numpy:cirq-program,closed form,6.47486198124226e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,numpy:cirq-program,closed form,1.0312899966171686e-15,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,numpy:cirq-program,closed form,7.500852469017285e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:cirq-program,closed form,1.9984014443252818e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,1.4782794558091698e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,3.8007567257729673e-16,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,7.654042494670951e-16,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,8.060783869000146e-16,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,pennylane:adapter,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,pennylane:adapter,closed form,4.565779502726965e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,pennylane:adapter,closed form,7.867459744965053e-16,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,pennylane:adapter,closed form,4.565779502726965e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:adapter,closed form,1.9984014443252818e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,2.465190328815662e-32,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,numpy:pennylane-program,closed form,3.3306690738754696e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,numpy:pennylane-program,closed form,4.565779502726965e-16,4e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,numpy:pennylane-program,closed form,7.867459744965053e-16,4e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,numpy:pennylane-program,closed form,4.565779502726965e-16,8e-09,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:pennylane-program,closed form,1.9984014443252818e-15,2.4000000000000003e-08,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+uniform_threshold_n2_k1,A,closed_form,amplitude,qsharp:adapter,closed form,0.0,4e-06,True,True
+uniform_threshold_n2_k1,Q,closed_form,rotation_2theta,qsharp:adapter,closed form,2.220446049250313e-16,4e-06,True,True
+uniform_threshold_n2_k1,Q_power_2,closed_form,rotation_4theta,qsharp:adapter,closed form,4.996003610813204e-16,4e-06,True,True
+uniform_threshold_n2_k1,controlled_Q,closed_form,identity_then_rotation,qsharp:adapter,closed form,2.220446049250313e-16,8e-06,True,True
+uniform_threshold_n2_k1,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:adapter,closed form,6.661338147750939e-16,2.4e-05,True,True
+uniform_threshold_n2_k1,A,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,1.1102230246251565e-16,1e-06,True,True
+uniform_threshold_n2_k1,Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,1.7743390503460954e-16,1e-06,True,True
+uniform_threshold_n2_k1,Q_power_2,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,3.548678100692191e-16,1e-06,True,True
+uniform_threshold_n2_k1,controlled_Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,1.7743390503460954e-16,1e-06,True,True
+uniform_threshold_n2_k1,Q,negative_control,rotation_2theta,negative:Q_without_global_phase,closed form,1.732050807568877,4e-09,,False
+uniform_threshold_n2_k1,Q_power_2,negative_control,rotation_4theta,negative:Q_without_global_phase,closed form,7.771561172376096e-16,4e-09,,True
+uniform_threshold_n2_k1,controlled_Q,negative_control,identity_then_rotation,negative:Q_without_global_phase,closed form,1.732050807568877,8e-09,,False
+uniform_threshold_n2_k1,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:Q_without_global_phase,closed form,1.9984014443252818e-15,2.4000000000000003e-08,,True
+uniform_threshold_n2_k1,Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,0.9999999999999997,1e-09,,False
+uniform_threshold_n2_k1,Q_power_2,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,1.2246467991473522e-16,1e-09,,True
+uniform_threshold_n2_k1,controlled_Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,0.9999999999999997,1e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,aeonq problem builder a_true,analytic a,0.0,1e-12,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,ir:reference amplitude,analytic a,1.1102230246251565e-16,1e-12,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,numpy:handwritten,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,numpy:handwritten,closed form,2.634611272012387e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,numpy:handwritten,closed form,5.944971836862566e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,numpy:handwritten,closed form,2.634611272012387e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:handwritten,closed form,1.27675647831893e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,ir:reference,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,ir:reference,closed form,3.4948175031205493e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,ir:reference,closed form,5.501008535900776e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,ir:reference,closed form,3.4948175031205493e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,ir:reference,closed form,1.3877787807814457e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,ir:reference,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,ir:reference,numpy:handwritten,1.3313559577235908e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,ir:reference,numpy:handwritten,4.105171621880383e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,ir:reference,numpy:handwritten,1.3313559577235908e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,qiskit:handwritten,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,qiskit:handwritten,closed form,2.3984649857322187e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,qiskit:handwritten,closed form,6.151837506487059e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,qiskit:handwritten,closed form,1.1169569204917661e-15,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:handwritten,closed form,1.0547118733938987e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,1.1102230246251565e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,6.047640587503304e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,8.881784197001252e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,cirq:handwritten,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,cirq:handwritten,closed form,2.634611272012387e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,cirq:handwritten,closed form,5.944971836862566e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,cirq:handwritten,closed form,2.634611272012387e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:handwritten,closed form,1.27675647831893e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,9.797174393178826e-17,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,2.3998078184349547e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,9.797174393178826e-17,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,pennylane:handwritten,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,pennylane:handwritten,closed form,3.4948175031205493e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,pennylane:handwritten,closed form,5.501008535900776e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,pennylane:handwritten,closed form,3.4948175031205493e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:handwritten,closed form,1.3877787807814457e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,1.9594348786357652e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,5.842060145304618e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,1.9594348786357652e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,qsharp:handwritten,closed form,8.465249999867197e-07,4e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,qsharp:handwritten,closed form,4.388131968902087e-07,4e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,qsharp:handwritten,closed form,1.0080799484057934e-07,4e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,qsharp:handwritten,closed form,4.388131968902087e-07,8e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:handwritten,closed form,8.465249998756974e-07,2.4e-05,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.679663241358156e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.24949238020389e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,1.0288672880331973e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.24949238020389e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,qiskit:adapter,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,qiskit:adapter,closed form,3.7590023739926464e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,qiskit:adapter,closed form,8.881784197001252e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,qiskit:adapter,closed form,1.5543122344752192e-15,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:adapter,closed form,2.9976021664879227e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,4.440892098500626e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,1.3537089097739928e-15,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,1.5543122344752192e-15,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,numpy:qiskit-program,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,numpy:qiskit-program,closed form,1.395393101798883e-15,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,numpy:qiskit-program,closed form,2.6777493982640677e-15,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,numpy:qiskit-program,closed form,6.121211892914769e-15,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:qiskit-program,closed form,3.3861802251067274e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,1.3811180494822544e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,8.707003145776844e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,2.1130771863076877e-15,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,5.843999899568475e-15,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,cirq:adapter,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,cirq:adapter,closed form,2.634611272012387e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,cirq:adapter,closed form,5.944971836862566e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,cirq:adapter,closed form,2.634611272012387e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:adapter,closed form,1.27675647831893e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,cirq:adapter,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,2.465190328815662e-32,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,cirq:adapter,numpy:handwritten,4.930380657631324e-32,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,2.465190328815662e-32,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,numpy:cirq-program,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,numpy:cirq-program,closed form,7.548463261574017e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,numpy:cirq-program,closed form,1.498420868238486e-15,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,numpy:cirq-program,closed form,1.0095389682901718e-15,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:cirq-program,closed form,1.1657341758564144e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,1.25550637936531e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,6.624775100708994e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,1.1676072436243589e-15,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,1.4439209919219784e-15,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,pennylane:adapter,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,pennylane:adapter,closed form,3.4948175031205493e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,pennylane:adapter,closed form,5.501008535900776e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,pennylane:adapter,closed form,3.4948175031205493e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:adapter,closed form,1.3877787807814457e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,1.1102230246251565e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,3.3306690738754696e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,1.1102230246251565e-16,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,numpy:pennylane-program,closed form,1.1102230246251565e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,numpy:pennylane-program,closed form,2.634611272012387e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,numpy:pennylane-program,closed form,5.944971836862566e-16,4e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,numpy:pennylane-program,closed form,2.634611272012387e-16,8e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:pennylane-program,closed form,1.27675647831893e-15,2.4000000000000003e-08,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,closed_form,amplitude,qsharp:adapter,closed form,8.465249999867197e-07,4e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,closed_form,rotation_2theta,qsharp:adapter,closed form,4.388131968902087e-07,4e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,closed_form,rotation_4theta,qsharp:adapter,closed form,1.0080799484057934e-07,4e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,closed_form,identity_then_rotation,qsharp:adapter,closed form,4.388131968902087e-07,8e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:adapter,closed form,8.465249998756974e-07,2.4e-05,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.679663241358156e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.24949238020389e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,1.0288672880331973e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.24949238020389e-07,1e-06,True,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,negative_control,rotation_2theta,negative:Q_without_global_phase,closed form,2.0,4e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,negative_control,rotation_4theta,negative:Q_without_global_phase,closed form,5.944971836862566e-16,4e-09,,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,negative_control,identity_then_rotation,negative:Q_without_global_phase,closed form,2.0,8e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:Q_without_global_phase,closed form,1.27675647831893e-15,2.4000000000000003e-08,,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,1.6,1e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,2.3998078184349547e-16,1e-09,,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,controlled_Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,1.6,1e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,negative_control,rotation_2theta,negative:Q_qubits_reversed,closed form,0.1549193338482966,4e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,negative_control,rotation_4theta,negative:Q_qubits_reversed,closed form,0.30357865537616435,4e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:Q_qubits_reversed,closed form,0.020000000000001183,2.4000000000000003e-08,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q,negative_control,entrywise_exact,negative:Q_qubits_reversed,numpy:handwritten,0.19999999999999984,1e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,Q_power_2,negative_control,entrywise_exact,negative:Q_qubits_reversed,numpy:handwritten,0.3999999999999999,1e-09,,False
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,negative_control,amplitude,negative:A_angle_negated,closed form,1.1102230246251565e-16,4e-09,,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:A_angle_negated,closed form,6.106226635438361e-16,2.4000000000000003e-08,,True
+distribution_0.1_0.2_0.3_0.4_marked_1_2,A,negative_control,entrywise_exact,negative:A_angle_negated,numpy:handwritten,1.0954451150103321,1e-09,,False
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,aeonq problem builder a_true,analytic a,0.0,1e-12,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,ir:reference amplitude,analytic a,5.551115123125783e-17,1e-12,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,numpy:handwritten,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,numpy:handwritten,closed form,1.2563455574701484e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,numpy:handwritten,closed form,2.634545892225822e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,numpy:handwritten,closed form,1.2563455574701484e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:handwritten,closed form,4.440892098500626e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,ir:reference,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,ir:reference,closed form,1.1102230246251565e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,ir:reference,closed form,2.7755575615628914e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,ir:reference,closed form,1.1102230246251565e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,ir:reference,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,ir:reference,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,ir:reference,numpy:handwritten,2.535772158592562e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,ir:reference,numpy:handwritten,3.3059672999409344e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,ir:reference,numpy:handwritten,2.535772158592562e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,qiskit:handwritten,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,qiskit:handwritten,closed form,2.53214129453154e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,qiskit:handwritten,closed form,4.440892098500626e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,qiskit:handwritten,closed form,1.337815617163173e-15,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:handwritten,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,3.3306690738754696e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,7.094182526369391e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,qiskit:handwritten,numpy:handwritten,1.4432899320127035e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,cirq:handwritten,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,cirq:handwritten,closed form,1.4221832006024657e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,cirq:handwritten,closed form,1.9615104512089168e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,cirq:handwritten,closed form,1.4221832006024657e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:handwritten,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,2.7755575615628914e-17,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,1.2246467991473532e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,2.449293598294706e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,cirq:handwritten,numpy:handwritten,1.2246467991473532e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,pennylane:handwritten,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,pennylane:handwritten,closed form,1.217110873273483e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,pennylane:handwritten,closed form,2.827458578716981e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,pennylane:handwritten,closed form,1.217110873273483e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:handwritten,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,3.3059672999409354e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,5.378339630426945e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,pennylane:handwritten,numpy:handwritten,3.3059672999409354e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,qsharp:handwritten,closed form,6.299817623678372e-07,8e-06,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,qsharp:handwritten,closed form,2.6657916477046406e-07,8e-06,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,qsharp:handwritten,closed form,5.403460823227846e-07,8e-06,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,qsharp:handwritten,closed form,2.6657916477046406e-07,1.6e-05,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:handwritten,closed form,1.31448345308538e-06,4.8e-05,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.4475206351091146e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.2150843096097623e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.5793166864212254e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,qsharp:handwritten,numpy:handwritten,4.2150843096097623e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,qiskit:adapter,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,qiskit:adapter,closed form,2.53214129453154e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,qiskit:adapter,closed form,4.440892098500626e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,qiskit:adapter,closed form,1.337815617163173e-15,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qiskit:adapter,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,3.3306690738754696e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,7.094182526369391e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,qiskit:adapter,numpy:handwritten,1.4432899320127035e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,numpy:qiskit-program,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,numpy:qiskit-program,closed form,1.2681238139070499e-15,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,numpy:qiskit-program,closed form,2.346558286267977e-15,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,numpy:qiskit-program,closed form,8.508282040515255e-15,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:qiskit-program,closed form,3.3306690738754696e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,1.6310292887848554e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,1.3654302180279074e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,2.113462730005952e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,numpy:qiskit-program,numpy:handwritten,9.265900608649244e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,cirq:adapter,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,cirq:adapter,closed form,1.2563455574701484e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,cirq:adapter,closed form,2.6345458922258225e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,cirq:adapter,closed form,1.2563455574701484e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,cirq:adapter,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,cirq:adapter,numpy:handwritten,2.7755575615628914e-17,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,5.551115123125783e-17,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,cirq:adapter,numpy:handwritten,5.551115123125783e-17,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,cirq:adapter,numpy:handwritten,5.551115123125783e-17,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,numpy:cirq-program,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,numpy:cirq-program,closed form,7.322184264647435e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,numpy:cirq-program,closed form,1.4373972261742934e-15,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,numpy:cirq-program,closed form,1.7434051853618002e-15,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:cirq-program,closed form,2.3592239273284576e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,4.4625211854153743e-17,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,1.0770447809898492e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,2.0884082594459852e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,numpy:cirq-program,numpy:handwritten,2.008723115457388e-15,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,pennylane:adapter,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,pennylane:adapter,closed form,1.217110873273483e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,pennylane:adapter,closed form,2.827458578716981e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,pennylane:adapter,closed form,1.217110873273483e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,pennylane:adapter,closed form,6.661338147750939e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,2.220446049250313e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,2.220446049250313e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,pennylane:adapter,numpy:handwritten,2.220446049250313e-16,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,numpy:pennylane-program,closed form,5.551115123125783e-17,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,numpy:pennylane-program,closed form,1.2563455574701484e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,numpy:pennylane-program,closed form,2.634545892225822e-16,8e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,numpy:pennylane-program,closed form,1.2563455574701484e-16,1.6e-08,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,numpy:pennylane-program,closed form,4.440892098500626e-16,4.8000000000000006e-08,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,numpy:pennylane-program,numpy:handwritten,0.0,1e-09,True,True
+lognormal_tail_n2_k2_flag,A,closed_form,amplitude,qsharp:adapter,closed form,6.299817623678372e-07,8e-06,True,True
+lognormal_tail_n2_k2_flag,Q,closed_form,rotation_2theta,qsharp:adapter,closed form,2.6657916477046406e-07,8e-06,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,closed_form,rotation_4theta,qsharp:adapter,closed form,5.403460823227846e-07,8e-06,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,closed_form,identity_then_rotation,qsharp:adapter,closed form,2.6657916477046406e-07,1.6e-05,True,True
+lognormal_tail_n2_k2_flag,"A,Q",closed_form,amplification_sin2_(2k+1)theta,qsharp:adapter,closed form,1.31448345308538e-06,4.8e-05,True,True
+lognormal_tail_n2_k2_flag,A,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.4475206351091146e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.2150843096097623e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,Q_power_2,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.5793166864212254e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,controlled_Q,cross,entrywise_exact,qsharp:adapter,numpy:handwritten,4.2150843096097623e-07,1e-06,True,True
+lognormal_tail_n2_k2_flag,Q,negative_control,rotation_2theta,negative:Q_without_global_phase,closed form,1.9876928990805889,8e-09,,False
+lognormal_tail_n2_k2_flag,Q_power_2,negative_control,rotation_4theta,negative:Q_without_global_phase,closed form,1.6653345369377348e-16,8e-09,,True
+lognormal_tail_n2_k2_flag,controlled_Q,negative_control,identity_then_rotation,negative:Q_without_global_phase,closed form,1.9876928990805889,1.6e-08,,False
+lognormal_tail_n2_k2_flag,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:Q_without_global_phase,closed form,4.440892098500626e-16,4.8000000000000006e-08,,True
+lognormal_tail_n2_k2_flag,Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,2.0,1e-09,,False
+lognormal_tail_n2_k2_flag,Q_power_2,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,2.449293598294706e-16,1e-09,,True
+lognormal_tail_n2_k2_flag,controlled_Q,negative_control,entrywise_exact,negative:Q_without_global_phase,numpy:handwritten,2.0,1e-09,,False
+lognormal_tail_n2_k2_flag,Q,negative_control,rotation_2theta,negative:Q_qubits_reversed,closed form,1.0251151345848637,8e-09,,False
+lognormal_tail_n2_k2_flag,Q_power_2,negative_control,rotation_4theta,negative:Q_qubits_reversed,closed form,1.9754543703002279,8e-09,,False
+lognormal_tail_n2_k2_flag,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:Q_qubits_reversed,closed form,0.40739034071434116,4.8000000000000006e-08,,False
+lognormal_tail_n2_k2_flag,Q,negative_control,entrywise_exact,negative:Q_qubits_reversed,numpy:handwritten,1.1496027653848535,1e-09,,False
+lognormal_tail_n2_k2_flag,Q_power_2,negative_control,entrywise_exact,negative:Q_qubits_reversed,numpy:handwritten,1.9717005793291746,1e-09,,False
+lognormal_tail_n2_k2_flag,A,negative_control,amplitude,negative:A_angle_negated,closed form,5.551115123125783e-17,8e-09,,True
+lognormal_tail_n2_k2_flag,"A,Q",negative_control,amplification_sin2_(2k+1)theta,negative:A_angle_negated,closed form,0.05926249941535666,4.8000000000000006e-08,,False
+lognormal_tail_n2_k2_flag,A,negative_control,entrywise_exact,negative:A_angle_negated,numpy:handwritten,1.4890613569079114,1e-09,,False

@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fast:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Install third-party circuit converters (translator-fidelity study)
+        run: python -m pip install -r requirements-translators.txt
+      - name: Lint
+        run: python -m ruff check aeonq tests benchmarks scripts examples --select F
+      - name: Formatting
+        run: python -m ruff format --check aeonq tests benchmarks scripts examples
+      - name: Type checking
+        run: python -m mypy aeonq --ignore-missing-imports --follow-imports=silent
+      - name: Unit, property and edge tests
+        run: python -m pytest -q tests/unit tests/property tests/edge_cases
+      - name: Integration and regression tests
+        run: python -m pytest -q tests/integration tests/regression tests/statistical --cov=aeonq --cov-report=xml
+      - name: Dependency consistency
+        run: python -m pip check
+      - name: Documentation link build
+        run: python scripts/validate_docs.py
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build VitePress documentation
+        run: |
+          npm ci
+          npm run docs:build
+      - name: Executable examples
+        run: python scripts/validate_examples.py

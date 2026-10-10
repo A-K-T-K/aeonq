@@ -1,0 +1,24 @@
+.venv/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.coverage
+coverage.xml
+pytest.xml
+benchmarks/results/environment/regeneration_state.json
+
+# Local-only manuscript materials and secrets
+paper/
+paper_build/
+manuscript*
+token.txt
+
+# Node and VitePress
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/.vitepress/.temp/

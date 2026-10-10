@@ -1,0 +1,5 @@
+backend,sdk_version,semantic_A,exact_adjoint,S0,Schi,Q,Q_power,controlled_Q,canonical_qae_local,iqae_local,mlqae_local,faster_ae_local,checkpointing,resource_extraction,supports_statevector,supports_finite_shots,supports_controlled_operations,supports_arbitrary_unitary,supports_mid_circuit_measurement,supports_dynamic_circuits,supports_parameter_binding,supports_async_jobs,max_qubits,max_shots
+qiskit,2.5.2,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,local metrics,True,True,True,True,True,True,True,False,,
+cirq,1.7.0,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,local metrics,True,True,True,True,True,True,True,False,,
+pennylane,0.45.1,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,local metrics,True,True,True,True,False,False,True,False,,
+qsharp,1.32.3,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,partial,True,True,True,False,False,False,False,False,12,
