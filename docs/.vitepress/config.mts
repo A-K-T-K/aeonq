@@ -1,9 +1,11 @@
 import { defineConfig } from 'vitepress'
 
+const base = (process.env.BASE_PATH || '/') as `/${string}/` | '/'
+
 export default defineConfig({
   title: 'aeonq',
   description: 'Semantics-Preserving Quantum Amplitude Estimation Across Heterogeneous Quantum SDKs',
-  base: '/',
+  base,
   cleanUrls: true,
   srcExclude: ['README.md'],
   head: [
