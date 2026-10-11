@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  <a href="https://a-k-t-k.github.io/aeonq/"><img src="https://img.shields.io/badge/docs-a--k--t--k.github.io%2Faeonq-0a7bbb.svg" alt="Documentation"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.13%2B-3776AB.svg" alt="Python 3.13+"></a>
   <a href="#supported-backends"><img src="https://img.shields.io/badge/backends-Qiskit%20%7C%20Cirq%20%7C%20PennyLane%20%7C%20Q%23-6f42c1.svg" alt="Backends"></a>
   <a href="docs/conformance_testing.md"><img src="https://img.shields.io/badge/conformance-66%20checks%20%7C%2015%20mutants-2e7d32.svg" alt="Conformance"></a>
@@ -17,7 +18,7 @@
 
 <p align="center">
   <a href="docs/quickstart.md">Quickstart</a> ·
-  <a href="docs/README.md">Documentation</a> ·
+  <a href="https://a-k-t-k.github.io/aeonq/">Documentation</a> ·
   <a href="examples/">Examples</a> ·
   <a href="docs/translator_fidelity.md">Translator study</a>
 </p>
@@ -160,7 +161,7 @@ Every result reports one of the following in `result.guarantee_status`:
 
 ## Documentation
 
-The full documentation is built with [VitePress](https://vitepress.dev) from [`docs/`](docs/README.md).
+The full documentation is published at **[a-k-t-k.github.io/aeonq](https://a-k-t-k.github.io/aeonq/)**. It is built with [VitePress](https://vitepress.dev) from [`docs/`](docs/README.md) and deployed to GitHub Pages.
 
 | Guide | Contents |
 |:---|:---|
