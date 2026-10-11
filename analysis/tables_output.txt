@@ -1,0 +1,250 @@
+
+Conformance
+===========
+
+Adapter targets, declared entry-wise unitary tolerance and conformance
+---------------------------------------------------------------------------------------------------------------------------------
+Adapter target             Tolerance  Operator  Measurement  Sampling  Max deviation (battery)  Max deviation (equivalence check)
+---------------------------------------------------------------------------------------------------------------------------------
+Reference simulator            1e-09     43/43          5/5     18/18                  0.0e+00                                 --
+Qiskit 2.5.2                   1e-09     43/43          5/5     18/18                  2.2e-15                            6.7e-16
+Cirq 1.7.0                     1e-09     43/43          5/5     18/18                  1.0e-15                            4.0e-15
+PennyLane 0.45.1               1e-09     43/43          5/5     18/18                  3.8e-16                            4.9e-16
+Microsoft Q# (QDK 1.32.3)      1e-06     43/43          5/5     18/18                  6.8e-07                            5.7e-07
+---------------------------------------------------------------------------------------------------------------------------------
+
+  Largest entry-wise deviation, Qiskit/Cirq/PennyLane, equivalence check                4.0e-15
+  Largest entry-wise deviation, Q#, equivalence check                                   5.7e-07
+  Largest entry-wise deviation, Qiskit/Cirq/PennyLane, battery                          2.2e-15
+  Largest entry-wise deviation, Q#, battery                                             6.8e-07
+
+Mutation analysis
+=================
+
+Failing conformance checks per injected fault (43 operator, 5 measurement, 18 sampling)
+------------------------------------------------------------------------------------
+Lowering fault                       Operator  Measurement  Sampling  SDKs detecting
+------------------------------------------------------------------------------------
+Drop global phase                          13            0         0             4/4
+Invert global phase sign                    1            0         0             4/4
+Omit phase under control                    7            0         0             4/4
+Negate rotation parameters                 24            0         3             4/4
+Halve rotation angles                      25            0        15             4/4
+Lower R_Z as phase gate                     4            0         0             4/4
+Swap CNOT direction                         5            0         3             4/4
+Invert control polarity                    26            0         9             4/4
+Omit adjoint                               20            0         9             4/4
+Shift power index (Q^(k+1) for Q^k)         6            0         8             4/4
+Reflect about |1...1>                      22            0         7             4/4
+Negate objective reflection S_chi          18            0         0             4/4
+Reverse qubit order                        21            4         8             4/4
+Reverse readout bit order                   0            4         8             4/4
+Omit one shot record                        0            5        18             4/4
+------------------------------------------------------------------------------------
+
+  Checks in the battery                                                                      66
+    operator checks                                                                          43
+    measurement checks                                                                        5
+    sampling checks                                                                          18
+  Injected faults                                                                            15
+  Faults detected on every SDK                                                               15
+  Unmutated adapters detected as faulty                                                       0
+  Failure profiles identical across SDKs                                                    yes
+  Faults with no measurement or sampling failure                                              5
+  Cirq canonical MAE, bernoulli_0.3, unmutated (20 trials)                                0.009
+    with drop_global_phase                                                                 0.39
+    with drop_phase_under_control                                                          0.39
+    with objective_reflection_negated                                                      0.39
+  Cirq canonical MAE, lognormal_tail_n2_k2_flag, unmutated (20 trials)                    0.002
+    with drop_global_phase                                                                 0.11
+    with drop_phase_under_control                                                          0.11
+    with objective_reflection_negated                                                      0.11
+  Iterative MAE unchanged by the three phase faults                                         yes
+  Estimation error unchanged by phase-sign inversion and R_Z as phase gate                  yes
+
+Translator fidelity and independent oracles
+===========================================
+
+Translator fidelity (61 programs per path)
+--------------------------------------------------------------------------------------------------------------------------
+Path                                                  Evaluated  Exact  Phase only  Not equal  Controlled  Count-invisible
+--------------------------------------------------------------------------------------------------------------------------
+Qiskit -> QASM 2 -> Qiskit                                   61     49          12          0          12               12
+Qiskit -> QASM 3 -> Qiskit                                   61     49          12          0          12               12
+Qiskit -> QASM 2 -> Cirq                                     42     34           8          0           8                8
+Qiskit -> QASM 3 -> Cirq                                     42     34           8          0           8                8
+Qiskit -> QASM 3 -> PennyLane                                 0     --          --         --          --               --
+Qiskit -> QASM 3 (include line removed) -> PennyLane         25     21           4          0           4                4
+Qiskit -> QASM 2 -> QDK                                      40     35           5          0          --                5
+Qiskit -> QASM 3 -> QDK                                      61     47           9          5          --               14
+Qiskit -> pytket -> Cirq                                     25     10          15          0          15               15
+Cirq -> QASM 2 -> Qiskit                                     61     37          24          0          24               24
+Cirq -> QASM 3 -> Qiskit                                     41     30          11          0          11               11
+Cirq -> QASM 2 -> Cirq                                       61     37          24          0          24               24
+Cirq -> QASM 3 -> QDK                                        61     41          10         10          --               12
+Cirq -> pytket -> Qiskit                                     25     25           0          0           0                0
+PennyLane -> QASM 2 -> Qiskit                                35     35           0          0           0                0
+PennyLane -> QASM 2 -> Cirq                                  35     35           0          0           0                0
+PennyLane -> QASM 2 -> QDK                                   26     23           3          0          --                3
+Total                                                       702    542         145         15         118              152
+--------------------------------------------------------------------------------------------------------------------------
+
+  Canonical estimate 0.08 -> 0.92 on asymmetric_rotations_n1 (9 paths)
+  Canonical estimate 0.22 -> 0.78 on bernoulli_0.25 (9 paths)
+  Canonical estimate 0.08 -> 0.15 on entangled_cx_n2 (1 path)
+  Canonical estimate 0.08 -> 0.22 on entangled_cx_n2 (3 paths)
+  Canonical estimate 0.08 -> 0.92 on entangled_cx_n2 (4 paths)
+  Canonical estimate 0.40 -> 0.60 on lognormal_tail_n2_k2_flag (6 paths)
+  Canonical estimate 0.78 -> 0.22 on uniform_threshold_n2_k1 (6 paths)
+  Canonical estimate 0.78 -> 1.00 on uniform_threshold_n2_k1 (1 path)
+  Conversion paths evaluated                                                                 17
+  Programs on available paths                                                             1,037
+  Programs translated                                                                       702
+  Programs not translated                                                                   335
+    failing at export                                                                        72
+    failing at import                                                                       166
+    failing at unitary evaluation                                                            97
+  Translated programs with permuted qubits                                                    0
+  Exactly equal programs failing once controlled                                              0
+  Adapter-lowered Grover operators translated                                                58
+    whose canonical estimate changes                                                         39
+  Native Grover operator translations                                                        33
+    that lose the -1                                                                         29
+    targets of those that keep it                                                        qsharp
+  Independent oracle checks                                                                 460
+    passed                                                                                  460
+    largest entry-wise difference from the NumPy oracle, non-Q#                         9.3e-15
+    largest entry-wise difference from the NumPy oracle, Q#                             4.7e-07
+  Faulty oracle variants                                                                      9
+    rejected                                                                                  9
+
+Baseline comparison and equivalence
+===================================
+
+Comparison with qiskit-algorithms (15 problems, 200 trials each) and cross-SDK equivalence
+--------------------------------------------------------------------------------------------------------------------------------
+Estimator                                 Mean queries  Mean abs. error  Mean int. width  Lowest coverage  Cases sig. below 0.95
+--------------------------------------------------------------------------------------------------------------------------------
+Iterative, aeonq                                 6,857           0.0034            0.011            0.995                      0
+Iterative, qiskit-algorithms                     6,913          0.00082           0.0054            0.980                      0
+Maximum likelihood, aeonq                       17,920          0.00035            0.038            0.940                      0
+Maximum likelihood, qiskit-algorithms           17,920          0.00036           0.0017            0.195                      3
+  Likelihood-ratio interval, same trials        17,920          0.00036           0.0018            0.000                      1
+Faster, aeonq                                  373,052           0.0027            0.062            1.000                      0
+Faster, qiskit-algorithms                      264,829           0.0017             0.26            1.000                      0
+Canonical, aeonq                                15,872          0.00066           0.0041            0.920                      0
+Canonical, qiskit-algorithms                    15,872            0.024           0.0041            0.925                      0
+--------------------------------------------------------------------------------------------------------------------------------
+Equivalence (margins met): sampling 40/40, coverage 16/16, error 16/16
+
+  Problems on which iterative aeonq stops after one round: bernoulli_0, bernoulli_1e-06, bernoulli_0.999999, bernoulli_1
+  Sampling comparisons within the TVD margin, SDK adapters                                32/32
+    reference simulator                                                                     8/8
+  Largest SDK 95% upper bound on TVD                                                     0.0065
+  Equivalence margins: TVD, coverage, MAE                                        0.01, 0.05, 0.002
+  Iterative aeonq queries on those problems                                                 512
+    mean absolute error                                                                  0.0072
+    qiskit-algorithms queries                                                             7,168
+    qiskit-algorithms mean absolute error                                                 3e-05
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.001                            0.1
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.01                             0.9
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.1                              1.2
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.25                             2.3
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.5                              3.6
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.75                             2.2
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.9                              1.3
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.99                             0.8
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.999                            0.1
+  Iterative query ratio aeonq/qiskit-algorithms, lognormal_tail_n3_k5_flag                  1.3
+  Iterative query ratio aeonq/qiskit-algorithms, lognormal_tail_n4_k10_flag                 1.3
+  Fisher-interval coverage significantly below nominal, bernoulli_1e-06                   0.200
+    likelihood-ratio coverage, same trials                                                0.985
+  Fisher-interval coverage significantly below nominal, bernoulli_0.999999                0.195
+    likelihood-ratio coverage, same trials                                                0.985
+  Fisher-interval coverage significantly below nominal, lognormal_tail_n4_k10_flag          0.905
+    likelihood-ratio coverage, same trials                                                0.985
+  Likelihood-ratio coverage, bernoulli_0                                                  0.000
+  Likelihood-ratio coverage, bernoulli_0.9                                                0.930
+  Clopper-Pearson / Fisher mean width ratio                                                22.1
+  Maximum-likelihood problems reaching the requested width in every trial                     4
+    in at least one trial                                                                     6
+  Faster AE additional queries, aeonq vs qiskit-algorithms (%)                               41
+  Faster AE per-cosine failure budget alpha/(2J)                                        0.00625
+  Faster AE first-stage shots, aeonq                                                     11,214
+  Faster AE second-stage shots, aeonq                                                     5,607
+  Faster AE first-stage shots, qiskit-algorithms int(1944 ln(2/alpha))                    7,171
+  Faster AE second-stage shots, qiskit-algorithms int(972 ln(2/alpha))                    3,585
+  qiskit-algorithms success bound 1-(2J-j0)alpha, smallest                                 0.65
+  qiskit-algorithms success bound 1-(2J-j0)alpha, largest                                  0.80
+
+Noise study
+===========
+
+Interval coverage by single-qubit depolarizing rate (two-qubit rate 10 times higher; rate 0 is ideal simulation)
+--------------------------------------------------------------------
+Estimator, case                       0  0.0001  0.001  0.005   0.01
+--------------------------------------------------------------------
+iqae, bernoulli_0.25              1.000   0.995  0.995  1.000  1.000
+iqae, lognormal_tail_n2_k2_flag   0.995   0.680  0.005  0.000  0.000
+iqae, lognormal_tail_n3_k5_flag   1.000   0.350  0.000  0.000  0.000
+mlqae, bernoulli_0.25             0.945   0.970  0.950  0.945  0.935
+mlqae, lognormal_tail_n2_k2_flag  0.970   0.930  0.960  0.925  0.865
+mlqae, lognormal_tail_n3_k5_flag  0.980   0.935  0.005  0.000  0.000
+--------------------------------------------------------------------
+
+  Every noisy result carries the non-ideal-sampling warning                                 yes
+  No noisy result reports a satisfied guarantee                                             yes
+
+Framework overhead
+==================
+
+Median wall-clock time and share spent in aeonq outside SDK compilation and execution
+-----------------------------------------------------------------------------------------
+SDK, case, estimator                      Evaluations  Median wall (ms)  Median share (%)
+-----------------------------------------------------------------------------------------
+cirq, bernoulli_0.3, iqae                          20               6.2                17
+cirq, bernoulli_0.3, mlqae                         20              24.4                39
+cirq, lognormal_tail_n3_flag, iqae                 20              85.8               2.3
+cirq, lognormal_tail_n3_flag, mlqae                20             105.8               9.3
+pennylane, bernoulli_0.3, iqae                     20               5.1                23
+pennylane, bernoulli_0.3, mlqae                    20              23.3                44
+pennylane, lognormal_tail_n3_flag, iqae            20             122.2               1.5
+pennylane, lognormal_tail_n3_flag, mlqae           20             127.0               7.7
+qiskit, bernoulli_0.3, iqae                        20             198.7               1.4
+qiskit, bernoulli_0.3, mlqae                       20             516.3               3.3
+qiskit, lognormal_tail_n3_flag, iqae               20             289.9                 1
+qiskit, lognormal_tail_n3_flag, mlqae              20             721.7               2.3
+qsharp, bernoulli_0.3, iqae                        20             158.0               1.1
+qsharp, bernoulli_0.3, mlqae                       20             529.3               1.9
+qsharp, lognormal_tail_n3_flag, iqae               20            2423.3               0.1
+qsharp, lognormal_tail_n3_flag, mlqae              20            4590.1              0.23
+-----------------------------------------------------------------------------------------
+
+Optimization pipeline
+=====================
+
+  Configurations compared                                                                    14
+    where the pipeline matches level 3 in depth and two-qubit gates                          14
+    where the pipeline improves on level 3                                                    0
+  Largest optimized depth                                                                     3
+  Largest optimized two-qubit count                                                           1
+  Largest naive depth                                                                       257
+
+Scaling
+=======
+
+Seconds to lower, compile and execute 1000 shots of Q^16 A on a uniform threshold problem (one run per cell)
+--------------------------------------------------------
+Backend                    4 qubits  8 qubits  12 qubits
+--------------------------------------------------------
+Reference simulator           0.003     0.005         --
+Qiskit 2.5.2                  0.096     0.128      0.191
+Cirq 1.7.0                    0.035     0.084      0.173
+PennyLane 0.45.1              0.036     0.116      8.408
+Microsoft Q# (QDK 1.32.3)     1.162     6.815     84.022
+--------------------------------------------------------
+
+Phase-oracle synthesis
+======================
+
+  Largest cube count minus register width m, all thresholds on 1 to 8 qubits                  0
