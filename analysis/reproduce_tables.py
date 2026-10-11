@@ -26,7 +26,7 @@ from functools import lru_cache
 from importlib.metadata import version
 from math import log, sqrt
 from pathlib import Path
-from statistics import mean, median
+from statistics import mean, median, stdev
 from typing import Any
 
 import numpy as np
@@ -338,6 +338,19 @@ def scaling_seconds(row: dict) -> float | None:
     if row.get("status") != "ok":
         return None
     return row["compile_seconds"] + row["execute_seconds"]
+
+
+def scaling_summary() -> dict[tuple[str, int, int], tuple[float, float | None, int]]:
+    """Mean, sample standard deviation and run count per backend, width and power."""
+    runs: dict[tuple[str, int, int], list[float]] = defaultdict(list)
+    for row in scaling_rows():
+        seconds = scaling_seconds(row)
+        if seconds is not None:
+            runs[(row["backend"], row["qubits"], row["power"])].append(seconds)
+    return {
+        key: (mean(values), stdev(values) if len(values) > 1 else None, len(values))
+        for key, values in runs.items()
+    }
 
 
 def compiler_rows() -> list[dict]:
@@ -1007,23 +1020,24 @@ def scaling_section() -> Section:
     versions = recorded_versions(RAW / "scaling_study.json")
     power = max(r["power"] for r in rows_raw)
     shots = sorted({r["shots_returned"] for r in rows_raw if r.get("status") == "ok"})
+    summary = scaling_summary()
+    counts = sorted({n for (_, _, p), (_, _, n) in summary.items() if p == power})
     rows = []
     for backend, _ in SCALING_BACKENDS:
         cells = []
         for qubits in SCALING_COLUMNS:
-            match = [
-                r
-                for r in rows_raw
-                if r["backend"] == backend
-                and r["qubits"] == qubits
-                and r["power"] == power
-            ]
-            cells.append(show(scaling_seconds(match[0]) if match else None, "f3"))
+            cell = summary.get((backend, qubits, power))
+            if cell is None:
+                cells.append(show(None, "f3"))
+            else:
+                average, spread, _ = cell
+                cells.append(f"{show(average, 'f3')} ± {show(spread, 'f3')}")
         rows.append((sdk_label(backend, versions), cells))
+    runs = "/".join(str(n) for n in counts)
     section.tables.append(
         Table(
             f"Seconds to lower, compile and execute {shots[0]} shots of Q^{power} A "
-            "on a uniform threshold problem (one run per cell)",
+            f"on a uniform threshold problem (mean ± SD over {runs} runs per cell)",
             ("Backend", *(f"{q} qubits" for q in SCALING_COLUMNS)),
             rows,
         )

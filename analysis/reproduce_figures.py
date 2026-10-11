@@ -508,22 +508,25 @@ def _rate_label(rate: float) -> str:
 
 
 def figure_scaling(out: Path) -> None:
-    rows = [r for r in data.scaling_rows() if r["power"] == 16 and r["status"] == "ok"]
+    summary = {
+        key: value for key, value in data.scaling_summary().items() if key[2] == 16
+    }
     fig, ax = figure(0.75)
     for slot, (backend, label) in enumerate(data.SCALING_BACKENDS):
-        selected = sorted(
-            (r for r in rows if r["backend"] == backend), key=lambda r: r["qubits"]
-        )
-        ax.plot(
-            [r["qubits"] for r in selected],
-            [data.scaling_seconds(r) for r in selected],
+        widths = sorted(q for (b, q, _) in summary if b == backend)
+        cells = [summary[(backend, q, 16)] for q in widths]
+        ax.errorbar(
+            widths,
+            [average for average, _, _ in cells],
+            yerr=[spread or 0.0 for _, spread, _ in cells],
             color=COLOURS[slot],
             marker=MARKERS[slot],
             markersize=4,
+            capsize=2,
             label=label.replace("Microsoft Q# (QDK)", "Q# (QDK)"),
         )
     ax.set_yscale("log")
-    ax.set_xticks(sorted({r["qubits"] for r in rows}))
+    ax.set_xticks(sorted({q for (_, q, _) in summary}))
     ax.set(
         xlabel="Register width (qubits)",
         ylabel="Wall-clock time (s)",
