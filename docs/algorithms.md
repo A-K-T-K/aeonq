@@ -21,7 +21,7 @@
 IQAE eliminates quantum phase estimation by querying powers $Q^k$ sequentially across rounds. In each round, feasible confidence intervals are contracted via exact Clopper--Pearson binomial bounds.
 - **Monotonicity**: The Grover power index $k$ advances only when the feasible confidence interval is guaranteed to lie within a monotonic branch of $\sin^2((2k+1)\theta)$.
 - **Pooling**: Consecutive rounds at the same power, shot count and branch form a segment, and each round's interval uses every count in its segment. Without pooling, a repeated power (when `max_power` binds or a scheduler prefers it) can only intersect intervals no narrower than a single round's, and the estimate stalls however many rounds are allowed.
-- **Error Budget**: With at most $B$ = `max_rounds` $\times$ (`max_resamples_per_round` + 1) batches, the union bound spends $\alpha/(2B)$ on each fresh interval and $\alpha/(B(B-1))$ on each pooled one, at most $\alpha$ in total. A segment's power and shot count are fixed before its data arrive, so each pooled interval is an exact Clopper--Pearson interval for a fixed number of fresh shots.
+- **Error Budget**: With at most $B$ = `max_rounds` $\times$ (`max_resamples_per_round` + 1) batches and $B>1$, the union bound spends $\alpha/(2B)$ on each fresh interval and $\alpha/(B(B-1))$ on each pooled one, at most $\alpha$ in total. For $B=1$, the single interval uses failure probability $\alpha$. A segment's power and shot count are fixed before its data arrive, so each pooled interval is an exact Clopper--Pearson interval for a fixed number of fresh shots.
 - **Midpoint Return**: Upon converging to an amplitude interval width of at most $2\epsilon$, the interval midpoint is returned.
 
 ```python
@@ -58,7 +58,8 @@ result = estimate(
 ### Canonical QAE (QPE-based)
 Canonical estimation couples powers of $Q$ with quantum phase estimation over $m$ evaluation qubits followed by an inverse Quantum Fourier Transform (QFT).
 - **Point Estimate**: Maximum-likelihood amplitude under the exact phase estimation outcome distribution (modeled as a mixture of Fejér kernels).
-- **Interval**: Likelihood-ratio confidence interval calibrated by the $\chi^2_1$ approximation.
+- **Interval**: Hull of the likelihood-ratio set calibrated by the $\chi^2_1$ approximation. Candidate likelihood modes are refined before locating the outer threshold crossings, so accepted peaks narrower than the initial grid spacing still contribute to the interval.
+- **Numerical Failure**: If the fit cannot resolve a valid interval, the result is `INCONCLUSIVE`, carries a warning, and reports the full amplitude range $[0,1]$.
 - **Guarantees**: Annotated as asymptotic (carrying no finite-sample coverage guarantees). With few evaluation qubits and shots the coverage can fall below nominal: on the exact reference backend, $m=3$ and 256 shots covered $a=0.1$ in 91.7% of 1000 runs at $\alpha=0.05$. Use IQAE or Faster AE when a finite-sample interval is required.
 
 ```python
@@ -74,7 +75,7 @@ result = estimate(
 
 ### Faster Amplitude Estimation (FAE)
 Implements the two-stage cosine reconstruction of Nakaji (2020):
-- **Amplitude Attenuation**: Uses an additional ancilla qubit to attenuate the amplitude by a factor of 5 ($a' = a / 5$), ensuring that the effective phase $\theta \le \arcsin(1/5) < 0.252$ falls inside the required initial domain.
+- **Amplitude Attenuation**: Uses an additional ancilla qubit to attenuate the good-state amplitude $\sqrt{a}$ by a factor of 5, so the success probability becomes $a'=a/25$. This ensures that the effective phase $\theta \le \arcsin(1/5) < 0.252$ falls inside the required initial domain.
 - **Two-Stage Cosine Reconstruction**: Evaluates first-stage and second-stage cosine circuits to achieve quadratic quantum speedup with minimal constant factors.
 - **Iteration Count**: By default `max_iterations` is derived from $\epsilon$ as the fewest iterations whose final second-stage interval is at most $2\epsilon$ wide in the worst case. Iteration $l$ leaves a phase window of $(2\pi/3)/(2^{l+1}+2)$, and the attenuation stretches phase widths by up to $25\sin(2\arcsin(1/5)) = 2\sqrt{24}$ in amplitude, so $\epsilon = 0.01$ needs $l = 10$. Passing a smaller `max_iterations` caps circuit depth at the cost of `INSUFFICIENT_BUDGET` for larger amplitudes.
 

@@ -51,6 +51,18 @@ def test_qubit_order_detects_reversal():
     assert qubit_order(u, swapped, 1e-12) == "reversed"
 
 
+def test_summary_distinguishes_permutations_from_unmatched_operators():
+    from benchmarks.translator_fidelity import summarize
+
+    rows = [
+        {"path": "test", "status": "evaluated", "qubit_order": order}
+        for order in ("identity", "none", "reversed", "permuted102")
+    ]
+    summary = summarize(rows)[0]
+    assert summary["qubit_order_changed"] == 2
+    assert summary["qubit_order_unmatched"] == 1
+
+
 def test_row_flags_are_consistent():
     row = _row("qiskit>qasm2>qiskit", "Q")
     assert row["status"] == "evaluated"

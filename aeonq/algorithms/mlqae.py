@@ -127,10 +127,10 @@ class MLQAE:
         # The point estimate is the MLE, not the midpoint, so the epsilon bound
         # needs the full width <= epsilon and the estimate inside the interval.
         # An MLE outside it means the k=0 interval missed or the MLE aliased.
-        if interval[1] - interval[0] > self.epsilon:
-            status = "INSUFFICIENT_BUDGET"
-        elif outside:
+        if outside:
             status = "INCONCLUSIVE"
+        elif interval[1] - interval[0] > self.epsilon:
+            status = "INSUFFICIENT_BUDGET"
         else:
             status = "CONVERGED"
         guarantee, warnings = qualified_guarantee(

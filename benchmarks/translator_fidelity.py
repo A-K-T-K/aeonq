@@ -143,7 +143,11 @@ def summarize(rows: list[dict]) -> list[dict]:
                     not r.get("equal_up_to_global_phase") for r in evaluated
                 ),
                 "qubit_order_changed": sum(
-                    r.get("qubit_order") not in ("identity", None) for r in evaluated
+                    r.get("qubit_order") not in ("identity", "none", None)
+                    for r in evaluated
+                ),
+                "qubit_order_unmatched": sum(
+                    r.get("qubit_order") == "none" for r in evaluated
                 ),
                 "controlled_checked": sum(
                     r.get("equal_when_controlled") is not None for r in evaluated

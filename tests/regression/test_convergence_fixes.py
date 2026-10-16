@@ -83,3 +83,11 @@ def test_mlqae_withholds_guarantee_when_estimate_leaves_interval(monkeypatch):
     assert result.diagnostics["estimate_outside_interval"]
     assert result.convergence_status == "INCONCLUSIVE"
     assert result.guarantee_status == "INCONCLUSIVE"
+
+
+def test_mlqae_outside_estimate_is_inconclusive_even_with_a_wide_interval():
+    result = MLQAE(0.01, seed=4).run(bernoulli(0.3).problem, ReferenceAdapter())
+    lo, hi = result.confidence_or_credible_interval
+    assert hi - lo > result.requested_epsilon
+    assert result.diagnostics["estimate_outside_interval"]
+    assert result.convergence_status == result.guarantee_status == "INCONCLUSIVE"

@@ -18,6 +18,102 @@ from aeonq.ir import Gate, ObjectivePredicate, StatePreparation
 from aeonq.reference import matrix, statevector
 
 
+@pytest.mark.parametrize("successes", [0, 15_000_000, 50_000_000])
+def test_sharp_likelihood_interval_matches_independent_binomial_roots(successes):
+    # For m=1 QPE is exactly Bernoulli(a), so its LR boundaries can be
+    # independently solved without the QPE model or its phase grid.
+    from scipy.optimize import brentq
+    from scipy.special import xlogy
+    from scipy.stats import chi2
+
+    shots = 50_000_000
+    probability = successes / shots
+
+    def likelihood(a):
+        return float(xlogy(successes, a) + xlogy(shots - successes, 1 - a))
+
+    cutoff = likelihood(probability) - chi2.ppf(0.95, 1) / 2
+    expected_low = (
+        0.0
+        if successes == 0
+        else brentq(lambda a: likelihood(a) - cutoff, 0.0, probability, xtol=1e-15)
+    )
+    expected_high = (
+        1.0
+        if successes == shots
+        else brentq(lambda a: likelihood(a) - cutoff, probability, 1.0, xtol=1e-15)
+    )
+    theta, (low, high), _ = likelihood_ratio_fit(
+        {0: shots - successes, 1: successes}, 1, 0.05
+    )
+    assert low < high
+    assert sin(theta) ** 2 == pytest.approx(probability, abs=2e-8)
+    assert sin(low) ** 2 == pytest.approx(expected_low, abs=2e-9)
+    assert sin(high) ** 2 == pytest.approx(expected_high, abs=2e-9)
+
+
+def test_likelihood_interval_contains_both_sharp_disconnected_modes():
+    # At m=2, P(0)=(1-a)(1-2a)^2 and P(2)=a(1-2a)^2. Equal counts
+    # have two exact MLEs, (1 +/- sqrt(2/3))/2, separated by a zero at a=1/2.
+    from scipy.optimize import brentq
+    from scipy.stats import chi2
+
+    shots = 50_000_000
+    mode = (1 - sqrt(2 / 3)) / 2
+
+    def likelihood(a):
+        return shots / 2 * np.log(a * (1 - a)) + shots * np.log((1 - 2 * a) ** 2)
+
+    cutoff = likelihood(mode) - chi2.ppf(0.95, 1) / 2
+    expected_low = brentq(lambda a: likelihood(a) - cutoff, 0.08, mode, xtol=1e-15)
+    theta, (low, high), _ = likelihood_ratio_fit(
+        {0: shots // 2, 2: shots // 2}, 2, 0.05
+    )
+    assert min(abs(sin(theta) ** 2 - mode), abs(sin(theta) ** 2 - (1 - mode))) < 2e-8
+    assert sin(low) ** 2 == pytest.approx(expected_low, abs=2e-9)
+    assert sin(high) ** 2 == pytest.approx(1 - expected_low, abs=2e-9)
+
+
+def test_sharp_mode_between_endpoint_and_first_grid_point_is_refined():
+    from scipy.optimize import brentq
+    from scipy.stats import chi2
+
+    shots = 1_000_000_000_000
+    probability = 1 / shots
+
+    def likelihood(a):
+        return np.log(a) + (shots - 1) * np.log1p(-a)
+
+    cutoff = likelihood(probability) - chi2.ppf(0.95, 1) / 2
+    expected_low = brentq(
+        lambda a: likelihood(a) - cutoff, 1e-20, probability, xtol=1e-25
+    )
+    expected_high = brentq(
+        lambda a: likelihood(a) - cutoff, probability, 1e-10, xtol=1e-25
+    )
+    theta, (low, high), _ = likelihood_ratio_fit({0: shots - 1, 1: 1}, 1, 0.05)
+    # At this scale the finite-precision QPE probabilities perturb the MLE
+    # slightly; the independently solved boundaries remain the tighter check.
+    assert sin(theta) ** 2 == pytest.approx(probability, abs=5e-14)
+    assert sin(low) ** 2 == pytest.approx(expected_low, abs=5e-15)
+    assert sin(high) ** 2 == pytest.approx(expected_high, abs=5e-15)
+
+
+def test_unresolvable_likelihood_threshold_is_inconclusive():
+    from aeonq.adapters.reference import ReferenceAdapter
+    from aeonq.benchmarks.problems import bernoulli
+
+    # The valid but tiny LR cutoff rounds to zero at the likelihood's scale.
+    result = CanonicalQAE(
+        evaluation_qubits=1, shots=512, alpha=float(np.nextafter(1.0, 0.0))
+    ).run(bernoulli(0.3).problem, ReferenceAdapter())
+    assert result.convergence_status == result.guarantee_status == "INCONCLUSIVE"
+    assert result.confidence_or_credible_interval == (0.0, 1.0)
+    assert result.diagnostics["theta_mle"] is None
+    assert result.diagnostics["likelihood_fit_error"]
+    assert result.warnings
+
+
 @pytest.mark.parametrize("m", [1, 2, 3])
 def test_inverse_qft_matrix(m: int) -> None:
     qft_inv = matrix(inverse_qft(m, m))

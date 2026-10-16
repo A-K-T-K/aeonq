@@ -24,7 +24,7 @@ The translated program is evaluated **only with the target SDK** (its own matrix
 - **qubit order**: the permutation, if any, under which the operators agree;
 - **parameters**: whether each data-carrying rotation angle survived, and how precisely;
 - **count-based check**: 4000 shots of $U|0\ldots0\rangle$ against the source distribution (G-test, $p \ge 10^{-3}$);
-- **canonical QAE consequence**: for $Q$, the most likely canonical-QAE estimate from the eigenphases of the source and translated operators.
+- **canonical QAE consequence**: for $Q$, the modal canonical grid estimate from the eigenphases of the source and translated operators, using five evaluation qubits and reporting $\sin^2(\pi y/32)$ for the most probable outcome $y$. This is distinct from the continuous maximum-likelihood estimate returned by the framework's canonical estimator.
 
 A row whose counts pass while an operator check fails is a **count-invisible translation fault**. A one-gate probe of every OpenQASM importer then locates the gates responsible.
 
@@ -36,6 +36,8 @@ The full tables are regenerated into `benchmarks/results/processed/translator_fi
 - 118 failed once controlled in the target SDK;
 - **152 passed the count check while failing an operator check.**
 
+Of the 1,037 programs on available paths, the other 335 failed at export (72), import (166), or unitary evaluation (97). The qubit-order summary distinguishes actual nonidentity permutations from operators that cannot be reconciled by any permutation: none were permuted, and 15 were unmatched.
+
 Qubit order was preserved wherever the operators agreed up to phase, and data-carrying angles survived to $\approx10^{-15}$ (Cirq's exporter: $1.4\times10^{-10}$). The faults trace to five converter behaviours:
 
 | Behaviour | Where | Visible in counts? |
@@ -43,12 +45,12 @@ Qubit order was preserved wherever the operators agreed up to phase, and data-ca
 | The circuit's global phase is dropped on export (Cirq warns that "the global phase does not affect the measurement results"). | Qiskit `qasm2.dumps`, `qasm3.dumps`; Cirq `to_qasm` | No |
 | Power gates are written as rotations: `Z**t` becomes `rz(πt)`, dropping $e^{i\pi t/2}$. Angles are printed to 10 significant digits ($\approx10^{-10}$ error). | Cirq `to_qasm` | No |
 | `Ry(θ)` becomes `cirq.YPowGate(θ/π)`, which differs by a phase of $e^{i\theta/2}$. | pytket `tk_to_cirq` | No |
-| Rotation angles are reduced modulo $2\pi$ on import, multiplying `rx`/`ry`/`rz` by $-1$ for negative or $>2\pi$ angles. This is relative under control (`cry`, `crz`). | QDK `import_openqasm` | Uncontrolled: no. Controlled: yes |
+| Rotation angles are reduced modulo $2\pi$ on import. Since $R(\theta+2\pi q)=(-1)^qR(\theta)$, removing an odd number of full turns contributes $-1$; an even number preserves the sign. The extra phase is relative under control (`cry`, `crz`). | QDK `import_openqasm` | Uncontrolled: no. Controlled: yes |
 | `gphase(γ)` is read as `GlobalPhase(γ)`, i.e. $e^{-i\gamma}$ rather than $e^{i\gamma}$. | PennyLane `qml.from_qasm3` | No |
 
 **The omitted $-1$ is not an aeonq artifact.** Grover operators built by Qiskit's own `grover_operator` and by `qiskit-algorithms`' `EstimationProblem` carry it too, and 29 of their 33 translations lost it while passing the count check; the other four reached the QDK, where the angle reduction restored the sign by coincidence. (`grover_operator` itself also discards any global phase of the oracle circuit, so an oracle written as $-S_0$ loses its sign before any conversion.)
 
-39 of the 58 translated Grover operators change the canonical-QAE estimate. In the Bernoulli case ($a = 0.25$), canonical QAE run on the controlled powers of $Q$ after a Qiskit QASM round trip reports $\hat a \approx 0.78$ instead of $0.22$ (5 evaluation qubits). The dropped $-1$ shifts every eigenphase by $\pi$ and turns $a$ into $1 - a$.
+39 of the 58 translated Grover operators change the modal canonical grid estimate. In the Bernoulli case ($a = 0.25$), a Qiskit QASM round trip changes this grid estimate from approximately $0.22$ to $0.78$ (five evaluation qubits). The dropped $-1$ shifts every eigenphase by $\pi$, turns the underlying ideal parameter $a$ into $1-a$, and maps the grid estimate $\hat a$ to $1-\hat a$.
 
 ::: info Unavailable path
 `qml.from_qiskit` / `qml.from_qasm` need `pennylane-qiskit` 0.45.0, which requires Qiskit 2.3.0, while the pinned stack uses 2.5.2. It is reported as unavailable rather than silently skipped. PennyLane's native `qml.from_qasm3` rejects the `include "stdgates.inc"` line that every exporter writes, so a second path deletes that line, as a user would.
@@ -83,6 +85,8 @@ Every source is held to closed forms, with the global phase of $Q$ not free:
 - $P_\text{good}(Q^k A|0\rangle) = \sin^2((2k+1)\theta)$ for $k = 0..4$.
 
 Every source is also compared entry by entry with the NumPy oracle. **All 460 checks pass**, for the IR reference, all four adapters, all four hand-written SDK circuits and the second simulator on all three adapter programs. Negative controls ($Q$ without its $-1$, qubit-reversed $Q$, $A$ with negated angles) are all rejected. $Q$ without its $-1$ still satisfies the $Q^2$ and amplification laws; only the rotation and controlled checks reject it. At $a = 1/2$ an angle sign flip in $A$ is invisible to every closed form and is caught only by the entrywise comparison.
+
+Closed-form checks use dimension-dependent tolerances: the largest Q# derived error is approximately $3.50\times10^{-6}$. Entry-wise differences from the NumPy oracle are below $10^{-14}$ for the other sources and $5\times10^{-7}$ for Q#; these matrix bounds do not also bound derived amplification probabilities.
 
 ```bash
 python benchmarks/independent_oracles.py

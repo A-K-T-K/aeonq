@@ -43,7 +43,7 @@ aeonq represents amplitude estimation in a semantic intermediate representation 
 
 ### Why it matters
 
-Running the same amplitude-estimation operators through 17 existing OpenQASM and pytket conversion paths, **152 of 702 translated programs differed from their source while passing a count-based check**, and **39 of 58 translated Grover operators changed the canonical estimate**, typically to about $1-a$. See [Translator Fidelity & Oracles](docs/translator_fidelity.md).
+Running the same amplitude-estimation operators through 17 existing OpenQASM and pytket conversion paths, **152 of 702 translated programs differed from their source while passing a count-based check**, and **39 of 58 translated Grover operators changed the modal canonical grid estimate** (five evaluation qubits), typically from $\hat a$ to $1-\hat a$. See [Translator Fidelity & Oracles](docs/translator_fidelity.md).
 
 ## Architecture
 

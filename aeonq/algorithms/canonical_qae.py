@@ -12,7 +12,7 @@ interval.
 """
 
 from dataclasses import dataclass
-from math import pi, sin
+from math import asin, pi, sin, sqrt
 from time import perf_counter
 
 import numpy as np
@@ -34,6 +34,10 @@ from aeonq.ir.registers import RegisterMap
 from aeonq.problem import AEProblem
 from aeonq.reference import grover_for
 from aeonq.runtime.result import AEResult
+
+
+class LikelihoodRatioFitError(ArithmeticError):
+    """A likelihood fit could not establish a numerically valid interval."""
 
 
 def _swap(a: int, b: int, n: int) -> tuple[Operator, ...]:
@@ -100,10 +104,13 @@ def qpe_outcome_probabilities(theta: np.ndarray | float, m: int) -> np.ndarray:
 def likelihood_ratio_fit(
     histogram: dict[int, int], m: int, alpha: float
 ) -> tuple[float, tuple[float, float], float]:
-    """Maximum-likelihood theta and the chi-square likelihood-ratio interval.
+    """Maximum-likelihood theta and the hull of the likelihood-ratio set.
 
     Returns (theta_mle, (theta_low, theta_high), maximum log-likelihood) with
     theta in [0, pi/2], so a = sin^2(theta) is monotone in it.
+    Refined modes participate in the interval search even when their accepted
+    neighbourhood is narrower than the grid spacing. Numerical failure raises
+    LikelihoodRatioFitError rather than returning a spurious singleton.
     """
     modulus = 2**m
     counts = np.array([histogram.get(y, 0) for y in range(modulus)], dtype=float)
@@ -118,42 +125,76 @@ def likelihood_ratio_fit(
     # Each Fejer peak is about pi/M wide; 2048 grid points per peak width.
     grid = np.linspace(0.0, pi / 2, 1024 * modulus + 1)
     values = log_likelihood(grid)
-    best = int(np.argmax(values))
-    theta_mle, best_value = float(grid[best]), float(values[best])
-    lo, hi = float(grid[max(0, best - 1)]), float(grid[min(len(grid) - 1, best + 1)])
-    if hi > lo:
+    preferred_theta = float(grid[int(np.argmax(values))])
+    # Refine every sampled basin: a narrow secondary mode can also belong to
+    # the confidence set even when no original grid point in it is accepted.
+    maxima = (
+        np.flatnonzero((values[1:-1] >= values[:-2]) & (values[1:-1] >= values[2:])) + 1
+    )
+    refined_points: list[float] = []
+    refined_values: list[float] = []
+    # A narrow interior mode can sit between an endpoint and its neighbour
+    # while the endpoint itself is the best coarse point. Refine those edge
+    # cells as well, retaining the exact endpoints in the combined search.
+    for index in np.concatenate(([0], maxima, [len(grid) - 1])):
+        lo = float(grid[max(0, index - 1)])
+        hi = float(grid[min(len(grid) - 1, index + 1)])
         refined = minimize_scalar(
             lambda t: -scalar(float(t)),
             bounds=(lo, hi),
             method="bounded",
             options={"xatol": 1e-13},
         )
-        if refined.success and -refined.fun > best_value:
-            theta_mle, best_value = float(refined.x), float(-refined.fun)
+        if not refined.success or not np.isfinite(refined.fun):
+            raise LikelihoodRatioFitError("likelihood mode refinement failed")
+        refined_points.append(float(refined.x))
+        refined_values.append(float(-refined.fun))
+
+    # Keep the full grid, including both physical endpoints, so endpoint MLEs
+    # remain exact and disconnected accepted components contribute to the hull.
+    points = np.concatenate((grid, refined_points))
+    values = np.concatenate((values, refined_values))
+    order = np.argsort(points)
+    points, values = points[order], values[order]
+    # Preserve the coarse search's basin when distinct modes have likelihoods
+    # equal to floating-point precision. Sorting the refined modes must not
+    # arbitrarily switch an existing estimate to its equally likely alias.
+    maximum = float(np.max(values))
+    roundoff = 8 * np.finfo(float).eps * max(1.0, abs(maximum))
+    tied = np.flatnonzero(values >= maximum - roundoff)
+    best = int(tied[int(np.argmin(np.abs(points[tied] - preferred_theta)))])
+    theta_mle, best_value = float(points[best]), float(values[best])
 
     threshold = best_value - chi2.ppf(1 - alpha, 1) / 2
+    if not np.isfinite(threshold) or not threshold < best_value:
+        raise LikelihoodRatioFitError("likelihood threshold cannot be resolved")
     accepted = np.flatnonzero(values >= threshold)
-    if accepted.size == 0:  # the grid missed a very sharp peak
-        return theta_mle, (theta_mle, theta_mle), best_value
 
     def boundary(inside: float, outside: float) -> float:
         """Bisect for the threshold crossing between an accepted and a rejected theta."""
         for _ in range(60):
             middle = (inside + outside) / 2
+            if middle == inside or middle == outside:
+                break
             if scalar(middle) >= threshold:
                 inside = middle
             else:
                 outside = middle
-        return inside
+        # Round outwards to retain a conservative hull at machine precision.
+        return outside
 
     first, last = int(accepted[0]), int(accepted[-1])
-    low = 0.0 if first == 0 else boundary(float(grid[first]), float(grid[first - 1]))
+    low = (
+        0.0 if first == 0 else boundary(float(points[first]), float(points[first - 1]))
+    )
     high = (
         pi / 2
-        if last == len(grid) - 1
-        else boundary(float(grid[last]), float(grid[last + 1]))
+        if last == len(points) - 1
+        else boundary(float(points[last]), float(points[last + 1]))
     )
-    return theta_mle, (min(low, theta_mle), max(high, theta_mle)), best_value
+    if not 0 <= low <= theta_mle <= high <= pi / 2 or low == high:
+        raise LikelihoodRatioFitError("likelihood interval cannot be resolved")
+    return theta_mle, (low, high), best_value
 
 
 @dataclass(frozen=True)
@@ -211,22 +252,35 @@ class CanonicalQAE:
             histogram[y] = histogram.get(y, 0) + count
             value = sin(pi * y / modulus) ** 2
             amplitudes[value] = amplitudes.get(value, 0) + count
-        theta_mle, (theta_low, theta_high), log_likelihood = likelihood_ratio_fit(
-            histogram, self.evaluation_qubits, self.alpha
-        )
+        fit_error = None
+        try:
+            theta_mle, (theta_low, theta_high), log_likelihood = likelihood_ratio_fit(
+                histogram, self.evaluation_qubits, self.alpha
+            )
+        except LikelihoodRatioFitError as exc:
+            # Retain a descriptive point estimate and the entire parameter
+            # range; failed numerical inference must not imply precision.
+            fit_error = str(exc)
+            theta_mle = asin(sqrt(_weighted_median(amplitudes)))
+            theta_low, theta_high = 0.0, pi / 2
+            log_likelihood = None
         estimate = sin(theta_mle) ** 2
         interval = (sin(theta_low) ** 2, sin(theta_high) ** 2)
         metrics = dict(backend.resource_metrics(compiled))
         metrics["total_compiled_depth"] = metrics.get("depth")
         metrics["total_two_qubit_gates"] = metrics.get("two_qubit_gates")
-        guarantee, warnings = qualified_guarantee(backend, "EMPIRICAL_VALIDATION_ONLY")
+        guarantee, warnings = qualified_guarantee(
+            backend, "INCONCLUSIVE" if fit_error else "EMPIRICAL_VALIDATION_ONLY"
+        )
+        if fit_error:
+            warnings += (f"canonical likelihood inference failed: {fit_error}",)
         return AEResult(
             estimate,
             interval,
             "asymptotic likelihood-ratio interval",
             self.epsilon,
             self.alpha,
-            "FIXED_BUDGET",
+            "INCONCLUSIVE" if fit_error else "FIXED_BUDGET",
             "asymptotic (chi-square likelihood ratio); no finite-sample guarantee",
             guarantee,
             (
@@ -253,8 +307,9 @@ class CanonicalQAE:
             {
                 "phase_histogram": histogram,
                 "median_estimate": _weighted_median(amplitudes),
-                "theta_mle": theta_mle,
+                "theta_mle": None if fit_error else theta_mle,
                 "theta_interval": (theta_low, theta_high),
                 "log_likelihood": log_likelihood,
+                "likelihood_fit_error": fit_error,
             },
         )
