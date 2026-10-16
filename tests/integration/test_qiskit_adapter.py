@@ -97,3 +97,28 @@ def test_qiskit_controlled_grover_exact(adapter: QiskitAdapter) -> None:
     )
     controlled = ControlledOperator(q, (1,), (1,), (0,), 2)
     assert np.allclose(adapter.unitary(controlled), matrix(controlled), atol=1e-10)
+
+
+@pytest.mark.parametrize("level", [0, 1, 2, 3])
+def test_qiskit_readout_follows_final_layout(adapter: QiskitAdapter, level: int):
+    """Levels 2 and 3 elide the inverse-QFT swaps into a final permutation."""
+    from aeonq.algorithms.canonical_qae import CanonicalQAE
+    from aeonq.benchmarks.problems import bernoulli
+    from aeonq.compiler import AECompiler
+    from aeonq.reference import statevector
+
+    circuit = CanonicalQAE(evaluation_qubits=3).circuit(bernoulli(0.3).problem)
+    n = circuit.n_qubits
+    exact = np.abs(statevector(circuit)) ** 2
+    programs = [adapter.compile(adapter.lower(circuit), {"optimization_level": level})]
+    if level == 3:
+        programs.append(AECompiler().compile(circuit, adapter).compiled_program)
+    for program in programs:
+        raw = adapter.execute(program, 20_000, seed=3)
+        counts = adapter.normalize_result(
+            raw, RegisterMap(tuple(range(n)), tuple(range(n)))
+        ).counts
+        observed = np.zeros(2**n)
+        for bits, count in counts.items():
+            observed[sum(bit << i for i, bit in enumerate(bits))] += count
+        assert 0.5 * np.abs(observed / 20_000 - exact).sum() < 0.02

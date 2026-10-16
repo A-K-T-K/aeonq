@@ -4,7 +4,7 @@ from importlib.metadata import version
 from typing import Any
 
 import numpy as np
-from qiskit import QuantumCircuit, transpile
+from qiskit import ClassicalRegister, QuantumCircuit, transpile
 from qiskit.quantum_info import Operator as QiskitOperator, Statevector
 from qiskit_aer import AerSimulator
 
@@ -204,7 +204,20 @@ class QiskitAdapter(BackendAdapter):
             raise ValueError("shots must be positive")
         circuit = compiled_program.copy()
         if not circuit.num_clbits:
-            circuit.measure_all()
+            # Optimization levels 2 and 3 can elide swap networks into a final
+            # qubit permutation, so read each logical qubit from the wire that
+            # holds it at the end rather than from its starting position.
+            layout = circuit.layout
+            final = (
+                layout.final_index_layout()
+                if layout is not None
+                else list(range(circuit.num_qubits))
+            )
+            register = ClassicalRegister(len(final), "meas")
+            circuit.add_register(register)
+            circuit.barrier()
+            for logical, physical in enumerate(final):
+                circuit.measure(physical, register[logical])
         return (
             self.backend.run(circuit, shots=shots, seed_simulator=seed)
             .result()

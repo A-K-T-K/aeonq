@@ -202,22 +202,22 @@ Median wall-clock time and share spent in aeonq outside SDK compilation and exec
 -----------------------------------------------------------------------------------------
 SDK, case, estimator                      Evaluations  Median wall (ms)  Median share (%)
 -----------------------------------------------------------------------------------------
-cirq, bernoulli_0.3, iqae                          20               9.0                17
-cirq, bernoulli_0.3, mlqae                         20              25.0                39
-cirq, lognormal_tail_n3_flag, iqae                 20              89.3               2.2
-cirq, lognormal_tail_n3_flag, mlqae                20             106.3               9.4
-pennylane, bernoulli_0.3, iqae                     20               5.5                22
-pennylane, bernoulli_0.3, mlqae                    20              22.6                43
-pennylane, lognormal_tail_n3_flag, iqae            20             123.5               1.6
-pennylane, lognormal_tail_n3_flag, mlqae           20             129.7               7.7
-qiskit, bernoulli_0.3, iqae                        20             298.1               1.2
-qiskit, bernoulli_0.3, mlqae                       20             513.9               3.5
-qiskit, lognormal_tail_n3_flag, iqae               20             470.5              0.84
-qiskit, lognormal_tail_n3_flag, mlqae              20             718.2               2.4
-qsharp, bernoulli_0.3, iqae                        20             283.3              0.92
-qsharp, bernoulli_0.3, mlqae                       20             561.7               1.9
-qsharp, lognormal_tail_n3_flag, iqae               20            3694.3             0.067
-qsharp, lognormal_tail_n3_flag, mlqae              20            4550.6              0.23
+cirq, bernoulli_0.3, iqae                          20              11.6                17
+cirq, bernoulli_0.3, mlqae                         20              24.4                39
+cirq, lognormal_tail_n3_flag, iqae                 20              86.2               2.1
+cirq, lognormal_tail_n3_flag, mlqae                20             104.4               9.5
+pennylane, bernoulli_0.3, iqae                     20               5.4                23
+pennylane, bernoulli_0.3, mlqae                    20              22.3                43
+pennylane, lognormal_tail_n3_flag, iqae            20             121.1               1.6
+pennylane, lognormal_tail_n3_flag, mlqae           20             126.8               7.8
+qiskit, bernoulli_0.3, iqae                        20             293.0               1.2
+qiskit, bernoulli_0.3, mlqae                       20             510.3               3.5
+qiskit, lognormal_tail_n3_flag, iqae               20             468.5              0.84
+qiskit, lognormal_tail_n3_flag, mlqae              20             711.4               2.3
+qsharp, bernoulli_0.3, iqae                        20             284.3              0.82
+qsharp, bernoulli_0.3, mlqae                       20             559.4               1.9
+qsharp, lognormal_tail_n3_flag, iqae               20            3676.6             0.071
+qsharp, lognormal_tail_n3_flag, mlqae              20            4550.1              0.23
 -----------------------------------------------------------------------------------------
 
 Optimization pipeline
@@ -238,10 +238,10 @@ Seconds to lower, compile and execute 1000 shots of Q^16 A on a uniform threshol
 Backend                         4 qubits       8 qubits       12 qubits
 -----------------------------------------------------------------------
 Reference simulator        0.003 ± 0.000  0.005 ± 0.000              --
-Qiskit 2.5.2               0.094 ± 0.001  0.129 ± 0.004   0.190 ± 0.002
-Cirq 1.7.0                 0.035 ± 0.000  0.086 ± 0.001   0.175 ± 0.001
-PennyLane 0.45.1           0.036 ± 0.000  0.114 ± 0.002   8.586 ± 0.013
-Microsoft Q# (QDK 1.32.3)  1.127 ± 0.010  6.834 ± 0.036  84.172 ± 1.245
+Qiskit 2.5.2               0.093 ± 0.001  0.128 ± 0.001   0.191 ± 0.001
+Cirq 1.7.0                 0.035 ± 0.001  0.086 ± 0.001   0.175 ± 0.001
+PennyLane 0.45.1           0.035 ± 0.000  0.113 ± 0.002   8.536 ± 0.020
+Microsoft Q# (QDK 1.32.3)  1.157 ± 0.009  6.925 ± 0.027  84.232 ± 0.122
 -----------------------------------------------------------------------
 
 Phase-oracle synthesis

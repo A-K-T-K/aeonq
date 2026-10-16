@@ -1,65 +1,65 @@
 timestamp_utc,sdk,mutant,description,checks,failed_checks,unsupported_checks,failed_operator,failed_measurement,failed_sampling,killed,first_failure,seconds
-2026-10-16T06:16:42.063101+00:00,qiskit,none,unmutated adapter (control),66,0,0,0,0,0,False,,4.477216599974781
-2026-10-16T06:16:45.320532+00:00,qiskit,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,3.2573230999987572
-2026-10-16T06:16:48.344616+00:00,qiskit,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,3.023937800026033
-2026-10-16T06:16:51.759426+00:00,qiskit,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,3.414714200014714
-2026-10-16T06:16:54.646495+00:00,qiskit,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,2.8869839000399224
-2026-10-16T06:16:57.901553+00:00,qiskit,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,3.2549227999988943
-2026-10-16T06:17:01.038675+00:00,qiskit,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,3.1369996999856085
-2026-10-16T06:17:04.241661+00:00,qiskit,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,3.2028982000192627
-2026-10-16T06:17:07.403124+00:00,qiskit,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,3.161368500033859
-2026-10-16T06:17:10.523273+00:00,qiskit,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,3.1200651000253856
-2026-10-16T06:17:13.742285+00:00,qiskit,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,3.2188687999732792
-2026-10-16T06:17:16.965226+00:00,qiskit,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,3.2228428999660537
-2026-10-16T06:17:19.975817+00:00,qiskit,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,3.0104999000323005
-2026-10-16T06:17:23.044531+00:00,qiskit,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,3.0685701000038534
-2026-10-16T06:17:26.209269+00:00,qiskit,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,3.164603600045666
-2026-10-16T06:17:29.347998+00:00,qiskit,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,3.138638100004755
-2026-10-16T06:17:29.842312+00:00,cirq,none,unmutated adapter (control),66,0,0,0,0,0,False,,0.4942241999669932
-2026-10-16T06:17:30.641502+00:00,cirq,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,0.7991374999983236
-2026-10-16T06:17:31.165887+00:00,cirq,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,0.5243315999978222
-2026-10-16T06:17:31.744717+00:00,cirq,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,0.5787763000116684
-2026-10-16T06:17:32.189957+00:00,cirq,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,0.4451797000365332
-2026-10-16T06:17:32.660442+00:00,cirq,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,0.47041140001965687
-2026-10-16T06:17:33.119326+00:00,cirq,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,0.45885210001142696
-2026-10-16T06:17:33.743234+00:00,cirq,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,0.6238505999790505
-2026-10-16T06:17:34.278237+00:00,cirq,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,0.53494550002506
-2026-10-16T06:17:34.858831+00:00,cirq,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,0.5805304000386968
-2026-10-16T06:17:35.444785+00:00,cirq,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,0.5858961999765597
-2026-10-16T06:17:36.002146+00:00,cirq,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,0.5573059000307694
-2026-10-16T06:17:36.769880+00:00,cirq,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,0.7676656999974512
-2026-10-16T06:17:37.412331+00:00,cirq,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,0.6423927000141703
-2026-10-16T06:17:37.891181+00:00,cirq,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,0.47879029996693134
-2026-10-16T06:17:38.434022+00:00,cirq,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,0.5428001999971457
-2026-10-16T06:17:38.742334+00:00,pennylane,none,unmutated adapter (control),66,0,0,0,0,0,False,,0.3082818000111729
-2026-10-16T06:17:39.007523+00:00,pennylane,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,0.26514119998319075
-2026-10-16T06:17:39.401924+00:00,pennylane,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,0.3943626999971457
-2026-10-16T06:17:39.756905+00:00,pennylane,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,0.3549500000081025
-2026-10-16T06:17:40.124039+00:00,pennylane,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,0.3670795999933034
-2026-10-16T06:17:40.453658+00:00,pennylane,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,0.3295718999579549
-2026-10-16T06:17:40.785787+00:00,pennylane,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,0.3320179999573156
-2026-10-16T06:17:41.166517+00:00,pennylane,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,0.3806925000390038
-2026-10-16T06:17:41.509521+00:00,pennylane,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,0.34297400002833456
-2026-10-16T06:17:41.875941+00:00,pennylane,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,0.3663189999642782
-2026-10-16T06:17:42.275407+00:00,pennylane,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,0.3994101000134833
-2026-10-16T06:17:42.667563+00:00,pennylane,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,0.39212490001227707
-2026-10-16T06:17:42.966817+00:00,pennylane,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,0.2991955000325106
-2026-10-16T06:17:43.280588+00:00,pennylane,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,0.3137380000553094
-2026-10-16T06:17:43.623247+00:00,pennylane,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,0.3426039000041783
-2026-10-16T06:17:43.997972+00:00,pennylane,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,0.37468520004767925
-2026-10-16T06:17:53.128691+00:00,qsharp,none,unmutated adapter (control),66,0,0,0,0,0,False,,9.130716899991967
-2026-10-16T06:18:04.205658+00:00,qsharp,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,11.076939399994444
-2026-10-16T06:18:15.953332+00:00,qsharp,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,11.74764050001977
-2026-10-16T06:18:28.135825+00:00,qsharp,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,12.182467300037388
-2026-10-16T06:18:44.338214+00:00,qsharp,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,16.202387700031977
-2026-10-16T06:19:03.987646+00:00,qsharp,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,19.649432000005618
-2026-10-16T06:19:19.678950+00:00,qsharp,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,15.691279200022109
-2026-10-16T06:19:34.297916+00:00,qsharp,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,14.618965300032869
-2026-10-16T06:19:54.522029+00:00,qsharp,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,20.22410209994996
-2026-10-16T06:20:15.324411+00:00,qsharp,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,20.802394400001504
-2026-10-16T06:20:36.831535+00:00,qsharp,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,21.507114799984265
-2026-10-16T06:21:00.886722+00:00,qsharp,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,24.055215600004885
-2026-10-16T06:21:28.582156+00:00,qsharp,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,27.69547460001195
-2026-10-16T06:21:58.090982+00:00,qsharp,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,29.50883469998371
-2026-10-16T06:22:15.579591+00:00,qsharp,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,17.488611300010234
-2026-10-16T06:22:32.401878+00:00,qsharp,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,16.822254800004885
+2026-10-16T10:08:10.337639+00:00,qiskit,none,unmutated adapter (control),66,0,0,0,0,0,False,,4.5974057000130415
+2026-10-16T10:08:13.974162+00:00,qiskit,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,3.636316000018269
+2026-10-16T10:08:17.128196+00:00,qiskit,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,3.1539064000244252
+2026-10-16T10:08:20.588923+00:00,qiskit,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,3.460617199947592
+2026-10-16T10:08:23.882647+00:00,qiskit,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,3.293601600045804
+2026-10-16T10:08:27.042376+00:00,qiskit,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,3.1595712000271305
+2026-10-16T10:08:30.271357+00:00,qiskit,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,3.2288306999835186
+2026-10-16T10:08:33.192255+00:00,qiskit,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,2.9207679000101052
+2026-10-16T10:08:36.628976+00:00,qiskit,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,3.4366205999976955
+2026-10-16T10:08:39.816717+00:00,qiskit,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,3.1875924000050873
+2026-10-16T10:08:43.042840+00:00,qiskit,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,3.2260214000125416
+2026-10-16T10:08:46.234835+00:00,qiskit,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,3.1918787000468
+2026-10-16T10:08:49.450783+00:00,qiskit,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,3.215843199985102
+2026-10-16T10:08:52.883065+00:00,qiskit,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,3.432124799990561
+2026-10-16T10:08:56.136109+00:00,qiskit,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,3.252939299971331
+2026-10-16T10:08:59.239282+00:00,qiskit,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,3.1030636000214145
+2026-10-16T10:08:59.715663+00:00,cirq,none,unmutated adapter (control),66,0,0,0,0,0,False,,0.47633510001469404
+2026-10-16T10:09:00.417092+00:00,cirq,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,0.7013495999854058
+2026-10-16T10:09:00.870606+00:00,cirq,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,0.45347680000122637
+2026-10-16T10:09:01.417216+00:00,cirq,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,0.5465365999843925
+2026-10-16T10:09:01.968928+00:00,cirq,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,0.5516427999828011
+2026-10-16T10:09:02.529520+00:00,cirq,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,0.5605485999840312
+2026-10-16T10:09:03.014882+00:00,cirq,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,0.48531080002430826
+2026-10-16T10:09:03.576784+00:00,cirq,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,0.5618342999950983
+2026-10-16T10:09:04.115380+00:00,cirq,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,0.538545899966266
+2026-10-16T10:09:04.579416+00:00,cirq,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,0.46400430001085624
+2026-10-16T10:09:05.183867+00:00,cirq,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,0.6043916000053287
+2026-10-16T10:09:05.823166+00:00,cirq,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,0.6392362000187859
+2026-10-16T10:09:06.532527+00:00,cirq,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,0.7092853999929503
+2026-10-16T10:09:07.094988+00:00,cirq,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,0.5623531999881379
+2026-10-16T10:09:07.615420+00:00,cirq,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,0.5203793999971822
+2026-10-16T10:09:08.156840+00:00,cirq,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,0.541373600019142
+2026-10-16T10:09:08.465157+00:00,pennylane,none,unmutated adapter (control),66,0,0,0,0,0,False,,0.30825499998172745
+2026-10-16T10:09:08.820701+00:00,pennylane,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,0.3555049000424333
+2026-10-16T10:09:09.216758+00:00,pennylane,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,0.39599920000182465
+2026-10-16T10:09:09.644679+00:00,pennylane,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,0.42785659997025505
+2026-10-16T10:09:10.053549+00:00,pennylane,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,0.4088099999935366
+2026-10-16T10:09:10.469519+00:00,pennylane,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,0.41591159999370575
+2026-10-16T10:09:10.822783+00:00,pennylane,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,0.35311169998021796
+2026-10-16T10:09:11.204301+00:00,pennylane,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,0.3814655999885872
+2026-10-16T10:09:11.614779+00:00,pennylane,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,0.4104111999622546
+2026-10-16T10:09:12.015515+00:00,pennylane,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,0.4006591000361368
+2026-10-16T10:09:12.433113+00:00,pennylane,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,0.4175614999840036
+2026-10-16T10:09:12.842276+00:00,pennylane,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,0.4091035999590531
+2026-10-16T10:09:13.223200+00:00,pennylane,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,0.3808659999631345
+2026-10-16T10:09:13.549430+00:00,pennylane,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,0.3261561999679543
+2026-10-16T10:09:13.893845+00:00,pennylane,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,0.3443738999776542
+2026-10-16T10:09:14.249240+00:00,pennylane,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,0.3553537999978289
+2026-10-16T10:09:23.335705+00:00,qsharp,none,unmutated adapter (control),66,0,0,0,0,0,False,,9.086406100017484
+2026-10-16T10:09:33.689118+00:00,qsharp,drop_global_phase,global phases lowered as no-ops,66,13,0,13,0,0,True,operator:bernoulli_0.25:Q,10.353329400008079
+2026-10-16T10:09:46.138515+00:00,qsharp,global_phase_sign,global phase sign convention flipped (exp(-i phi)),66,1,0,1,0,0,True,operator:phase:controlled_global_phase,12.449341200001072
+2026-10-16T10:09:58.899684+00:00,qsharp,drop_phase_under_control,global phase of a controlled block discarded,66,7,0,7,0,0,True,operator:bernoulli_0.25:controlled_Q,12.761126400029752
+2026-10-16T10:10:14.500668+00:00,qsharp,rotation_sign,rotation angles negated,66,27,0,24,0,3,True,operator:bernoulli_0.25:A,15.600900200020988
+2026-10-16T10:10:31.470432+00:00,qsharp,rotation_half_angle,rotation angle convention off by a factor of two,66,40,0,25,0,15,True,operator:bernoulli_0.25:A,16.969714399951044
+2026-10-16T10:10:48.947322+00:00,qsharp,rz_as_phase_gate,"RZ lowered as the phase gate diag(1, e^{i theta})",66,4,0,4,0,0,True,operator:entangled_cx_n2:A,17.47681720001856
+2026-10-16T10:11:03.903582+00:00,qsharp,swap_cx_direction,CX control and target exchanged,66,8,0,5,0,3,True,operator:entangled_cx_n2:A,14.956179100030567
+2026-10-16T10:11:22.818358+00:00,qsharp,invert_first_control,first control value inverted,66,35,0,26,0,9,True,operator:bernoulli_0.25:controlled_Q,18.914710599987302
+2026-10-16T10:11:42.949786+00:00,qsharp,adjoint_ignored,Adjoint(U) lowered as U,66,29,0,20,0,9,True,operator:bernoulli_0.25:A_adjoint,20.131362700019963
+2026-10-16T10:12:04.278385+00:00,qsharp,grover_power_off_by_one,Q^k lowered as Q^(k+1),66,14,0,6,0,8,True,operator:bernoulli_0.25:Q_power_2,21.32852899999125
+2026-10-16T10:12:28.409022+00:00,qsharp,zero_reflection_about_ones,S0 reflects about |1...1> instead of |0...0>,66,29,0,22,0,7,True,operator:bernoulli_0.25:S0,24.13059129996691
+2026-10-16T10:12:54.737713+00:00,qsharp,objective_reflection_negated,S_chi lowered as -S_chi,66,18,0,18,0,0,True,operator:bernoulli_0.25:Schi,26.328618700033985
+2026-10-16T10:13:25.252093+00:00,qsharp,reverse_qubit_order,logical qubit q placed on native qubit n-1-q,66,33,0,21,4,8,True,operator:bernoulli_0.25:controlled_Q,30.514301099989098
+2026-10-16T10:13:41.811889+00:00,qsharp,reverse_result_bits,result bitstrings read in the opposite order,66,12,0,0,4,8,True,measurement:n2:basis_01,16.559725400002208
+2026-10-16T10:13:58.436309+00:00,qsharp,drop_one_shot,one shot lost from the returned counts,66,23,0,0,5,18,True,measurement:n1:basis_1,16.62436079996405

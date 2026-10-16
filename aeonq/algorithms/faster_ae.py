@@ -67,7 +67,7 @@ def _lift_predicate(
 
 
 def attenuated_problem(problem: AEProblem) -> AEProblem:
-    """Construct A' = A âŠ— Ry(2 asin(1/5)), Ï‡' = Ï‡ AND extra_bit."""
+    """Construct A' = A ⊗ Ry(2 asin(1/5)), χ' = χ AND extra_bit."""
     n = problem.state_preparation.n_qubits
     prep = StatePreparation(
         Sequence(

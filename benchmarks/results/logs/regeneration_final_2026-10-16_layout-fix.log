@@ -1,0 +1,1009 @@
+{
+  "environment": {
+    "timestamp_utc": "2026-10-16T09:04:28.382491+00:00",
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "git_commit": "469516b86b7af7f1e37c3814e88dcfd51e0d9268",
+    "source_snapshot_sha256": "aa80eb53108e52c63de5472172d12edca2f0ae950f34038957aca7b3055a1149",
+    "source_archive": "benchmarks/results/archives/source-aa80eb53108e52c63de5472172d12edca2f0ae950f34038957aca7b3055a1149.zip",
+    "seed_scheme": "sha256-condition-v1",
+    "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
+    "dependencies": {
+      "aeonq": "0.1.0.dev0",
+      "numpy": "2.3.3",
+      "scipy": "1.18.1",
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "cirq-core": "1.7.0",
+      "pennylane": "0.45.1",
+      "qdk": "1.32.3",
+      "qiskit-algorithms": "0.4.0"
+    }
+  },
+  "cached_reference_500_seconds": 0.010619600012432784,
+  "uncached_reference_500_seconds": 0.4988613000023179,
+  "reference_cache_speedup": 46.97552633039675,
+  "vectorized_grid_25_seconds": 0.0037641999660991132,
+  "scalar_grid_25_seconds": 0.4517898000194691,
+  "grid_speedup": 120.02279477401527,
+  "serial_manifest_200_seconds": 0.6167331999749877,
+  "threaded_manifest_200_seconds": 0.6323250000132248,
+  "thread_speedup": 0.9753421104053912,
+  "threaded_backend_scope": "reference only"
+}
+[A: isolated timing] done benchmarks/performance_comparison.py in 8s
+[A: isolated timing] done benchmarks/compiler_comparison.py in 8s
+[A: isolated timing] done benchmarks/compiler_cross_sdk.py in 9s
+{'sdk': 'qiskit', 'case_id': 'bernoulli_0.3', 'power': 1, 'aeonq_lower_seconds': 0.00017765001393854618, 'native_build_seconds': 0.0001345000055152923, 'aeonq_compile_seconds': 0.06407369999215007, 'native_compile_seconds': 0.06448060000548139, 'total_overhead_seconds': -0.00036375000490806997, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 1, 'native_depth': 1, 'aeonq_exact_distance': 1.6402322009871518e-16, 'native_exact_distance': 1.6402322009871518e-16, 'native_phase_aligned_distance': 1.1443916996305594e-16}
+{'sdk': 'cirq', 'case_id': 'bernoulli_0.3', 'power': 1, 'aeonq_lower_seconds': 0.00024090000079013407, 'native_build_seconds': 9.275000775232911e-05, 'aeonq_compile_seconds': 7.00005330145359e-07, 'native_compile_seconds': 7.00005330145359e-07, 'total_overhead_seconds': 0.00014814999303780496, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 8, 'native_depth': 7, 'aeonq_exact_distance': 1.6402322009871518e-16, 'native_exact_distance': 1.1102230246251565e-16, 'native_phase_aligned_distance': 1.1443916996305594e-16}
+{'sdk': 'pennylane', 'case_id': 'bernoulli_0.3', 'power': 1, 'aeonq_lower_seconds': 0.0001534000039100647, 'native_build_seconds': 8.785002864897251e-05, 'aeonq_compile_seconds': 1.00000761449337e-07, 'native_compile_seconds': 2.00001522898674e-07, 'total_overhead_seconds': 6.544997449964285e-05, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 9, 'native_depth': 8, 'aeonq_exact_distance': 1.207380018365107e-16, 'native_exact_distance': 1.207380018365107e-16, 'native_phase_aligned_distance': 0.0}
+{'sdk': 'qsharp', 'case_id': 'bernoulli_0.3', 'power': 1, 'aeonq_lower_seconds': 8.994998643174767e-05, 'native_build_seconds': 0.0006420499994419515, 'aeonq_compile_seconds': 0.0031510000117123127, 'native_compile_seconds': 1.00000761449337e-07, 'total_overhead_seconds': 0.0025987999979406595, 'aeonq_two_qubit_gates': None, 'native_two_qubit_gates': None, 'aeonq_depth': None, 'native_depth': None, 'aeonq_exact_distance': 3.964907010489682e-07, 'native_exact_distance': 3.964907010489682e-07, 'native_phase_aligned_distance': 5.607727494439199e-07}
+{'sdk': 'qiskit', 'case_id': 'bernoulli_0.3', 'power': 4, 'aeonq_lower_seconds': 0.0002009499876294285, 'native_build_seconds': 0.00015559999155811965, 'aeonq_compile_seconds': 0.06400325000868179, 'native_compile_seconds': 0.0642392499721609, 'total_overhead_seconds': -0.0001906499674078077, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 1, 'native_depth': 1, 'aeonq_exact_distance': 3.3306690738754696e-16, 'native_exact_distance': 3.3306690738754696e-16, 'native_phase_aligned_distance': 4.871083751574258e-16}
+{'sdk': 'cirq', 'case_id': 'bernoulli_0.3', 'power': 4, 'aeonq_lower_seconds': 0.0002637500292621553, 'native_build_seconds': 0.00019389999215491116, 'aeonq_compile_seconds': 7.00005330145359e-07, 'native_compile_seconds': 7.00005330145359e-07, 'total_overhead_seconds': 6.985003710724413e-05, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 26, 'native_depth': 25, 'aeonq_exact_distance': 5.430061235533987e-16, 'native_exact_distance': 3.3306690738754696e-16, 'native_phase_aligned_distance': 4.871083751574258e-16}
+{'sdk': 'pennylane', 'case_id': 'bernoulli_0.3', 'power': 4, 'aeonq_lower_seconds': 0.0004272499936632812, 'native_build_seconds': 0.0003100500034634024, 'aeonq_compile_seconds': 2.00001522898674e-07, 'native_compile_seconds': 2.00001522898674e-07, 'total_overhead_seconds': 0.00011719999019987881, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 30, 'native_depth': 29, 'aeonq_exact_distance': 4.2886138252328607e-16, 'native_exact_distance': 4.2886138252328607e-16, 'native_phase_aligned_distance': 6.972611193684198e-32}
+{'sdk': 'qsharp', 'case_id': 'bernoulli_0.3', 'power': 4, 'aeonq_lower_seconds': 9.024998871609569e-05, 'native_build_seconds': 0.004669950023526326, 'aeonq_compile_seconds': 0.008694649994140491, 'native_compile_seconds': 1.00000761449337e-07, 'total_overhead_seconds': 0.004114849958568811, 'aeonq_two_qubit_gates': None, 'native_two_qubit_gates': None, 'aeonq_depth': None, 'native_depth': None, 'aeonq_exact_distance': 2.64083742318455e-07, 'native_exact_distance': 2.64083742318455e-07, 'native_phase_aligned_distance': 4.4315034393002653e-07}
+{'sdk': 'qiskit', 'case_id': 'bernoulli_0.3', 'power': 16, 'aeonq_lower_seconds': 0.0002928999892901629, 'native_build_seconds': 0.00024920000578276813, 'aeonq_compile_seconds': 0.0640323499974329, 'native_compile_seconds': 0.06389814999420196, 'total_overhead_seconds': 0.00017789998673833907, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 1, 'native_depth': 1, 'aeonq_exact_distance': 4.440892098500626e-16, 'native_exact_distance': 4.440892098500626e-16, 'native_phase_aligned_distance': 6.304854800243424e-16}
+{'sdk': 'cirq', 'case_id': 'bernoulli_0.3', 'power': 16, 'aeonq_lower_seconds': 0.00037804999738000333, 'native_build_seconds': 0.0005825000116601586, 'aeonq_compile_seconds': 8.999486453831196e-07, 'native_compile_seconds': 9.00006853044033e-07, 'total_overhead_seconds': -0.00020445007248781621, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 98, 'native_depth': 97, 'aeonq_exact_distance': 1.935540283791177e-15, 'native_exact_distance': 4.440892098500626e-16, 'native_phase_aligned_distance': 6.304854800243424e-16}
+{'sdk': 'pennylane', 'case_id': 'bernoulli_0.3', 'power': 16, 'aeonq_lower_seconds': 0.0015806499868631363, 'native_build_seconds': 0.0012020999856758863, 'aeonq_compile_seconds': 1.500011421740055e-07, 'native_compile_seconds': 2.00001522898674e-07, 'total_overhead_seconds': 0.00037850000080652535, 'aeonq_two_qubit_gates': 0, 'native_two_qubit_gates': 0, 'aeonq_depth': 114, 'native_depth': 113, 'aeonq_exact_distance': 1.8839057736185163e-15, 'native_exact_distance': 1.8839057736185163e-15, 'native_phase_aligned_distance': 5.664576111808501e-31}
+{'sdk': 'qsharp', 'case_id': 'bernoulli_0.3', 'power': 16, 'aeonq_lower_seconds': 9.32500115595758e-05, 'native_build_seconds': 0.00881614998797886, 'aeonq_compile_seconds': 0.014115399972070009, 'native_compile_seconds': 1.00000761449337e-07, 'total_overhead_seconds': 0.005392399994889274, 'aeonq_two_qubit_gates': None, 'native_two_qubit_gates': None, 'aeonq_depth': None, 'native_depth': None, 'aeonq_exact_distance': 3.7163029142917026e-07, 'native_exact_distance': 3.7163029142917026e-07, 'native_phase_aligned_distance': 5.550448006770971e-07}
+{'sdk': 'qiskit', 'case_id': 'uniform_ge2_n2', 'power': 1, 'aeonq_lower_seconds': 0.0007944499957375228, 'native_build_seconds': 0.00017470004968345165, 'aeonq_compile_seconds': 0.06525649997638538, 'native_compile_seconds': 0.06490229998598807, 'total_overhead_seconds': 0.0009739499364513904, 'aeonq_two_qubit_gates': 1, 'native_two_qubit_gates': 1, 'aeonq_depth': 3, 'native_depth': 3, 'aeonq_exact_distance': 2.4552708892540894e-16, 'native_exact_distance': 2.4552708892540894e-16, 'native_phase_aligned_distance': 5.815438919242456e-16}
+{'sdk': 'cirq', 'case_id': 'uniform_ge2_n2', 'power': 1, 'aeonq_lower_seconds': 0.0004800999886356294, 'native_build_seconds': 0.00012154999421909451, 'aeonq_compile_seconds': 6.00004568696022e-07, 'native_compile_seconds': 7.00005330145359e-07, 'total_overhead_seconds': 0.00035844999365508556, 'aeonq_two_qubit_gates': 1, 'native_two_qubit_gates': 1, 'aeonq_depth': 8, 'native_depth': 7, 'aeonq_exact_distance': 1.4279114733108581e-16, 'native_exact_distance': 1.1102230246251565e-16, 'native_phase_aligned_distance': 2.0584085788909642e-16}
+{'sdk': 'pennylane', 'case_id': 'uniform_ge2_n2', 'power': 1, 'aeonq_lower_seconds': 0.00029784999787807465, 'native_build_seconds': 0.00015685000107623637, 'aeonq_compile_seconds': 1.00000761449337e-07, 'native_compile_seconds': 2.00001522898674e-07, 'total_overhead_seconds': 0.00014089999604038894, 'aeonq_two_qubit_gates': 1, 'native_two_qubit_gates': 1, 'aeonq_depth': 15, 'native_depth': 13, 'aeonq_exact_distance': 1.0478427754139659e-16, 'native_exact_distance': 1.0478427754139659e-16, 'native_phase_aligned_distance': 5.529532361904265e-32}
+{'sdk': 'qsharp', 'case_id': 'uniform_ge2_n2', 'power': 1, 'aeonq_lower_seconds': 0.0001343000039923936, 'native_build_seconds': 0.014039450004929677, 'aeonq_compile_seconds': 0.022345849982229993, 'native_compile_seconds': 1.00000761449337e-07, 'total_overhead_seconds': 0.00844059998053126, 'aeonq_two_qubit_gates': None, 'native_two_qubit_gates': None, 'aeonq_depth': None, 'native_depth': None, 'aeonq_exact_distance': 4.4150989908509075e-07, 'native_exact_distance': 4.4150989908509075e-07, 'native_phase_aligned_distance': 1.2033741394149859e-06}
+{'sdk': 'qiskit', 'case_id': 'uniform_ge2_n2', 'power': 4, 'aeonq_lower_seconds': 0.0012439999845810235, 'native_build_seconds': 0.00022494999575428665, 'aeonq_compile_seconds': 0.06498529997770675, 'native_compile_seconds': 0.06475334998685867, 'total_overhead_seconds': 0.0012509999796748161, 'aeonq_two_qubit_gates': 4, 'native_two_qubit_gates': 4, 'aeonq_depth': 9, 'native_depth': 9, 'aeonq_exact_distance': 8.881784197001252e-16, 'native_exact_distance': 8.881784197001252e-16, 'native_phase_aligned_distance': 2.053349905459987e-15}
+{'sdk': 'cirq', 'case_id': 'uniform_ge2_n2', 'power': 4, 'aeonq_lower_seconds': 0.0005234499694779515, 'native_build_seconds': 0.00025610000011511147, 'aeonq_compile_seconds': 7.00005330145359e-07, 'native_compile_seconds': 7.00005330145359e-07, 'total_overhead_seconds': 0.00026734996936284006, 'aeonq_two_qubit_gates': 4, 'native_two_qubit_gates': 4, 'aeonq_depth': 26, 'native_depth': 25, 'aeonq_exact_distance': 4.658392548042124e-16, 'native_exact_distance': 3.3306690738754696e-16, 'native_phase_aligned_distance': 6.286500016609089e-16}
+{'sdk': 'pennylane', 'case_id': 'uniform_ge2_n2', 'power': 4, 'aeonq_lower_seconds': 0.0009112500119954348, 'native_build_seconds': 0.0005424999981187284, 'aeonq_compile_seconds': 1.9997241906821728e-07, 'native_compile_seconds': 2.00001522898674e-07, 'total_overhead_seconds': 0.0003687499847728759, 'aeonq_two_qubit_gates': 4, 'native_two_qubit_gates': 4, 'aeonq_depth': 48, 'native_depth': 46, 'aeonq_exact_distance': 4.095148406837422e-16, 'native_exact_distance': 4.095148406837422e-16, 'native_phase_aligned_distance': 1.9913184302439655e-31}
+{'sdk': 'qsharp', 'case_id': 'uniform_ge2_n2', 'power': 4, 'aeonq_lower_seconds': 0.00012530002277344465, 'native_build_seconds': 0.019711150001967326, 'aeonq_compile_seconds': 0.02955380000639707, 'native_compile_seconds': 1.00000761449337e-07, 'total_overhead_seconds': 0.009967850026441738, 'aeonq_two_qubit_gates': None, 'native_two_qubit_gates': None, 'aeonq_depth': None, 'native_depth': None, 'aeonq_exact_distance': 4.0757572983274315e-07, 'native_exact_distance': 4.0757572983274315e-07, 'native_phase_aligned_distance': 1.2078665553429867e-06}
+{'sdk': 'qiskit', 'case_id': 'uniform_ge2_n2', 'power': 16, 'aeonq_lower_seconds': 0.002780349983368069, 'native_build_seconds': 0.0003294000052846968, 'aeonq_compile_seconds': 0.06636139997863211, 'native_compile_seconds': 0.0656802500016056, 'total_overhead_seconds': 0.0031320999551098794, 'aeonq_two_qubit_gates': 16, 'native_two_qubit_gates': 16, 'aeonq_depth': 33, 'native_depth': 33, 'aeonq_exact_distance': 2.4424906541753444e-15, 'native_exact_distance': 2.4424906541753444e-15, 'native_phase_aligned_distance': 4.935109935626661e-15}
+{'sdk': 'cirq', 'case_id': 'uniform_ge2_n2', 'power': 16, 'aeonq_lower_seconds': 0.0006322500121314079, 'native_build_seconds': 0.0007942499942146242, 'aeonq_compile_seconds': 9.00006853044033e-07, 'native_compile_seconds': 8.999777492135763e-07, 'total_overhead_seconds': -0.00016199995297938585, 'aeonq_two_qubit_gates': 16, 'native_two_qubit_gates': 16, 'aeonq_depth': 98, 'native_depth': 97, 'aeonq_exact_distance': 1.750034934467033e-15, 'native_exact_distance': 9.992007221626409e-16, 'native_phase_aligned_distance': 1.5515838457795456e-15}
+{'sdk': 'pennylane', 'case_id': 'uniform_ge2_n2', 'power': 16, 'aeonq_lower_seconds': 0.003383700008271262, 'native_build_seconds': 0.00208684999961406, 'aeonq_compile_seconds': 2.00001522898674e-07, 'native_compile_seconds': 2.00001522898674e-07, 'total_overhead_seconds': 0.0012968500086572021, 'aeonq_two_qubit_gates': 16, 'native_two_qubit_gates': 16, 'aeonq_depth': 180, 'native_depth': 178, 'aeonq_exact_distance': 1.5468907197997883e-15, 'native_exact_distance': 1.5468907197997883e-15, 'native_phase_aligned_distance': 1.5035640222187058e-30}
+{'sdk': 'qsharp', 'case_id': 'uniform_ge2_n2', 'power': 16, 'aeonq_lower_seconds': 0.0001318500144407153, 'native_build_seconds': 0.025994850002462044, 'aeonq_compile_seconds': 0.038734500034479424, 'native_compile_seconds': 1.00000761449337e-07, 'total_overhead_seconds': 0.012871400045696646, 'aeonq_two_qubit_gates': None, 'native_two_qubit_gates': None, 'aeonq_depth': None, 'native_depth': None, 'aeonq_exact_distance': 4.861418776425097e-07, 'native_exact_distance': 4.861418776425097e-07, 'native_phase_aligned_distance': 1.4736515414600298e-06}
+bernoulli_0.3 qiskit iqae
+bernoulli_0.3 qiskit mlqae
+bernoulli_0.3 cirq iqae
+bernoulli_0.3 cirq mlqae
+bernoulli_0.3 pennylane iqae
+bernoulli_0.3 pennylane mlqae
+bernoulli_0.3 qsharp iqae
+bernoulli_0.3 qsharp mlqae
+lognormal_tail_n3_flag qiskit iqae
+lognormal_tail_n3_flag qiskit mlqae
+lognormal_tail_n3_flag cirq iqae
+lognormal_tail_n3_flag cirq mlqae
+lognormal_tail_n3_flag pennylane iqae
+lognormal_tail_n3_flag pennylane mlqae
+lognormal_tail_n3_flag qsharp iqae
+lognormal_tail_n3_flag qsharp mlqae
+[A: isolated timing] done benchmarks/overhead_study.py in 243s
+0 reference 2 1 ok 0.11s
+0 reference 2 4 ok 0.11s
+0 reference 2 16 ok 0.10s
+0 reference 4 1 ok 0.10s
+0 reference 4 4 ok 0.10s
+0 reference 4 16 ok 0.10s
+0 reference 6 1 ok 0.10s
+0 reference 6 4 ok 0.10s
+0 reference 6 16 ok 0.10s
+0 reference 8 1 ok 0.10s
+0 reference 8 4 ok 0.10s
+0 reference 8 16 ok 0.11s
+0 reference 10 1 ok 0.10s
+0 reference 10 4 ok 0.10s
+0 reference 10 16 ok 0.11s
+0 reference 12 1 failed 0.10s
+0 qiskit 2 1 ok 0.95s
+0 qiskit 2 4 ok 0.21s
+0 qiskit 2 16 ok 0.22s
+0 qiskit 4 1 ok 0.21s
+0 qiskit 4 4 ok 0.22s
+0 qiskit 4 16 ok 0.24s
+0 qiskit 6 1 ok 0.23s
+0 qiskit 6 4 ok 0.24s
+0 qiskit 6 16 ok 0.26s
+0 qiskit 8 1 ok 0.24s
+0 qiskit 8 4 ok 0.25s
+0 qiskit 8 16 ok 0.28s
+0 qiskit 10 1 ok 0.25s
+0 qiskit 10 4 ok 0.26s
+0 qiskit 10 16 ok 0.30s
+0 qiskit 12 1 ok 0.28s
+0 qiskit 12 4 ok 0.30s
+0 qiskit 12 16 ok 0.35s
+0 cirq 2 1 ok 0.15s
+0 cirq 2 4 ok 0.13s
+0 cirq 2 16 ok 0.14s
+0 cirq 4 1 ok 0.13s
+0 cirq 4 4 ok 0.13s
+0 cirq 4 16 ok 0.16s
+0 cirq 6 1 ok 0.13s
+0 cirq 6 4 ok 0.14s
+0 cirq 6 16 ok 0.18s
+0 cirq 8 1 ok 0.14s
+0 cirq 8 4 ok 0.15s
+0 cirq 8 16 ok 0.21s
+0 cirq 10 1 ok 0.14s
+0 cirq 10 4 ok 0.16s
+0 cirq 10 16 ok 0.25s
+0 cirq 12 1 ok 0.15s
+0 cirq 12 4 ok 0.18s
+0 cirq 12 16 ok 0.30s
+0 pennylane 2 1 ok 0.13s
+0 pennylane 2 4 ok 0.13s
+0 pennylane 2 16 ok 0.14s
+0 pennylane 4 1 ok 0.13s
+0 pennylane 4 4 ok 0.14s
+0 pennylane 4 16 ok 0.16s
+0 pennylane 6 1 ok 0.13s
+0 pennylane 6 4 ok 0.15s
+0 pennylane 6 16 ok 0.19s
+0 pennylane 8 1 ok 0.14s
+0 pennylane 8 4 ok 0.15s
+0 pennylane 8 16 ok 0.24s
+0 pennylane 10 1 ok 0.17s
+0 pennylane 10 4 ok 0.29s
+0 pennylane 10 16 ok 0.75s
+0 pennylane 12 1 ok 0.66s
+0 pennylane 12 4 ok 2.26s
+0 pennylane 12 16 ok 8.66s
+0 qsharp 2 1 ok 0.16s
+0 qsharp 2 4 ok 0.20s
+0 qsharp 2 16 ok 0.37s
+0 qsharp 4 1 ok 0.22s
+0 qsharp 4 4 ok 0.44s
+0 qsharp 4 16 ok 1.27s
+0 qsharp 6 1 ok 0.34s
+0 qsharp 6 4 ok 0.92s
+0 qsharp 6 16 ok 2.96s
+0 qsharp 8 1 ok 0.62s
+0 qsharp 8 4 ok 1.88s
+0 qsharp 8 16 ok 7.03s
+0 qsharp 10 1 ok 1.51s
+0 qsharp 10 4 ok 5.58s
+0 qsharp 10 16 ok 21.90s
+0 qsharp 12 1 ok 5.40s
+0 qsharp 12 4 ok 21.17s
+0 qsharp 12 16 ok 84.35s
+1 reference 2 1 ok 0.13s
+1 reference 2 4 ok 0.13s
+1 reference 2 16 ok 0.13s
+1 reference 4 1 ok 0.13s
+1 reference 4 4 ok 0.13s
+1 reference 4 16 ok 0.13s
+1 reference 6 1 ok 0.13s
+1 reference 6 4 ok 0.13s
+1 reference 6 16 ok 0.13s
+1 reference 8 1 ok 0.13s
+1 reference 8 4 ok 0.13s
+1 reference 8 16 ok 0.13s
+1 reference 10 1 ok 0.13s
+1 reference 10 4 ok 0.13s
+1 reference 10 16 ok 0.13s
+1 reference 12 1 failed 0.12s
+1 qiskit 2 1 ok 0.19s
+1 qiskit 2 4 ok 0.21s
+1 qiskit 2 16 ok 0.22s
+1 qiskit 4 1 ok 0.21s
+1 qiskit 4 4 ok 0.22s
+1 qiskit 4 16 ok 0.24s
+1 qiskit 6 1 ok 0.23s
+1 qiskit 6 4 ok 0.24s
+1 qiskit 6 16 ok 0.27s
+1 qiskit 8 1 ok 0.24s
+1 qiskit 8 4 ok 0.25s
+1 qiskit 8 16 ok 0.29s
+1 qiskit 10 1 ok 0.26s
+1 qiskit 10 4 ok 0.27s
+1 qiskit 10 16 ok 0.32s
+1 qiskit 12 1 ok 0.28s
+1 qiskit 12 4 ok 0.30s
+1 qiskit 12 16 ok 0.36s
+1 cirq 2 1 ok 0.15s
+1 cirq 2 4 ok 0.13s
+1 cirq 2 16 ok 0.14s
+1 cirq 4 1 ok 0.13s
+1 cirq 4 4 ok 0.14s
+1 cirq 4 16 ok 0.16s
+1 cirq 6 1 ok 0.14s
+1 cirq 6 4 ok 0.15s
+1 cirq 6 16 ok 0.18s
+1 cirq 8 1 ok 0.14s
+1 cirq 8 4 ok 0.15s
+1 cirq 8 16 ok 0.21s
+1 cirq 10 1 ok 0.15s
+1 cirq 10 4 ok 0.17s
+1 cirq 10 16 ok 0.25s
+1 cirq 12 1 ok 0.15s
+1 cirq 12 4 ok 0.18s
+1 cirq 12 16 ok 0.31s
+1 pennylane 2 1 ok 0.13s
+1 pennylane 2 4 ok 0.13s
+1 pennylane 2 16 ok 0.14s
+1 pennylane 4 1 ok 0.13s
+1 pennylane 4 4 ok 0.14s
+1 pennylane 4 16 ok 0.16s
+1 pennylane 6 1 ok 0.13s
+1 pennylane 6 4 ok 0.15s
+1 pennylane 6 16 ok 0.20s
+1 pennylane 8 1 ok 0.14s
+1 pennylane 8 4 ok 0.16s
+1 pennylane 8 16 ok 0.24s
+1 pennylane 10 1 ok 0.17s
+1 pennylane 10 4 ok 0.28s
+1 pennylane 10 16 ok 0.74s
+1 pennylane 12 1 ok 0.66s
+1 pennylane 12 4 ok 2.28s
+1 pennylane 12 16 ok 8.66s
+1 qsharp 2 1 ok 0.16s
+1 qsharp 2 4 ok 0.20s
+1 qsharp 2 16 ok 0.37s
+1 qsharp 4 1 ok 0.22s
+1 qsharp 4 4 ok 0.44s
+1 qsharp 4 16 ok 1.27s
+1 qsharp 6 1 ok 0.34s
+1 qsharp 6 4 ok 0.89s
+1 qsharp 6 16 ok 2.97s
+1 qsharp 8 1 ok 0.61s
+1 qsharp 8 4 ok 1.90s
+1 qsharp 8 16 ok 7.05s
+1 qsharp 10 1 ok 1.53s
+1 qsharp 10 4 ok 5.62s
+1 qsharp 10 16 ok 21.74s
+1 qsharp 12 1 ok 5.42s
+1 qsharp 12 4 ok 21.23s
+1 qsharp 12 16 ok 84.17s
+2 reference 2 1 ok 0.13s
+2 reference 2 4 ok 0.13s
+2 reference 2 16 ok 0.13s
+2 reference 4 1 ok 0.13s
+2 reference 4 4 ok 0.13s
+2 reference 4 16 ok 0.13s
+2 reference 6 1 ok 0.13s
+2 reference 6 4 ok 0.13s
+2 reference 6 16 ok 0.13s
+2 reference 8 1 ok 0.13s
+2 reference 8 4 ok 0.13s
+2 reference 8 16 ok 0.13s
+2 reference 10 1 ok 0.14s
+2 reference 10 4 ok 0.13s
+2 reference 10 16 ok 0.13s
+2 reference 12 1 failed 0.13s
+2 qiskit 2 1 ok 0.19s
+2 qiskit 2 4 ok 0.21s
+2 qiskit 2 16 ok 0.22s
+2 qiskit 4 1 ok 0.22s
+2 qiskit 4 4 ok 0.22s
+2 qiskit 4 16 ok 0.24s
+2 qiskit 6 1 ok 0.23s
+2 qiskit 6 4 ok 0.23s
+2 qiskit 6 16 ok 0.27s
+2 qiskit 8 1 ok 0.24s
+2 qiskit 8 4 ok 0.25s
+2 qiskit 8 16 ok 0.29s
+2 qiskit 10 1 ok 0.26s
+2 qiskit 10 4 ok 0.27s
+2 qiskit 10 16 ok 0.32s
+2 qiskit 12 1 ok 0.28s
+2 qiskit 12 4 ok 0.30s
+2 qiskit 12 16 ok 0.35s
+2 cirq 2 1 ok 0.15s
+2 cirq 2 4 ok 0.13s
+2 cirq 2 16 ok 0.14s
+2 cirq 4 1 ok 0.13s
+2 cirq 4 4 ok 0.14s
+2 cirq 4 16 ok 0.16s
+2 cirq 6 1 ok 0.14s
+2 cirq 6 4 ok 0.15s
+2 cirq 6 16 ok 0.18s
+2 cirq 8 1 ok 0.14s
+2 cirq 8 4 ok 0.16s
+2 cirq 8 16 ok 0.21s
+2 cirq 10 1 ok 0.15s
+2 cirq 10 4 ok 0.17s
+2 cirq 10 16 ok 0.25s
+2 cirq 12 1 ok 0.15s
+2 cirq 12 4 ok 0.19s
+2 cirq 12 16 ok 0.31s
+2 pennylane 2 1 ok 0.13s
+2 pennylane 2 4 ok 0.13s
+2 pennylane 2 16 ok 0.14s
+2 pennylane 4 1 ok 0.13s
+2 pennylane 4 4 ok 0.14s
+2 pennylane 4 16 ok 0.16s
+2 pennylane 6 1 ok 0.13s
+2 pennylane 6 4 ok 0.15s
+2 pennylane 6 16 ok 0.20s
+2 pennylane 8 1 ok 0.14s
+2 pennylane 8 4 ok 0.16s
+2 pennylane 8 16 ok 0.25s
+2 pennylane 10 1 ok 0.17s
+2 pennylane 10 4 ok 0.30s
+2 pennylane 10 16 ok 0.76s
+2 pennylane 12 1 ok 0.67s
+2 pennylane 12 4 ok 2.27s
+2 pennylane 12 16 ok 8.67s
+2 qsharp 2 1 ok 0.16s
+2 qsharp 2 4 ok 0.20s
+2 qsharp 2 16 ok 0.37s
+2 qsharp 4 1 ok 0.23s
+2 qsharp 4 4 ok 0.44s
+2 qsharp 4 16 ok 1.28s
+2 qsharp 6 1 ok 0.35s
+2 qsharp 6 4 ok 0.87s
+2 qsharp 6 16 ok 2.99s
+2 qsharp 8 1 ok 0.62s
+2 qsharp 8 4 ok 1.92s
+2 qsharp 8 16 ok 7.01s
+2 qsharp 10 1 ok 1.53s
+2 qsharp 10 4 ok 5.58s
+2 qsharp 10 16 ok 21.77s
+2 qsharp 12 1 ok 5.37s
+2 qsharp 12 4 ok 21.31s
+2 qsharp 12 16 ok 84.37s
+3 reference 2 1 ok 0.13s
+3 reference 2 4 ok 0.13s
+3 reference 2 16 ok 0.13s
+3 reference 4 1 ok 0.13s
+3 reference 4 4 ok 0.13s
+3 reference 4 16 ok 0.13s
+3 reference 6 1 ok 0.13s
+3 reference 6 4 ok 0.13s
+3 reference 6 16 ok 0.13s
+3 reference 8 1 ok 0.13s
+3 reference 8 4 ok 0.13s
+3 reference 8 16 ok 0.13s
+3 reference 10 1 ok 0.13s
+3 reference 10 4 ok 0.13s
+3 reference 10 16 ok 0.14s
+3 reference 12 1 failed 0.12s
+3 qiskit 2 1 ok 0.20s
+3 qiskit 2 4 ok 0.21s
+3 qiskit 2 16 ok 0.22s
+3 qiskit 4 1 ok 0.23s
+3 qiskit 4 4 ok 0.22s
+3 qiskit 4 16 ok 0.25s
+3 qiskit 6 1 ok 0.23s
+3 qiskit 6 4 ok 0.24s
+3 qiskit 6 16 ok 0.27s
+3 qiskit 8 1 ok 0.24s
+3 qiskit 8 4 ok 0.25s
+3 qiskit 8 16 ok 0.29s
+3 qiskit 10 1 ok 0.26s
+3 qiskit 10 4 ok 0.27s
+3 qiskit 10 16 ok 0.31s
+3 qiskit 12 1 ok 0.30s
+3 qiskit 12 4 ok 0.30s
+3 qiskit 12 16 ok 0.35s
+3 cirq 2 1 ok 0.15s
+3 cirq 2 4 ok 0.13s
+3 cirq 2 16 ok 0.14s
+3 cirq 4 1 ok 0.13s
+3 cirq 4 4 ok 0.14s
+3 cirq 4 16 ok 0.16s
+3 cirq 6 1 ok 0.14s
+3 cirq 6 4 ok 0.15s
+3 cirq 6 16 ok 0.18s
+3 cirq 8 1 ok 0.14s
+3 cirq 8 4 ok 0.15s
+3 cirq 8 16 ok 0.21s
+3 cirq 10 1 ok 0.15s
+3 cirq 10 4 ok 0.17s
+3 cirq 10 16 ok 0.25s
+3 cirq 12 1 ok 0.15s
+3 cirq 12 4 ok 0.18s
+3 cirq 12 16 ok 0.31s
+3 pennylane 2 1 ok 0.13s
+3 pennylane 2 4 ok 0.13s
+3 pennylane 2 16 ok 0.14s
+3 pennylane 4 1 ok 0.13s
+3 pennylane 4 4 ok 0.14s
+3 pennylane 4 16 ok 0.16s
+3 pennylane 6 1 ok 0.13s
+3 pennylane 6 4 ok 0.15s
+3 pennylane 6 16 ok 0.19s
+3 pennylane 8 1 ok 0.14s
+3 pennylane 8 4 ok 0.16s
+3 pennylane 8 16 ok 0.24s
+3 pennylane 10 1 ok 0.17s
+3 pennylane 10 4 ok 0.29s
+3 pennylane 10 16 ok 0.77s
+3 pennylane 12 1 ok 0.67s
+3 pennylane 12 4 ok 2.28s
+3 pennylane 12 16 ok 8.68s
+3 qsharp 2 1 ok 0.15s
+3 qsharp 2 4 ok 0.20s
+3 qsharp 2 16 ok 0.37s
+3 qsharp 4 1 ok 0.23s
+3 qsharp 4 4 ok 0.44s
+3 qsharp 4 16 ok 1.28s
+3 qsharp 6 1 ok 0.34s
+3 qsharp 6 4 ok 0.88s
+3 qsharp 6 16 ok 2.99s
+3 qsharp 8 1 ok 0.61s
+3 qsharp 8 4 ok 1.90s
+3 qsharp 8 16 ok 7.02s
+3 qsharp 10 1 ok 1.52s
+3 qsharp 10 4 ok 5.58s
+3 qsharp 10 16 ok 21.74s
+3 qsharp 12 1 ok 5.35s
+3 qsharp 12 4 ok 21.12s
+3 qsharp 12 16 ok 84.25s
+4 reference 2 1 ok 0.13s
+4 reference 2 4 ok 0.13s
+4 reference 2 16 ok 0.13s
+4 reference 4 1 ok 0.13s
+4 reference 4 4 ok 0.13s
+4 reference 4 16 ok 0.13s
+4 reference 6 1 ok 0.13s
+4 reference 6 4 ok 0.13s
+4 reference 6 16 ok 0.13s
+4 reference 8 1 ok 0.13s
+4 reference 8 4 ok 0.13s
+4 reference 8 16 ok 0.13s
+4 reference 10 1 ok 0.13s
+4 reference 10 4 ok 0.13s
+4 reference 10 16 ok 0.14s
+4 reference 12 1 failed 0.13s
+4 qiskit 2 1 ok 0.19s
+4 qiskit 2 4 ok 0.21s
+4 qiskit 2 16 ok 0.22s
+4 qiskit 4 1 ok 0.22s
+4 qiskit 4 4 ok 0.23s
+4 qiskit 4 16 ok 0.24s
+4 qiskit 6 1 ok 0.23s
+4 qiskit 6 4 ok 0.24s
+4 qiskit 6 16 ok 0.27s
+4 qiskit 8 1 ok 0.24s
+4 qiskit 8 4 ok 0.25s
+4 qiskit 8 16 ok 0.28s
+4 qiskit 10 1 ok 0.26s
+4 qiskit 10 4 ok 0.27s
+4 qiskit 10 16 ok 0.31s
+4 qiskit 12 1 ok 0.28s
+4 qiskit 12 4 ok 0.30s
+4 qiskit 12 16 ok 0.35s
+4 cirq 2 1 ok 0.15s
+4 cirq 2 4 ok 0.13s
+4 cirq 2 16 ok 0.14s
+4 cirq 4 1 ok 0.14s
+4 cirq 4 4 ok 0.14s
+4 cirq 4 16 ok 0.16s
+4 cirq 6 1 ok 0.14s
+4 cirq 6 4 ok 0.15s
+4 cirq 6 16 ok 0.18s
+4 cirq 8 1 ok 0.14s
+4 cirq 8 4 ok 0.16s
+4 cirq 8 16 ok 0.21s
+4 cirq 10 1 ok 0.15s
+4 cirq 10 4 ok 0.17s
+4 cirq 10 16 ok 0.25s
+4 cirq 12 1 ok 0.15s
+4 cirq 12 4 ok 0.18s
+4 cirq 12 16 ok 0.30s
+4 pennylane 2 1 ok 0.13s
+4 pennylane 2 4 ok 0.13s
+4 pennylane 2 16 ok 0.14s
+4 pennylane 4 1 ok 0.13s
+4 pennylane 4 4 ok 0.14s
+4 pennylane 4 16 ok 0.16s
+4 pennylane 6 1 ok 0.13s
+4 pennylane 6 4 ok 0.15s
+4 pennylane 6 16 ok 0.20s
+4 pennylane 8 1 ok 0.14s
+4 pennylane 8 4 ok 0.16s
+4 pennylane 8 16 ok 0.24s
+4 pennylane 10 1 ok 0.17s
+4 pennylane 10 4 ok 0.29s
+4 pennylane 10 16 ok 0.76s
+4 pennylane 12 1 ok 0.67s
+4 pennylane 12 4 ok 2.26s
+4 pennylane 12 16 ok 8.66s
+4 qsharp 2 1 ok 0.16s
+4 qsharp 2 4 ok 0.20s
+4 qsharp 2 16 ok 0.37s
+4 qsharp 4 1 ok 0.22s
+4 qsharp 4 4 ok 0.44s
+4 qsharp 4 16 ok 1.28s
+4 qsharp 6 1 ok 0.35s
+4 qsharp 6 4 ok 0.89s
+4 qsharp 6 16 ok 2.99s
+4 qsharp 8 1 ok 0.62s
+4 qsharp 8 4 ok 1.92s
+4 qsharp 8 16 ok 7.04s
+4 qsharp 10 1 ok 1.53s
+4 qsharp 10 4 ok 5.59s
+4 qsharp 10 16 ok 21.69s
+4 qsharp 12 1 ok 5.39s
+4 qsharp 12 4 ok 21.23s
+4 qsharp 12 16 ok 84.32s
+5 reference 2 1 ok 0.13s
+5 reference 2 4 ok 0.13s
+5 reference 2 16 ok 0.13s
+5 reference 4 1 ok 0.13s
+5 reference 4 4 ok 0.13s
+5 reference 4 16 ok 0.13s
+5 reference 6 1 ok 0.13s
+5 reference 6 4 ok 0.13s
+5 reference 6 16 ok 0.13s
+5 reference 8 1 ok 0.13s
+5 reference 8 4 ok 0.13s
+5 reference 8 16 ok 0.13s
+5 reference 10 1 ok 0.13s
+5 reference 10 4 ok 0.13s
+5 reference 10 16 ok 0.14s
+5 reference 12 1 failed 0.12s
+5 qiskit 2 1 ok 0.19s
+5 qiskit 2 4 ok 0.21s
+5 qiskit 2 16 ok 0.22s
+5 qiskit 4 1 ok 0.22s
+5 qiskit 4 4 ok 0.22s
+5 qiskit 4 16 ok 0.25s
+5 qiskit 6 1 ok 0.23s
+5 qiskit 6 4 ok 0.24s
+5 qiskit 6 16 ok 0.27s
+5 qiskit 8 1 ok 0.24s
+5 qiskit 8 4 ok 0.25s
+5 qiskit 8 16 ok 0.29s
+5 qiskit 10 1 ok 0.26s
+5 qiskit 10 4 ok 0.28s
+5 qiskit 10 16 ok 0.34s
+5 qiskit 12 1 ok 0.28s
+5 qiskit 12 4 ok 0.30s
+5 qiskit 12 16 ok 0.35s
+5 cirq 2 1 ok 0.15s
+5 cirq 2 4 ok 0.13s
+5 cirq 2 16 ok 0.14s
+5 cirq 4 1 ok 0.13s
+5 cirq 4 4 ok 0.14s
+5 cirq 4 16 ok 0.16s
+5 cirq 6 1 ok 0.14s
+5 cirq 6 4 ok 0.15s
+5 cirq 6 16 ok 0.18s
+5 cirq 8 1 ok 0.14s
+5 cirq 8 4 ok 0.16s
+5 cirq 8 16 ok 0.21s
+5 cirq 10 1 ok 0.15s
+5 cirq 10 4 ok 0.17s
+5 cirq 10 16 ok 0.25s
+5 cirq 12 1 ok 0.15s
+5 cirq 12 4 ok 0.18s
+5 cirq 12 16 ok 0.30s
+5 pennylane 2 1 ok 0.13s
+5 pennylane 2 4 ok 0.13s
+5 pennylane 2 16 ok 0.14s
+5 pennylane 4 1 ok 0.13s
+5 pennylane 4 4 ok 0.14s
+5 pennylane 4 16 ok 0.16s
+5 pennylane 6 1 ok 0.13s
+5 pennylane 6 4 ok 0.15s
+5 pennylane 6 16 ok 0.19s
+5 pennylane 8 1 ok 0.14s
+5 pennylane 8 4 ok 0.16s
+5 pennylane 8 16 ok 0.24s
+5 pennylane 10 1 ok 0.17s
+5 pennylane 10 4 ok 0.29s
+5 pennylane 10 16 ok 0.77s
+5 pennylane 12 1 ok 0.67s
+5 pennylane 12 4 ok 2.27s
+5 pennylane 12 16 ok 8.66s
+5 qsharp 2 1 ok 0.16s
+5 qsharp 2 4 ok 0.20s
+5 qsharp 2 16 ok 0.37s
+5 qsharp 4 1 ok 0.23s
+5 qsharp 4 4 ok 0.45s
+5 qsharp 4 16 ok 1.28s
+5 qsharp 6 1 ok 0.34s
+5 qsharp 6 4 ok 0.87s
+5 qsharp 6 16 ok 2.98s
+5 qsharp 8 1 ok 0.61s
+5 qsharp 8 4 ok 1.91s
+5 qsharp 8 16 ok 7.07s
+5 qsharp 10 1 ok 1.53s
+5 qsharp 10 4 ok 5.62s
+5 qsharp 10 16 ok 21.67s
+5 qsharp 12 1 ok 5.44s
+5 qsharp 12 4 ok 21.19s
+5 qsharp 12 16 ok 84.54s
+6 reference 2 1 ok 0.13s
+6 reference 2 4 ok 0.13s
+6 reference 2 16 ok 0.13s
+6 reference 4 1 ok 0.13s
+6 reference 4 4 ok 0.13s
+6 reference 4 16 ok 0.13s
+6 reference 6 1 ok 0.13s
+6 reference 6 4 ok 0.13s
+6 reference 6 16 ok 0.13s
+6 reference 8 1 ok 0.13s
+6 reference 8 4 ok 0.13s
+6 reference 8 16 ok 0.13s
+6 reference 10 1 ok 0.13s
+6 reference 10 4 ok 0.13s
+6 reference 10 16 ok 0.14s
+6 reference 12 1 failed 0.12s
+6 qiskit 2 1 ok 0.19s
+6 qiskit 2 4 ok 0.21s
+6 qiskit 2 16 ok 0.22s
+6 qiskit 4 1 ok 0.22s
+6 qiskit 4 4 ok 0.23s
+6 qiskit 4 16 ok 0.25s
+6 qiskit 6 1 ok 0.23s
+6 qiskit 6 4 ok 0.24s
+6 qiskit 6 16 ok 0.27s
+6 qiskit 8 1 ok 0.24s
+6 qiskit 8 4 ok 0.25s
+6 qiskit 8 16 ok 0.28s
+6 qiskit 10 1 ok 0.26s
+6 qiskit 10 4 ok 0.27s
+6 qiskit 10 16 ok 0.32s
+6 qiskit 12 1 ok 0.28s
+6 qiskit 12 4 ok 0.30s
+6 qiskit 12 16 ok 0.36s
+6 cirq 2 1 ok 0.15s
+6 cirq 2 4 ok 0.13s
+6 cirq 2 16 ok 0.14s
+6 cirq 4 1 ok 0.13s
+6 cirq 4 4 ok 0.14s
+6 cirq 4 16 ok 0.16s
+6 cirq 6 1 ok 0.14s
+6 cirq 6 4 ok 0.14s
+6 cirq 6 16 ok 0.19s
+6 cirq 8 1 ok 0.14s
+6 cirq 8 4 ok 0.15s
+6 cirq 8 16 ok 0.21s
+6 cirq 10 1 ok 0.15s
+6 cirq 10 4 ok 0.17s
+6 cirq 10 16 ok 0.25s
+6 cirq 12 1 ok 0.15s
+6 cirq 12 4 ok 0.18s
+6 cirq 12 16 ok 0.31s
+6 pennylane 2 1 ok 0.13s
+6 pennylane 2 4 ok 0.13s
+6 pennylane 2 16 ok 0.14s
+6 pennylane 4 1 ok 0.13s
+6 pennylane 4 4 ok 0.14s
+6 pennylane 4 16 ok 0.16s
+6 pennylane 6 1 ok 0.13s
+6 pennylane 6 4 ok 0.15s
+6 pennylane 6 16 ok 0.20s
+6 pennylane 8 1 ok 0.14s
+6 pennylane 8 4 ok 0.16s
+6 pennylane 8 16 ok 0.24s
+6 pennylane 10 1 ok 0.17s
+6 pennylane 10 4 ok 0.29s
+6 pennylane 10 16 ok 0.76s
+6 pennylane 12 1 ok 0.67s
+6 pennylane 12 4 ok 2.26s
+6 pennylane 12 16 ok 8.72s
+6 qsharp 2 1 ok 0.16s
+6 qsharp 2 4 ok 0.20s
+6 qsharp 2 16 ok 0.38s
+6 qsharp 4 1 ok 0.23s
+6 qsharp 4 4 ok 0.44s
+6 qsharp 4 16 ok 1.27s
+6 qsharp 6 1 ok 0.35s
+6 qsharp 6 4 ok 0.87s
+6 qsharp 6 16 ok 2.99s
+6 qsharp 8 1 ok 0.61s
+6 qsharp 8 4 ok 1.91s
+6 qsharp 8 16 ok 7.07s
+6 qsharp 10 1 ok 1.53s
+6 qsharp 10 4 ok 5.60s
+6 qsharp 10 16 ok 21.78s
+6 qsharp 12 1 ok 5.39s
+6 qsharp 12 4 ok 21.24s
+6 qsharp 12 16 ok 84.26s
+7 reference 2 1 ok 0.13s
+7 reference 2 4 ok 0.13s
+7 reference 2 16 ok 0.13s
+7 reference 4 1 ok 0.13s
+7 reference 4 4 ok 0.13s
+7 reference 4 16 ok 0.13s
+7 reference 6 1 ok 0.13s
+7 reference 6 4 ok 0.13s
+7 reference 6 16 ok 0.13s
+7 reference 8 1 ok 0.13s
+7 reference 8 4 ok 0.13s
+7 reference 8 16 ok 0.13s
+7 reference 10 1 ok 0.13s
+7 reference 10 4 ok 0.13s
+7 reference 10 16 ok 0.14s
+7 reference 12 1 failed 0.13s
+7 qiskit 2 1 ok 0.20s
+7 qiskit 2 4 ok 0.21s
+7 qiskit 2 16 ok 0.22s
+7 qiskit 4 1 ok 0.22s
+7 qiskit 4 4 ok 0.22s
+7 qiskit 4 16 ok 0.24s
+7 qiskit 6 1 ok 0.23s
+7 qiskit 6 4 ok 0.23s
+7 qiskit 6 16 ok 0.27s
+7 qiskit 8 1 ok 0.24s
+7 qiskit 8 4 ok 0.25s
+7 qiskit 8 16 ok 0.29s
+7 qiskit 10 1 ok 0.26s
+7 qiskit 10 4 ok 0.27s
+7 qiskit 10 16 ok 0.32s
+7 qiskit 12 1 ok 0.29s
+7 qiskit 12 4 ok 0.30s
+7 qiskit 12 16 ok 0.36s
+7 cirq 2 1 ok 0.15s
+7 cirq 2 4 ok 0.13s
+7 cirq 2 16 ok 0.14s
+7 cirq 4 1 ok 0.14s
+7 cirq 4 4 ok 0.14s
+7 cirq 4 16 ok 0.16s
+7 cirq 6 1 ok 0.14s
+7 cirq 6 4 ok 0.15s
+7 cirq 6 16 ok 0.18s
+7 cirq 8 1 ok 0.14s
+7 cirq 8 4 ok 0.15s
+7 cirq 8 16 ok 0.21s
+7 cirq 10 1 ok 0.15s
+7 cirq 10 4 ok 0.17s
+7 cirq 10 16 ok 0.25s
+7 cirq 12 1 ok 0.15s
+7 cirq 12 4 ok 0.18s
+7 cirq 12 16 ok 0.30s
+7 pennylane 2 1 ok 0.13s
+7 pennylane 2 4 ok 0.13s
+7 pennylane 2 16 ok 0.14s
+7 pennylane 4 1 ok 0.13s
+7 pennylane 4 4 ok 0.14s
+7 pennylane 4 16 ok 0.16s
+7 pennylane 6 1 ok 0.13s
+7 pennylane 6 4 ok 0.15s
+7 pennylane 6 16 ok 0.19s
+7 pennylane 8 1 ok 0.14s
+7 pennylane 8 4 ok 0.16s
+7 pennylane 8 16 ok 0.25s
+7 pennylane 10 1 ok 0.18s
+7 pennylane 10 4 ok 0.29s
+7 pennylane 10 16 ok 0.74s
+7 pennylane 12 1 ok 0.67s
+7 pennylane 12 4 ok 2.26s
+7 pennylane 12 16 ok 8.67s
+7 qsharp 2 1 ok 0.16s
+7 qsharp 2 4 ok 0.20s
+7 qsharp 2 16 ok 0.37s
+7 qsharp 4 1 ok 0.23s
+7 qsharp 4 4 ok 0.45s
+7 qsharp 4 16 ok 1.29s
+7 qsharp 6 1 ok 0.34s
+7 qsharp 6 4 ok 0.88s
+7 qsharp 6 16 ok 2.97s
+7 qsharp 8 1 ok 0.61s
+7 qsharp 8 4 ok 1.90s
+7 qsharp 8 16 ok 7.03s
+7 qsharp 10 1 ok 1.55s
+7 qsharp 10 4 ok 5.58s
+7 qsharp 10 16 ok 21.72s
+7 qsharp 12 1 ok 5.37s
+7 qsharp 12 4 ok 21.29s
+7 qsharp 12 16 ok 84.50s
+8 reference 2 1 ok 0.13s
+8 reference 2 4 ok 0.13s
+8 reference 2 16 ok 0.13s
+8 reference 4 1 ok 0.13s
+8 reference 4 4 ok 0.13s
+8 reference 4 16 ok 0.13s
+8 reference 6 1 ok 0.13s
+8 reference 6 4 ok 0.13s
+8 reference 6 16 ok 0.13s
+8 reference 8 1 ok 0.13s
+8 reference 8 4 ok 0.13s
+8 reference 8 16 ok 0.13s
+8 reference 10 1 ok 0.13s
+8 reference 10 4 ok 0.13s
+8 reference 10 16 ok 0.14s
+8 reference 12 1 failed 0.13s
+8 qiskit 2 1 ok 0.20s
+8 qiskit 2 4 ok 0.21s
+8 qiskit 2 16 ok 0.22s
+8 qiskit 4 1 ok 0.22s
+8 qiskit 4 4 ok 0.22s
+8 qiskit 4 16 ok 0.25s
+8 qiskit 6 1 ok 0.23s
+8 qiskit 6 4 ok 0.24s
+8 qiskit 6 16 ok 0.27s
+8 qiskit 8 1 ok 0.24s
+8 qiskit 8 4 ok 0.25s
+8 qiskit 8 16 ok 0.28s
+8 qiskit 10 1 ok 0.26s
+8 qiskit 10 4 ok 0.27s
+8 qiskit 10 16 ok 0.31s
+8 qiskit 12 1 ok 0.28s
+8 qiskit 12 4 ok 0.30s
+8 qiskit 12 16 ok 0.35s
+8 cirq 2 1 ok 0.15s
+8 cirq 2 4 ok 0.13s
+8 cirq 2 16 ok 0.15s
+8 cirq 4 1 ok 0.13s
+8 cirq 4 4 ok 0.14s
+8 cirq 4 16 ok 0.16s
+8 cirq 6 1 ok 0.14s
+8 cirq 6 4 ok 0.14s
+8 cirq 6 16 ok 0.18s
+8 cirq 8 1 ok 0.14s
+8 cirq 8 4 ok 0.15s
+8 cirq 8 16 ok 0.21s
+8 cirq 10 1 ok 0.15s
+8 cirq 10 4 ok 0.17s
+8 cirq 10 16 ok 0.25s
+8 cirq 12 1 ok 0.15s
+8 cirq 12 4 ok 0.18s
+8 cirq 12 16 ok 0.31s
+8 pennylane 2 1 ok 0.13s
+8 pennylane 2 4 ok 0.13s
+8 pennylane 2 16 ok 0.14s
+8 pennylane 4 1 ok 0.13s
+8 pennylane 4 4 ok 0.14s
+8 pennylane 4 16 ok 0.16s
+8 pennylane 6 1 ok 0.13s
+8 pennylane 6 4 ok 0.15s
+8 pennylane 6 16 ok 0.20s
+8 pennylane 8 1 ok 0.14s
+8 pennylane 8 4 ok 0.16s
+8 pennylane 8 16 ok 0.24s
+8 pennylane 10 1 ok 0.17s
+8 pennylane 10 4 ok 0.29s
+8 pennylane 10 16 ok 0.73s
+8 pennylane 12 1 ok 0.67s
+8 pennylane 12 4 ok 2.26s
+8 pennylane 12 16 ok 8.67s
+8 qsharp 2 1 ok 0.16s
+8 qsharp 2 4 ok 0.20s
+8 qsharp 2 16 ok 0.37s
+8 qsharp 4 1 ok 0.23s
+8 qsharp 4 4 ok 0.44s
+8 qsharp 4 16 ok 1.29s
+8 qsharp 6 1 ok 0.35s
+8 qsharp 6 4 ok 0.88s
+8 qsharp 6 16 ok 3.00s
+8 qsharp 8 1 ok 0.62s
+8 qsharp 8 4 ok 1.94s
+8 qsharp 8 16 ok 7.06s
+8 qsharp 10 1 ok 1.52s
+8 qsharp 10 4 ok 5.55s
+8 qsharp 10 16 ok 21.77s
+8 qsharp 12 1 ok 5.36s
+8 qsharp 12 4 ok 21.22s
+8 qsharp 12 16 ok 84.40s
+9 reference 2 1 ok 0.13s
+9 reference 2 4 ok 0.13s
+9 reference 2 16 ok 0.13s
+9 reference 4 1 ok 0.13s
+9 reference 4 4 ok 0.13s
+9 reference 4 16 ok 0.13s
+9 reference 6 1 ok 0.13s
+9 reference 6 4 ok 0.13s
+9 reference 6 16 ok 0.13s
+9 reference 8 1 ok 0.13s
+9 reference 8 4 ok 0.13s
+9 reference 8 16 ok 0.14s
+9 reference 10 1 ok 0.13s
+9 reference 10 4 ok 0.13s
+9 reference 10 16 ok 0.14s
+9 reference 12 1 failed 0.13s
+9 qiskit 2 1 ok 0.20s
+9 qiskit 2 4 ok 0.21s
+9 qiskit 2 16 ok 0.22s
+9 qiskit 4 1 ok 0.22s
+9 qiskit 4 4 ok 0.22s
+9 qiskit 4 16 ok 0.24s
+9 qiskit 6 1 ok 0.23s
+9 qiskit 6 4 ok 0.23s
+9 qiskit 6 16 ok 0.27s
+9 qiskit 8 1 ok 0.24s
+9 qiskit 8 4 ok 0.25s
+9 qiskit 8 16 ok 0.29s
+9 qiskit 10 1 ok 0.25s
+9 qiskit 10 4 ok 0.27s
+9 qiskit 10 16 ok 0.31s
+9 qiskit 12 1 ok 0.29s
+9 qiskit 12 4 ok 0.30s
+9 qiskit 12 16 ok 0.35s
+9 cirq 2 1 ok 0.15s
+9 cirq 2 4 ok 0.13s
+9 cirq 2 16 ok 0.14s
+9 cirq 4 1 ok 0.13s
+9 cirq 4 4 ok 0.14s
+9 cirq 4 16 ok 0.16s
+9 cirq 6 1 ok 0.14s
+9 cirq 6 4 ok 0.15s
+9 cirq 6 16 ok 0.18s
+9 cirq 8 1 ok 0.14s
+9 cirq 8 4 ok 0.15s
+9 cirq 8 16 ok 0.22s
+9 cirq 10 1 ok 0.14s
+9 cirq 10 4 ok 0.17s
+9 cirq 10 16 ok 0.25s
+9 cirq 12 1 ok 0.15s
+9 cirq 12 4 ok 0.18s
+9 cirq 12 16 ok 0.30s
+9 pennylane 2 1 ok 0.13s
+9 pennylane 2 4 ok 0.13s
+9 pennylane 2 16 ok 0.14s
+9 pennylane 4 1 ok 0.13s
+9 pennylane 4 4 ok 0.14s
+9 pennylane 4 16 ok 0.16s
+9 pennylane 6 1 ok 0.13s
+9 pennylane 6 4 ok 0.15s
+9 pennylane 6 16 ok 0.19s
+9 pennylane 8 1 ok 0.14s
+9 pennylane 8 4 ok 0.16s
+9 pennylane 8 16 ok 0.24s
+9 pennylane 10 1 ok 0.17s
+9 pennylane 10 4 ok 0.29s
+9 pennylane 10 16 ok 0.74s
+9 pennylane 12 1 ok 0.67s
+9 pennylane 12 4 ok 2.29s
+9 pennylane 12 16 ok 8.65s
+9 qsharp 2 1 ok 0.16s
+9 qsharp 2 4 ok 0.20s
+9 qsharp 2 16 ok 0.37s
+9 qsharp 4 1 ok 0.23s
+9 qsharp 4 4 ok 0.44s
+9 qsharp 4 16 ok 1.29s
+9 qsharp 6 1 ok 0.34s
+9 qsharp 6 4 ok 0.88s
+9 qsharp 6 16 ok 3.02s
+9 qsharp 8 1 ok 0.62s
+9 qsharp 8 4 ok 1.91s
+9 qsharp 8 16 ok 7.10s
+9 qsharp 10 1 ok 1.52s
+9 qsharp 10 4 ok 5.61s
+9 qsharp 10 16 ok 21.66s
+9 qsharp 12 1 ok 5.36s
+9 qsharp 12 4 ok 21.14s
+9 qsharp 12 16 ok 84.47s
+[A: isolated timing] done benchmarks/scaling_study.py in 1814s
+{'adapter': 'reference', 'module': 'aeonq/adapters/reference.py', 'source_lines': 75, 'required_methods': 7, 'required_method_names': 'capabilities compile execute lower normalize_result resource_metrics validate', 'optional_methods_added': 'unitary', 'declared_unitary_precision': 1e-09, 'battery_checks': 66, 'battery_passed': 66, 'battery_failed': 0, 'battery_unsupported': 0, 'operator_passed': '43/43', 'measurement_passed': '5/5', 'sampling_passed': '18/18'}
+{'adapter': 'qiskit', 'module': 'aeonq/adapters/qiskit.py', 'source_lines': 244, 'required_methods': 7, 'required_method_names': 'capabilities compile execute lower normalize_result resource_metrics validate', 'optional_methods_added': 'unitary statevector', 'declared_unitary_precision': 1e-09, 'battery_checks': 66, 'battery_passed': 66, 'battery_failed': 0, 'battery_unsupported': 0, 'operator_passed': '43/43', 'measurement_passed': '5/5', 'sampling_passed': '18/18'}
+{'adapter': 'cirq', 'module': 'aeonq/adapters/cirq.py', 'source_lines': 176, 'required_methods': 7, 'required_method_names': 'capabilities compile execute lower normalize_result resource_metrics validate', 'optional_methods_added': 'unitary statevector', 'declared_unitary_precision': 1e-09, 'battery_checks': 66, 'battery_passed': 66, 'battery_failed': 0, 'battery_unsupported': 0, 'operator_passed': '43/43', 'measurement_passed': '5/5', 'sampling_passed': '18/18'}
+{'adapter': 'pennylane', 'module': 'aeonq/adapters/pennylane.py', 'source_lines': 166, 'required_methods': 7, 'required_method_names': 'capabilities compile execute lower normalize_result resource_metrics validate', 'optional_methods_added': 'unitary statevector', 'declared_unitary_precision': 1e-09, 'battery_checks': 66, 'battery_passed': 66, 'battery_failed': 0, 'battery_unsupported': 0, 'operator_passed': '43/43', 'measurement_passed': '5/5', 'sampling_passed': '18/18'}
+{'adapter': 'qsharp', 'module': 'aeonq/adapters/qsharp.py', 'source_lines': 194, 'required_methods': 7, 'required_method_names': 'capabilities compile execute lower normalize_result resource_metrics validate', 'optional_methods_added': 'unitary', 'declared_unitary_precision': 1e-06, 'battery_checks': 66, 'battery_passed': 66, 'battery_failed': 0, 'battery_unsupported': 0, 'operator_passed': '43/43', 'measurement_passed': '5/5', 'sampling_passed': '18/18'}
+[A: isolated timing] done benchmarks/extensibility_report.py in 15s
+[B] done equivalence in 1626s
+[B] done noise_and_mutation in 2176s
+[B] done publication_profiles in 2666s
+[B] done native_baselines in 3078s
+[C: derive and audit] done benchmarks/pipeline/generate_all_results.py in 16s
+{
+  "audited_at_utc": "2026-10-16T10:31:06.974230+00:00",
+  "manifest_sha256": "9a4b948903008651f2788baeab056e496628710cc569182784fc4d9e27902a27",
+  "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
+  "raw_sha256": {
+    "publication_reference": "9e26308e8421ac7a3575be731ee16dd95b7b09c6a14131704c54174dee836f92",
+    "publication_cross_sdk": "749fa177d17d6590995068278580c6155a03d0b3af2c9cc4daa313df68312c40",
+    "publication_scheduler_qiskit": "e64cb2db46c7975f0b0e04199624602fc0c3d34fad6480a004e8d87b6d25eeb6",
+    "publication_case_study": "46443e2f67e5bf2bdbea9524d7069fda50554278beb6dd321e77c12ccb526777",
+    "publication_case_study_sdk": "1e5d2fb6deca32cd93135e28cade4383934304a78ac2013362075b0b6801c273",
+    "publication_case_study_qsharp": "832c4f3ee5d5f7f0f059b3b2ae87cbcee4866b16492dbf4f0c63bb60a1717950",
+    "native_baselines": "6d1adfbe7d3c5e4a092fd8edda6d58f9d7037334a1ca4d32328bc25b28ceacfb",
+    "noise_study": "7dd7dae505a3320f1e02362b26a763c260f0d0655687ba0f436093b1d897a928",
+    "equivalence_estimators": "f88f3884f0266e33c884f0936e10e55c6034da5a30069d147ef69edeba703b85",
+    "adapter_mutation": "893a5693bcfbe599f49ceb86b3f748d9dca22ee329e516010d45db4928d28821",
+    "adapter_mutation_impact": "80da1bfc3c17bae53ece94a4f5e4b37e42e95586fa391f4e971e6f75c370bca9",
+    "equivalence_sampling": "e65c1d59b7bf263ce02280ec7d164ede8e360545e5239a5e64af901134339fb5"
+  },
+  "trial_counts": {
+    "publication_reference": 23800,
+    "publication_cross_sdk": 800,
+    "publication_scheduler_qiskit": 750,
+    "publication_case_study": 2400,
+    "publication_case_study_sdk": 900,
+    "publication_case_study_qsharp": 45
+  },
+  "total_trials": 28695,
+  "extended_trial_counts": {
+    "native_baselines": 27000,
+    "noise_study": 6000,
+    "equivalence_estimators": 10000,
+    "adapter_mutation_impact": 1280
+  },
+  "trials_without_git_commit": 0,
+  "installed_dependency_mismatches": [],
+  "errors": [],
+  "passed": true
+}
+[C: derive and audit] done benchmarks/pipeline/audit_reproducibility.py in 14s

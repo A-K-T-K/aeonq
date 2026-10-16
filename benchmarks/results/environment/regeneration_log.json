@@ -1,10 +1,10 @@
 {
-  "started_utc": "2026-10-16T05:11:05.123938+00:00",
-  "finished_utc": "2026-10-16T06:39:14.506582+00:00",
+  "started_utc": "2026-10-16T09:04:24.351457+00:00",
+  "finished_utc": "2026-10-16T10:31:08.319994+00:00",
   "cpu_count": 12,
   "sessions": [
     {
-      "started_utc": "2026-10-16T05:11:05.123949+00:00",
+      "started_utc": "2026-10-16T09:04:24.351468+00:00",
       "resumed": false
     }
   ],
@@ -12,50 +12,50 @@
     {
       "phase": "A: isolated timing",
       "command": "benchmarks/performance_comparison.py",
-      "started_utc": "2026-10-16T05:11:05.125175+00:00",
-      "seconds": 7.999610600003507,
+      "started_utc": "2026-10-16T09:04:24.353045+00:00",
+      "seconds": 7.944571900006849,
       "concurrent_processes": 1
     },
     {
       "phase": "A: isolated timing",
       "command": "benchmarks/compiler_comparison.py",
-      "started_utc": "2026-10-16T05:11:13.126131+00:00",
-      "seconds": 7.454723900009412,
+      "started_utc": "2026-10-16T09:04:32.298939+00:00",
+      "seconds": 7.610700400022324,
       "concurrent_processes": 1
     },
     {
       "phase": "A: isolated timing",
       "command": "benchmarks/compiler_cross_sdk.py",
-      "started_utc": "2026-10-16T05:11:20.582280+00:00",
-      "seconds": 8.215848500025459,
+      "started_utc": "2026-10-16T09:04:39.910992+00:00",
+      "seconds": 8.785297299968079,
       "concurrent_processes": 1
     },
     {
       "phase": "A: isolated timing",
       "command": "benchmarks/overhead_study.py",
-      "started_utc": "2026-10-16T05:11:28.799452+00:00",
-      "seconds": 244.81387130002258,
+      "started_utc": "2026-10-16T09:04:48.697804+00:00",
+      "seconds": 242.91893520002486,
       "concurrent_processes": 1
     },
     {
       "phase": "A: isolated timing",
       "command": "benchmarks/scaling_study.py",
-      "started_utc": "2026-10-16T05:15:33.611705+00:00",
-      "seconds": 1809.4999794000178,
+      "started_utc": "2026-10-16T09:08:51.618446+00:00",
+      "seconds": 1813.6987577999826,
       "concurrent_processes": 1
     },
     {
       "phase": "A: isolated timing",
       "command": "benchmarks/extensibility_report.py",
-      "started_utc": "2026-10-16T05:45:43.099045+00:00",
-      "seconds": 16.4128584000282,
+      "started_utc": "2026-10-16T09:39:05.318572+00:00",
+      "seconds": 15.069974199985154,
       "concurrent_processes": 1
     },
     {
       "phase": "B: concurrent statistics",
       "command": "equivalence",
-      "started_utc": "2026-10-16T05:45:59.515985+00:00",
-      "seconds": 1728.6747444000212,
+      "started_utc": "2026-10-16T09:39:20.391476+00:00",
+      "seconds": 1626.458983300021,
       "concurrent_processes": 4,
       "worker_processes": 2,
       "exit_code": 0
@@ -63,8 +63,8 @@
     {
       "phase": "B: concurrent statistics",
       "command": "noise_and_mutation",
-      "started_utc": "2026-10-16T05:45:59.515606+00:00",
-      "seconds": 2291.1190029999707,
+      "started_utc": "2026-10-16T09:39:20.391184+00:00",
+      "seconds": 2175.914556700038,
       "concurrent_processes": 4,
       "worker_processes": 2,
       "exit_code": 0
@@ -72,8 +72,8 @@
     {
       "phase": "B: concurrent statistics",
       "command": "publication_profiles",
-      "started_utc": "2026-10-16T05:45:59.515279+00:00",
-      "seconds": 2743.3976208000095,
+      "started_utc": "2026-10-16T09:39:20.390860+00:00",
+      "seconds": 2666.0226625999785,
       "concurrent_processes": 4,
       "worker_processes": 1,
       "exit_code": 0
@@ -81,8 +81,8 @@
     {
       "phase": "B: concurrent statistics",
       "command": "native_baselines",
-      "started_utc": "2026-10-16T05:45:59.515427+00:00",
-      "seconds": 3164.6640809000237,
+      "started_utc": "2026-10-16T09:39:20.391011+00:00",
+      "seconds": 3077.677388000011,
       "concurrent_processes": 4,
       "worker_processes": 7,
       "exit_code": 0
@@ -90,15 +90,15 @@
     {
       "phase": "C: derive and audit",
       "command": "benchmarks/pipeline/generate_all_results.py",
-      "started_utc": "2026-10-16T06:38:44.169051+00:00",
-      "seconds": 16.411147300037555,
+      "started_utc": "2026-10-16T10:30:38.069858+00:00",
+      "seconds": 16.18998319999082,
       "concurrent_processes": 1
     },
     {
       "phase": "C: derive and audit",
       "command": "benchmarks/pipeline/audit_reproducibility.py",
-      "started_utc": "2026-10-16T06:39:00.581540+00:00",
-      "seconds": 13.923582800023723,
+      "started_utc": "2026-10-16T10:30:54.261257+00:00",
+      "seconds": 14.057145999977365,
       "concurrent_processes": 1
     }
   ]
