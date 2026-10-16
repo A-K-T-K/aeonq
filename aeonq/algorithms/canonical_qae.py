@@ -3,7 +3,9 @@
 The point estimate is the maximum-likelihood amplitude under the exact QPE
 outcome model, and the interval is the likelihood-ratio set calibrated by the
 chi-square(1) approximation, as in Suzuki et al. and qiskit-algorithms. The
-interval is asymptotic: it carries no finite-sample guarantee. The median of
+interval is asymptotic: it carries no finite-sample guarantee, and with few
+evaluation qubits its coverage can fall below nominal (about 92% at m=3, 256
+shots, a=0.1 for a nominal 95%). The median of
 the per-shot estimates sin^2(pi*y/M) is reported in the diagnostics only; it
 takes just M/2+1 distinct values and rarely lies inside the likelihood-ratio
 interval.

@@ -125,7 +125,7 @@ Comparison with qiskit-algorithms (15 problems, 200 trials each) and cross-SDK e
 --------------------------------------------------------------------------------------------------------------------------------
 Estimator                                 Mean queries  Mean abs. error  Mean int. width  Lowest coverage  Cases sig. below 0.95
 --------------------------------------------------------------------------------------------------------------------------------
-Iterative, aeonq                                 6,857           0.0034            0.011            0.995                      0
+Iterative, aeonq                                 7,591           0.0032             0.01            1.000                      0
 Iterative, qiskit-algorithms                     6,913          0.00082           0.0054            0.980                      0
 Maximum likelihood, aeonq                       17,920          0.00035            0.038            0.940                      0
 Maximum likelihood, qiskit-algorithms           17,920          0.00036           0.0017            0.195                      3
@@ -143,20 +143,20 @@ Equivalence (margins met): sampling 40/40, coverage 16/16, error 16/16
   Largest SDK 95% upper bound on TVD                                                     0.0065
   Equivalence margins: TVD, coverage, MAE                                        0.01, 0.05, 0.002
   Iterative aeonq queries on those problems                                                 512
-    mean absolute error                                                                  0.0072
+    mean absolute error                                                                  0.0078
     qiskit-algorithms queries                                                             7,168
     qiskit-algorithms mean absolute error                                                 3e-05
-  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.001                            0.1
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.001                            0.4
   Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.01                             0.9
-  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.1                              1.2
-  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.25                             2.3
-  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.5                              3.6
-  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.75                             2.2
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.1                              1.3
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.25                             2.4
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.5                              4.1
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.75                             2.3
   Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.9                              1.3
   Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.99                             0.8
-  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.999                            0.1
-  Iterative query ratio aeonq/qiskit-algorithms, lognormal_tail_n3_k5_flag                  1.3
-  Iterative query ratio aeonq/qiskit-algorithms, lognormal_tail_n4_k10_flag                 1.3
+  Iterative query ratio aeonq/qiskit-algorithms, bernoulli_0.999                            0.4
+  Iterative query ratio aeonq/qiskit-algorithms, lognormal_tail_n3_k5_flag                  1.6
+  Iterative query ratio aeonq/qiskit-algorithms, lognormal_tail_n4_k10_flag                 1.4
   Fisher-interval coverage significantly below nominal, bernoulli_1e-06                   0.200
     likelihood-ratio coverage, same trials                                                0.985
   Fisher-interval coverage significantly below nominal, bernoulli_0.999999                0.195
@@ -184,9 +184,9 @@ Interval coverage by single-qubit depolarizing rate (two-qubit rate 10 times hig
 --------------------------------------------------------------------
 Estimator, case                       0  0.0001  0.001  0.005   0.01
 --------------------------------------------------------------------
-iqae, bernoulli_0.25              1.000   0.995  0.995  1.000  1.000
-iqae, lognormal_tail_n2_k2_flag   0.995   0.680  0.005  0.000  0.000
-iqae, lognormal_tail_n3_k5_flag   1.000   0.350  0.000  0.000  0.000
+iqae, bernoulli_0.25              1.000   1.000  1.000  1.000  1.000
+iqae, lognormal_tail_n2_k2_flag   0.995   0.755  0.000  0.000  0.000
+iqae, lognormal_tail_n3_k5_flag   1.000   0.285  0.000  0.000  0.000
 mlqae, bernoulli_0.25             0.945   0.970  0.950  0.945  0.935
 mlqae, lognormal_tail_n2_k2_flag  0.970   0.930  0.960  0.925  0.865
 mlqae, lognormal_tail_n3_k5_flag  0.980   0.935  0.005  0.000  0.000
@@ -202,22 +202,22 @@ Median wall-clock time and share spent in aeonq outside SDK compilation and exec
 -----------------------------------------------------------------------------------------
 SDK, case, estimator                      Evaluations  Median wall (ms)  Median share (%)
 -----------------------------------------------------------------------------------------
-cirq, bernoulli_0.3, iqae                          20               6.2                17
-cirq, bernoulli_0.3, mlqae                         20              24.0                39
-cirq, lognormal_tail_n3_flag, iqae                 20              84.0                 2
-cirq, lognormal_tail_n3_flag, mlqae                20             102.7               9.4
-pennylane, bernoulli_0.3, iqae                     20               4.8                23
-pennylane, bernoulli_0.3, mlqae                    20              21.3                44
-pennylane, lognormal_tail_n3_flag, iqae            20             116.9               1.5
-pennylane, lognormal_tail_n3_flag, mlqae           20             123.3               7.9
-qiskit, bernoulli_0.3, iqae                        20             204.4               1.3
-qiskit, bernoulli_0.3, mlqae                       20             522.6               3.3
-qiskit, lognormal_tail_n3_flag, iqae               20             271.8               1.1
-qiskit, lognormal_tail_n3_flag, mlqae              20             708.6               2.3
-qsharp, bernoulli_0.3, iqae                        20             155.5               1.1
-qsharp, bernoulli_0.3, mlqae                       20             527.8                 2
-qsharp, lognormal_tail_n3_flag, iqae               20            2421.9              0.11
-qsharp, lognormal_tail_n3_flag, mlqae              20            4518.9              0.23
+cirq, bernoulli_0.3, iqae                          20               9.0                17
+cirq, bernoulli_0.3, mlqae                         20              25.0                39
+cirq, lognormal_tail_n3_flag, iqae                 20              89.3               2.2
+cirq, lognormal_tail_n3_flag, mlqae                20             106.3               9.4
+pennylane, bernoulli_0.3, iqae                     20               5.5                22
+pennylane, bernoulli_0.3, mlqae                    20              22.6                43
+pennylane, lognormal_tail_n3_flag, iqae            20             123.5               1.6
+pennylane, lognormal_tail_n3_flag, mlqae           20             129.7               7.7
+qiskit, bernoulli_0.3, iqae                        20             298.1               1.2
+qiskit, bernoulli_0.3, mlqae                       20             513.9               3.5
+qiskit, lognormal_tail_n3_flag, iqae               20             470.5              0.84
+qiskit, lognormal_tail_n3_flag, mlqae              20             718.2               2.4
+qsharp, bernoulli_0.3, iqae                        20             283.3              0.92
+qsharp, bernoulli_0.3, mlqae                       20             561.7               1.9
+qsharp, lognormal_tail_n3_flag, iqae               20            3694.3             0.067
+qsharp, lognormal_tail_n3_flag, mlqae              20            4550.6              0.23
 -----------------------------------------------------------------------------------------
 
 Optimization pipeline
@@ -238,10 +238,10 @@ Seconds to lower, compile and execute 1000 shots of Q^16 A on a uniform threshol
 Backend                         4 qubits       8 qubits       12 qubits
 -----------------------------------------------------------------------
 Reference simulator        0.003 ± 0.000  0.005 ± 0.000              --
-Qiskit 2.5.2               0.094 ± 0.001  0.128 ± 0.001   0.190 ± 0.002
-Cirq 1.7.0                 0.034 ± 0.000  0.085 ± 0.000   0.173 ± 0.001
-PennyLane 0.45.1           0.035 ± 0.000  0.117 ± 0.002   8.441 ± 0.015
-Microsoft Q# (QDK 1.32.3)  1.124 ± 0.010  6.825 ± 0.036  83.751 ± 0.384
+Qiskit 2.5.2               0.094 ± 0.001  0.129 ± 0.004   0.190 ± 0.002
+Cirq 1.7.0                 0.035 ± 0.000  0.086 ± 0.001   0.175 ± 0.001
+PennyLane 0.45.1           0.036 ± 0.000  0.114 ± 0.002   8.586 ± 0.013
+Microsoft Q# (QDK 1.32.3)  1.127 ± 0.010  6.834 ± 0.036  84.172 ± 1.245
 -----------------------------------------------------------------------
 
 Phase-oracle synthesis

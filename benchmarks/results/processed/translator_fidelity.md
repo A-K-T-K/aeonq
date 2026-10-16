@@ -1,6 +1,6 @@
 # Translator fidelity on amplitude-estimation circuits
 
-Generated 2026-10-10T08:55:50.988067+00:00 by `benchmarks/translator_fidelity.py`. Every program was lowered by a verified aeonq adapter and then converted only by third-party code; the translated program was evaluated only with the target SDK. Operator comparisons are against the source program's own matrix, entry by entry; counts use 4000 shots of U|0...0> and a G-test at p >= 1e-3.
+Generated 2026-10-16T06:42:51.970304+00:00 by `benchmarks/translator_fidelity.py`. Every program was lowered by a verified aeonq adapter and then converted only by third-party code; the translated program was evaluated only with the target SDK. Operator comparisons are against the source program's own matrix, entry by entry; counts use 4000 shots of U|0...0> and a G-test at p >= 1e-3.
 
 * programs attempted: 1098 (61 on unavailable paths)
 * programs translated and evaluated: 702

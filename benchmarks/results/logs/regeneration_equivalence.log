@@ -58,23 +58,3 @@ estimators lognormal_tail_n2_k2_flag mlqae qiskit
 estimators lognormal_tail_n2_k2_flag mlqae cirq
 estimators lognormal_tail_n2_k2_flag mlqae pennylane
 estimators lognormal_tail_n2_k2_flag mlqae qsharp
-Traceback (most recent call last):
-  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\equivalence_study.py", line 218, in <module>
-    estimators(
-    ~~~~~~~~~~^
-        directory / "equivalence_estimators.jsonl",
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-        workers=arguments.workers,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\equivalence_study.py", line 199, in estimators
-    validate_extended(read_records(output), "equivalence_estimators", repetitions)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 198, in validate_extended
-    keys, expected = extended_expected(study, repetitions)
-                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 156, in extended_expected
-    from benchmarks import equivalence_study as equiv
-ModuleNotFoundError: No module named 'benchmarks'

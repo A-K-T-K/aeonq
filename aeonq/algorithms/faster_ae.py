@@ -17,7 +17,7 @@ near either end of the domain (for example a close to 1).
 """
 
 from dataclasses import dataclass
-from math import acos, asin, atan2, ceil, cos, floor, isfinite, log, pi, sin
+from math import acos, asin, atan2, ceil, cos, floor, isfinite, log, log2, pi, sin
 from time import perf_counter
 
 from aeonq.adapters.base import BackendAdapter
@@ -30,6 +30,21 @@ from aeonq.runtime.result import AEResult
 
 ATTENUATION = 5.0
 THETA_MAX = asin(1 / ATTENUATION)
+
+
+def iterations_for_epsilon(epsilon: float) -> int:
+    """Fewest iterations whose final second-stage interval is <= 2*epsilon wide.
+
+    Iteration l leaves a phase window of (2*pi/3) / (2^(l+1) + 2). Since
+    a = 25 sin^2(theta) and both endpoints lie in [0, THETA_MAX], an amplitude
+    width is at most 25 sin(2*THETA_MAX) = 2*sqrt(24) times the phase width.
+    """
+    if not 0 < epsilon < 1:
+        raise ValueError("epsilon must be in (0,1)")
+    slope = ATTENUATION**2 * sin(2 * THETA_MAX)
+    # Smallest l with slope * (2*pi/3) / (2^(l+1) + 2) <= 2*epsilon.
+    needed = slope * pi / (3 * epsilon) - 2
+    return max(1, ceil(log2(needed)) - 1) if needed > 1 else 1
 
 
 def _lift_predicate(
@@ -52,7 +67,7 @@ def _lift_predicate(
 
 
 def attenuated_problem(problem: AEProblem) -> AEProblem:
-    """Construct A' = A ⊗ Ry(2 asin(1/5)), χ' = χ AND extra_bit."""
+    """Construct A' = A âŠ— Ry(2 asin(1/5)), Ï‡' = Ï‡ AND extra_bit."""
     n = problem.state_preparation.n_qubits
     prep = StatePreparation(
         Sequence(
@@ -85,21 +100,30 @@ def attenuated_problem(problem: AEProblem) -> AEProblem:
 class FasterAE:
     epsilon: float
     alpha: float = 0.05
-    max_iterations: int = 4
+    # None derives the count from epsilon (see ``iterations_for_epsilon``).
+    max_iterations: int | None = None
     max_total_shots: int = 1_000_000
     seed: int = 0
 
     def __post_init__(self) -> None:
         if not 0 < self.epsilon < 1 or not 0 < self.alpha < 1:
             raise ValueError("epsilon and alpha must be in (0,1)")
-        if not isinstance(self.max_iterations, int) or self.max_iterations < 1:
+        if self.max_iterations is not None and (
+            not isinstance(self.max_iterations, int) or self.max_iterations < 1
+        ):
             raise ValueError("max_iterations must be positive")
         if not isinstance(self.max_total_shots, int) or self.max_total_shots < 1:
             raise ValueError("max_total_shots must be positive")
 
     @property
+    def iterations(self) -> int:
+        if self.max_iterations is None:
+            return iterations_for_epsilon(self.epsilon)
+        return self.max_iterations
+
+    @property
     def required_shots(self) -> tuple[int, int]:
-        delta = self.alpha / (2 * self.max_iterations)
+        delta = self.alpha / (2 * self.iterations)
         multiplier = log(2 / delta)
         return ceil(1944 * multiplier), ceil(972 * multiplier)
 
@@ -108,7 +132,8 @@ class FasterAE:
         adapted = attenuated_problem(problem)
         experiment = Experiment(adapted, backend)
         n_first, n_second = self.required_shots
-        delta = self.alpha / (2 * self.max_iterations)
+        iterations = self.iterations
+        delta = self.alpha / (2 * iterations)
         theta = (0.0, THETA_MAX)
         first_stage = True
         j0: int | None = None
@@ -125,7 +150,7 @@ class FasterAE:
             per_power[power] = per_power.get(power, 0) + shots
             return 1.0 - 2.0 * successes / shots
 
-        for j in range(1, self.max_iterations + 1):
+        for j in range(1, iterations + 1):
             main_power = 2 ** (j - 1)
             shots = n_first if first_stage else n_second
             needed = shots if first_stage else 2 * shots
@@ -196,11 +221,7 @@ class FasterAE:
             if original_interval[1] - original_interval[0] <= 2 * self.epsilon:
                 status = "CONVERGED"
                 break
-            if (
-                first_stage
-                and 2 ** (j + 1) * theta[1] >= 3 * pi / 8
-                and j < self.max_iterations
-            ):
+            if first_stage and 2 ** (j + 1) * theta[1] >= 3 * pi / 8 and j < iterations:
                 j0 = j
                 nu = 2**j0 * sum(theta)
                 first_stage = False

@@ -1,127 +1,127 @@
 timestamp_utc,sdk,sdk_version,case_id,amplitude,power,pipeline,compile_seconds,qubits,depth,two_qubit_gates,one_qubit_gates,multi_qubit_gates,t_count,executable_success,error,peak_python_bytes,ancillas,metric_scope,primitive_statements
-2026-10-07T03:08:48.649604+00:00,cirq,1.7.0,bernoulli_0.25,0.25,0,naive_materialization,0.007521499996073544,1,2,0,2,0,,True,,191282,0,native SDK local metrics,
-2026-10-07T03:08:48.664526+00:00,cirq,1.7.0,bernoulli_0.25,0.25,0,ordinary_sdk,0.0011266999645158648,1,2,0,2,0,,True,,38158,0,native SDK local metrics,
-2026-10-07T03:08:48.670600+00:00,cirq,1.7.0,bernoulli_0.25,0.25,0,ae_aware,0.00047539989463984966,1,2,0,2,0,,True,,24828,0,native SDK local metrics,
-2026-10-07T03:08:48.675415+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,0,naive_materialization,0.00024110008962452412,1,2,0,2,0,,True,,56281,0,native SDK local metrics,
-2026-10-07T03:08:48.680927+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,0,ordinary_sdk,0.00018260010983794928,1,2,0,2,0,,True,,27152,0,native SDK local metrics,
-2026-10-07T03:08:48.684993+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,0,ae_aware,0.0004986999556422234,1,2,0,2,0,,True,,26456,0,native SDK local metrics,
-2026-10-07T03:08:48.689616+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,0,naive_materialization,0.0848948999773711,1,,,,,,True,,23060,0,native operation counts; QDK depth and gate counts unavailable,1
-2026-10-07T03:08:48.775941+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,0,ordinary_sdk,0.0018291000742465258,1,,,,,,True,,20826,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:48.779307+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,0,ae_aware,0.00043160002678632736,,,,,,,False,ValueError: depth metric required,6316,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:48.780889+00:00,cirq,1.7.0,bernoulli_0.25,0.25,1,naive_materialization,0.0009372999193146825,1,8,0,8,0,,True,,78212,0,native SDK local metrics,
-2026-10-07T03:08:48.789037+00:00,cirq,1.7.0,bernoulli_0.25,0.25,1,ordinary_sdk,0.0008955999510362744,1,8,0,8,0,,True,,39463,0,native SDK local metrics,
-2026-10-07T03:08:48.796108+00:00,cirq,1.7.0,bernoulli_0.25,0.25,1,ae_aware,0.002009499934501946,1,8,0,8,0,,True,,39514,0,native SDK local metrics,
-2026-10-07T03:08:48.804483+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,1,naive_materialization,0.003999800072051585,1,9,0,8,0,,True,,238269,0,native SDK local metrics,
-2026-10-07T03:08:48.814419+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,1,ordinary_sdk,0.0005894000642001629,1,9,0,8,0,,True,,31320,0,native SDK local metrics,
-2026-10-07T03:08:48.819879+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,1,ae_aware,0.0014211999950930476,1,9,0,8,0,,True,,31677,0,native SDK local metrics,
-2026-10-07T03:08:48.826384+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,1,naive_materialization,0.0023180999560281634,1,,,,,,True,,28412,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:48.830338+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,1,ordinary_sdk,0.0024788000155240297,1,,,,,,True,,35978,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:48.834754+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,1,ae_aware,0.0010077001061290503,,,,,,,False,ValueError: depth metric required,13964,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:48.837001+00:00,cirq,1.7.0,bernoulli_0.25,0.25,2,naive_materialization,0.0013732999796047807,1,14,0,14,0,,True,,55808,0,native SDK local metrics,
-2026-10-07T03:08:48.845913+00:00,cirq,1.7.0,bernoulli_0.25,0.25,2,ordinary_sdk,0.0011554999509826303,1,14,0,14,0,,True,,45980,0,native SDK local metrics,
-2026-10-07T03:08:48.856643+00:00,cirq,1.7.0,bernoulli_0.25,0.25,2,ae_aware,0.002305199974216521,1,14,0,14,0,,True,,45957,0,native SDK local metrics,
-2026-10-07T03:08:48.867007+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,2,naive_materialization,0.001114899991080165,1,16,0,14,0,,True,,34879,0,native SDK local metrics,
-2026-10-07T03:08:48.874465+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,2,ordinary_sdk,0.0010140999220311642,1,16,0,14,0,,True,,34074,0,native SDK local metrics,
-2026-10-07T03:08:48.881417+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,2,ae_aware,0.002131100045517087,1,16,0,14,0,,True,,35063,0,native SDK local metrics,
-2026-10-07T03:08:48.889252+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,2,naive_materialization,0.003973899991251528,1,,,,,,True,,59390,0,native operation counts; QDK depth and gate counts unavailable,15
-2026-10-07T03:08:48.895332+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,2,ordinary_sdk,0.0033379000378772616,1,,,,,,True,,58182,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:48.901053+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,2,ae_aware,0.0010177000658586621,,,,,,,False,ValueError: depth metric required,13838,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:48.903305+00:00,cirq,1.7.0,bernoulli_0.25,0.25,4,naive_materialization,0.0025254000211134553,1,26,0,26,0,,True,,86238,0,native SDK local metrics,
-2026-10-07T03:08:48.916271+00:00,cirq,1.7.0,bernoulli_0.25,0.25,4,ordinary_sdk,0.0011119999689981341,1,26,0,26,0,,True,,60751,0,native SDK local metrics,
-2026-10-07T03:08:48.927855+00:00,cirq,1.7.0,bernoulli_0.25,0.25,4,ae_aware,0.002234600018709898,1,26,0,26,0,,True,,60545,0,native SDK local metrics,
-2026-10-07T03:08:48.940414+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,4,naive_materialization,0.0019096999894827604,1,30,0,26,0,,True,,40739,0,native SDK local metrics,
-2026-10-07T03:08:48.950665+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,4,ordinary_sdk,0.0019471000414341688,1,30,0,26,0,,True,,40222,0,native SDK local metrics,
-2026-10-07T03:08:48.960733+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,4,ae_aware,0.003670299891382456,1,30,0,26,0,,True,,42299,0,native SDK local metrics,
-2026-10-07T03:08:48.972650+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,4,naive_materialization,0.007975500077009201,1,,,,,,True,,108030,0,native operation counts; QDK depth and gate counts unavailable,29
-2026-10-07T03:08:48.983109+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,4,ordinary_sdk,0.005586900049820542,1,,,,,,True,,95542,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:48.991808+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,4,ae_aware,0.0010593000333756208,,,,,,,False,ValueError: depth metric required,14362,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:48.994019+00:00,cirq,1.7.0,bernoulli_0.25,0.25,8,naive_materialization,0.004532600054517388,1,50,0,50,0,,True,,148446,0,native SDK local metrics,
-2026-10-07T03:08:49.014775+00:00,cirq,1.7.0,bernoulli_0.25,0.25,8,ordinary_sdk,0.0014439000515267253,1,50,0,50,0,,True,,81859,0,native SDK local metrics,
-2026-10-07T03:08:49.032330+00:00,cirq,1.7.0,bernoulli_0.25,0.25,8,ae_aware,0.002814000006765127,1,50,0,50,0,,True,,81633,0,native SDK local metrics,
-2026-10-07T03:08:49.051417+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,8,naive_materialization,0.0033558999421074986,1,58,0,50,0,,True,,54123,0,native SDK local metrics,
-2026-10-07T03:08:49.067653+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,8,ordinary_sdk,0.003600299940444529,1,58,0,50,0,,True,,53803,0,native SDK local metrics,
-2026-10-07T03:08:49.084097+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,8,ae_aware,0.007003900012932718,1,58,0,50,0,,True,,54979,0,native SDK local metrics,
-2026-10-07T03:08:49.103764+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,8,naive_materialization,0.017810999997891486,1,,,,,,True,,211421,0,native operation counts; QDK depth and gate counts unavailable,57
-2026-10-07T03:08:49.124583+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,8,ordinary_sdk,0.007458799984306097,1,,,,,,True,,155617,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:49.136572+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,8,ae_aware,0.0010235999943688512,,,,,,,False,ValueError: depth metric required,14570,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:49.138609+00:00,cirq,1.7.0,bernoulli_0.25,0.25,16,naive_materialization,0.008528799982741475,1,98,0,98,0,,True,,247581,0,native SDK local metrics,
-2026-10-07T03:08:49.174028+00:00,cirq,1.7.0,bernoulli_0.25,0.25,16,ordinary_sdk,0.0017121999990195036,1,98,0,98,0,,True,,135747,0,native SDK local metrics,
-2026-10-07T03:08:49.202536+00:00,cirq,1.7.0,bernoulli_0.25,0.25,16,ae_aware,0.0034031999530270696,1,98,0,98,0,,True,,136442,0,native SDK local metrics,
-2026-10-07T03:08:49.232970+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,16,naive_materialization,0.006725599989295006,1,114,0,98,0,,True,,85337,0,native SDK local metrics,
-2026-10-07T03:08:49.261107+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,16,ordinary_sdk,0.006375900004059076,1,114,0,98,0,,True,,82487,0,native SDK local metrics,
-2026-10-07T03:08:49.288292+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,16,ae_aware,0.013492300058715045,1,114,0,98,0,,True,,85863,0,native SDK local metrics,
-2026-10-07T03:08:49.322543+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,16,naive_materialization,0.03201910003554076,1,,,,,,True,,362325,0,native operation counts; QDK depth and gate counts unavailable,113
-2026-10-07T03:08:49.359463+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,16,ordinary_sdk,0.012904500006698072,1,,,,,,True,,290628,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:49.378476+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,16,ae_aware,0.0010137000354006886,,,,,,,False,ValueError: depth metric required,15322,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:49.380602+00:00,cirq,1.7.0,bernoulli_0.25,0.25,32,naive_materialization,0.016532700043171644,1,194,0,194,0,,True,,472307,0,native SDK local metrics,
-2026-10-07T03:08:49.447230+00:00,cirq,1.7.0,bernoulli_0.25,0.25,32,ordinary_sdk,0.0027086000191047788,1,194,0,194,0,,True,,245726,0,native SDK local metrics,
-2026-10-07T03:08:49.498739+00:00,cirq,1.7.0,bernoulli_0.25,0.25,32,ae_aware,0.00507020007353276,1,194,0,194,0,,True,,246153,0,native SDK local metrics,
-2026-10-07T03:08:49.553188+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,32,naive_materialization,0.012920200009830296,1,226,0,194,0,,True,,150280,0,native SDK local metrics,
-2026-10-07T03:08:49.604536+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,32,ordinary_sdk,0.013533399906009436,1,226,0,194,0,,True,,143359,0,native SDK local metrics,
-2026-10-07T03:08:49.655919+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,32,ae_aware,0.02790740004274994,1,226,0,194,0,,True,,149938,0,native SDK local metrics,
-2026-10-07T03:08:49.722468+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,32,naive_materialization,0.07312139996793121,1,,,,,,True,,673707,0,native operation counts; QDK depth and gate counts unavailable,225
-2026-10-07T03:08:49.805537+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,32,ordinary_sdk,0.02252200001385063,1,,,,,,True,,476315,0,native operation counts; QDK depth and gate counts unavailable,8
-2026-10-07T03:08:49.836338+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,32,ae_aware,0.001045399927534163,,,,,,,False,ValueError: depth metric required,16050,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:49.838443+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,0,naive_materialization,0.00035830005072057247,2,2,0,4,0,,True,,24962,0,native SDK local metrics,
-2026-10-07T03:08:49.844028+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,0,ordinary_sdk,0.0022030998952686787,2,2,0,4,0,,True,,31456,0,native SDK local metrics,
-2026-10-07T03:08:49.851639+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,0,ae_aware,0.0006862999871373177,2,2,0,4,0,,True,,24206,0,native SDK local metrics,
-2026-10-07T03:08:49.857556+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,0,naive_materialization,0.00026430003345012665,2,4,0,4,0,,True,,29784,0,native SDK local metrics,
-2026-10-07T03:08:49.861753+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,0,ordinary_sdk,0.00023339991457760334,2,4,0,4,0,,True,,26336,0,native SDK local metrics,
-2026-10-07T03:08:49.865552+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,0,ae_aware,0.0005851999158039689,2,4,0,4,0,,True,,26685,0,native SDK local metrics,
-2026-10-07T03:08:49.870129+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,0,naive_materialization,0.018729800009168684,2,,,,,,True,,470660,0,native operation counts; QDK depth and gate counts unavailable,2
-2026-10-07T03:08:49.896979+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,0,ordinary_sdk,0.021988100023008883,2,,,,,,True,,490320,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:49.927319+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,0,ae_aware,0.0005626999773085117,,,,,,,False,ValueError: depth metric required,6127,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:49.928992+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,1,naive_materialization,0.0018411000492051244,2,8,1,13,0,,True,,89951,0,native SDK local metrics,
-2026-10-07T03:08:49.939633+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,1,ordinary_sdk,0.001868399907834828,2,8,1,13,0,,True,,45383,0,native SDK local metrics,
-2026-10-07T03:08:49.949329+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,1,ae_aware,0.0036540000000968575,2,8,1,13,0,,True,,46384,0,native SDK local metrics,
-2026-10-07T03:08:49.960548+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,1,naive_materialization,0.0013927000109106302,2,15,1,13,0,,True,,51750,0,native SDK local metrics,
-2026-10-07T03:08:49.968851+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,1,ordinary_sdk,0.0012080000014975667,2,15,1,13,0,,True,,35968,0,native SDK local metrics,
-2026-10-07T03:08:49.975673+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,1,ae_aware,0.0024959000293165445,2,15,1,13,0,,True,,37928,0,native SDK local metrics,
-2026-10-07T03:08:49.984157+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,1,naive_materialization,0.022304899990558624,2,,,,,,True,,501372,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:50.017424+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,1,ordinary_sdk,0.023199500050395727,2,,,,,,True,,509350,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:50.050723+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,1,ae_aware,0.0014421999221667647,,,,,,,False,ValueError: depth metric required,17749,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:50.053492+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,2,naive_materialization,0.003127500065602362,2,14,2,22,0,,True,,68333,0,native SDK local metrics,
-2026-10-07T03:08:50.066789+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,2,ordinary_sdk,0.001908399979583919,2,14,2,22,0,,True,,52802,0,native SDK local metrics,
-2026-10-07T03:08:50.079323+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,2,ae_aware,0.003877400071360171,2,14,2,22,0,,True,,52594,0,native SDK local metrics,
-2026-10-07T03:08:50.093604+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,2,naive_materialization,0.0020483999978750944,2,26,2,22,0,,True,,43669,0,native SDK local metrics,
-2026-10-07T03:08:50.103452+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,2,ordinary_sdk,0.0020348000107333064,2,26,2,22,0,,True,,42893,0,native SDK local metrics,
-2026-10-07T03:08:50.113223+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,2,ae_aware,0.0042709000408649445,2,26,2,22,0,,True,,45845,0,native SDK local metrics,
-2026-10-07T03:08:50.124977+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,2,naive_materialization,0.026731999940238893,2,,,,,,True,,594336,0,native operation counts; QDK depth and gate counts unavailable,24
-2026-10-07T03:08:50.161694+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,2,ordinary_sdk,0.02368339989334345,2,,,,,,True,,545790,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:50.195190+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,2,ae_aware,0.0013623000122606754,,,,,,,False,ValueError: depth metric required,19215,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:50.197678+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,4,naive_materialization,0.006034299964085221,2,26,4,40,0,,True,,116290,0,native SDK local metrics,
-2026-10-07T03:08:50.219614+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,4,ordinary_sdk,0.002101300051435828,2,26,4,40,0,,True,,67493,0,native SDK local metrics,
-2026-10-07T03:08:50.237533+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,4,ae_aware,0.004184099962003529,2,26,4,40,0,,True,,65933,0,native SDK local metrics,
-2026-10-07T03:08:50.257672+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,4,naive_materialization,0.003892800072208047,2,48,4,40,0,,True,,58237,0,native SDK local metrics,
-2026-10-07T03:08:50.273079+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,4,ordinary_sdk,0.0038693000096827745,2,48,4,40,0,,True,,56480,0,native SDK local metrics,
-2026-10-07T03:08:50.288087+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,4,ae_aware,0.009250600007362664,2,48,4,40,0,,True,,60669,0,native SDK local metrics,
-2026-10-07T03:08:50.308693+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,4,naive_materialization,0.03648320003412664,2,,,,,,True,,610983,0,native operation counts; QDK depth and gate counts unavailable,46
-2026-10-07T03:08:50.359930+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,4,ordinary_sdk,0.02888520003762096,2,,,,,,True,,597241,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:50.401880+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,4,ae_aware,0.0014198001008480787,,,,,,,False,ValueError: depth metric required,20115,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:50.404313+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,8,naive_materialization,0.0119816999649629,2,50,8,76,0,,True,,204377,0,native SDK local metrics,
-2026-10-07T03:08:50.442697+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,8,ordinary_sdk,0.002473499975167215,2,50,8,76,0,,True,,93805,0,native SDK local metrics,
-2026-10-07T03:08:50.471455+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,8,ae_aware,0.004648700007237494,2,50,8,76,0,,True,,95277,0,native SDK local metrics,
-2026-10-07T03:08:50.502379+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,8,naive_materialization,0.0071446000365540385,2,92,8,76,0,,True,,86949,0,native SDK local metrics,
-2026-10-07T03:08:50.527577+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,8,ordinary_sdk,0.009436900028958917,2,92,8,76,0,,True,,82789,0,native SDK local metrics,
-2026-10-07T03:08:50.555497+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,8,ae_aware,0.015484499977901578,2,92,8,76,0,,True,,91893,0,native SDK local metrics,
-2026-10-07T03:08:50.589583+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,8,naive_materialization,0.04984840005636215,2,,,,,,True,,748606,0,native operation counts; QDK depth and gate counts unavailable,90
-2026-10-07T03:08:50.652318+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,8,ordinary_sdk,0.035744499997235835,2,,,,,,True,,680020,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:50.700907+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,8,ae_aware,0.0014280000468716025,,,,,,,False,ValueError: depth metric required,20027,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:50.703464+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,16,naive_materialization,0.1396970999194309,2,98,16,148,0,,True,,425004,0,native SDK local metrics,
-2026-10-07T03:08:50.893466+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,16,ordinary_sdk,0.003006200073286891,2,98,16,148,0,,True,,188050,0,native SDK local metrics,
-2026-10-07T03:08:50.945510+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,16,ae_aware,0.006319099920801818,2,98,16,148,0,,True,,154553,0,native SDK local metrics,
-2026-10-07T03:08:51.001821+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,16,naive_materialization,0.014540800009854138,2,180,16,148,0,,True,,144044,0,native SDK local metrics,
-2026-10-07T03:08:51.049625+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,16,ordinary_sdk,0.015197500004433095,2,180,16,148,0,,True,,140029,0,native SDK local metrics,
-2026-10-07T03:08:51.098768+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,16,ae_aware,0.031662499997764826,2,180,16,148,0,,True,,152767,0,native SDK local metrics,
-2026-10-07T03:08:51.162603+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,16,naive_materialization,0.08640419994480908,2,,,,,,True,,985244,0,native operation counts; QDK depth and gate counts unavailable,178
-2026-10-07T03:08:51.264921+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,16,ordinary_sdk,0.03694400005042553,2,,,,,,True,,836423,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:51.315481+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,16,ae_aware,0.0013636000221595168,,,,,,,False,ValueError: depth metric required,19099,,native operation counts; QDK depth and gate counts unavailable,
-2026-10-07T03:08:51.317920+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,32,naive_materialization,0.0425547999329865,2,194,32,292,0,,True,,716014,0,native SDK local metrics,
-2026-10-07T03:08:51.448197+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,32,ordinary_sdk,0.0036594000412151217,2,194,32,292,0,,True,,256384,0,native SDK local metrics,
-2026-10-07T03:08:51.537425+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,32,ae_aware,0.007204300025478005,2,194,32,292,0,,True,,257541,0,native SDK local metrics,
-2026-10-07T03:08:51.632476+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,32,naive_materialization,0.027971599949523807,2,356,32,292,0,,True,,258592,0,native SDK local metrics,
-2026-10-07T03:08:51.718846+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,32,ordinary_sdk,0.028544100001454353,2,356,32,292,0,,True,,258264,0,native SDK local metrics,
-2026-10-07T03:08:51.805150+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,32,ae_aware,0.06094579992350191,2,356,32,292,0,,True,,265512,0,native SDK local metrics,
-2026-10-07T03:08:51.923084+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,32,naive_materialization,0.15701730002183467,2,,,,,,True,,1506557,0,native operation counts; QDK depth and gate counts unavailable,354
-2026-10-07T03:08:52.101988+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,32,ordinary_sdk,0.05335059994831681,2,,,,,,True,,1135890,0,native operation counts; QDK depth and gate counts unavailable,13
-2026-10-07T03:08:52.198721+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,32,ae_aware,0.0014615000691264868,,,,,,,False,ValueError: depth metric required,20539,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:24.453381+00:00,cirq,1.7.0,bernoulli_0.25,0.25,0,naive_materialization,0.0008248999947682023,1,2,0,2,0,,True,,190859,0,native SDK local metrics,
+2026-10-16T05:11:24.460804+00:00,cirq,1.7.0,bernoulli_0.25,0.25,0,ordinary_sdk,0.0010043000220321119,1,2,0,2,0,,True,,38113,0,native SDK local metrics,
+2026-10-16T05:11:24.466201+00:00,cirq,1.7.0,bernoulli_0.25,0.25,0,ae_aware,0.00044739997247233987,1,2,0,2,0,,True,,24740,0,native SDK local metrics,
+2026-10-16T05:11:24.470704+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,0,naive_materialization,0.0002125999890267849,1,2,0,2,0,,True,,56614,0,native SDK local metrics,
+2026-10-16T05:11:24.475424+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,0,ordinary_sdk,0.0001553000183776021,1,2,0,2,0,,True,,27245,0,native SDK local metrics,
+2026-10-16T05:11:24.478888+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,0,ae_aware,0.0003648999845609069,1,2,0,2,0,,True,,26179,0,native SDK local metrics,
+2026-10-16T05:11:24.482472+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,0,naive_materialization,0.06911919999402016,1,,,,,,True,,23060,0,native operation counts; QDK depth and gate counts unavailable,1
+2026-10-16T05:11:24.552851+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,0,ordinary_sdk,0.0015373000060208142,1,,,,,,True,,20826,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:24.555714+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,0,ae_aware,0.00033599999733269215,,,,,,,False,ValueError: depth metric required,6316,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:24.556833+00:00,cirq,1.7.0,bernoulli_0.25,0.25,1,naive_materialization,0.0008406999986618757,1,8,0,8,0,,True,,78362,0,native SDK local metrics,
+2026-10-16T05:11:24.564203+00:00,cirq,1.7.0,bernoulli_0.25,0.25,1,ordinary_sdk,0.0009240000508725643,1,8,0,8,0,,True,,39463,0,native SDK local metrics,
+2026-10-16T05:11:24.570709+00:00,cirq,1.7.0,bernoulli_0.25,0.25,1,ae_aware,0.0017282000044360757,1,8,0,8,0,,True,,39648,0,native SDK local metrics,
+2026-10-16T05:11:24.577842+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,1,naive_materialization,0.0031911999685689807,1,9,0,8,0,,True,,237497,0,native SDK local metrics,
+2026-10-16T05:11:24.586622+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,1,ordinary_sdk,0.0005672000115737319,1,9,0,8,0,,True,,31586,0,native SDK local metrics,
+2026-10-16T05:11:24.591471+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,1,ae_aware,0.0011777000036090612,1,9,0,8,0,,True,,31520,0,native SDK local metrics,
+2026-10-16T05:11:24.596872+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,1,naive_materialization,0.0019180999952368438,1,,,,,,True,,28412,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:24.600064+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,1,ordinary_sdk,0.0022107999539002776,1,,,,,,True,,35978,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:24.603802+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,1,ae_aware,0.0009397999965585768,,,,,,,False,ValueError: depth metric required,13964,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:24.605606+00:00,cirq,1.7.0,bernoulli_0.25,0.25,2,naive_materialization,0.0013245000154711306,1,14,0,14,0,,True,,55898,0,native SDK local metrics,
+2026-10-16T05:11:24.614017+00:00,cirq,1.7.0,bernoulli_0.25,0.25,2,ordinary_sdk,0.0009191000135615468,1,14,0,14,0,,True,,45935,0,native SDK local metrics,
+2026-10-16T05:11:24.621996+00:00,cirq,1.7.0,bernoulli_0.25,0.25,2,ae_aware,0.0018152000266127288,1,14,0,14,0,,True,,46000,0,native SDK local metrics,
+2026-10-16T05:11:24.630715+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,2,naive_materialization,0.0010025000083260238,1,16,0,14,0,,True,,34932,0,native SDK local metrics,
+2026-10-16T05:11:24.637395+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,2,ordinary_sdk,0.0009374000364914536,1,16,0,14,0,,True,,34127,0,native SDK local metrics,
+2026-10-16T05:11:24.643600+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,2,ae_aware,0.0019208999583497643,1,16,0,14,0,,True,,35116,0,native SDK local metrics,
+2026-10-16T05:11:24.650896+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,2,naive_materialization,0.003510700014885515,1,,,,,,True,,59390,0,native operation counts; QDK depth and gate counts unavailable,15
+2026-10-16T05:11:24.655915+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,2,ordinary_sdk,0.0032583000138401985,1,,,,,,True,,58182,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:24.660584+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,2,ae_aware,0.0009453999809920788,,,,,,,False,ValueError: depth metric required,13838,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:24.662350+00:00,cirq,1.7.0,bernoulli_0.25,0.25,4,naive_materialization,0.0023346999660134315,1,26,0,26,0,,True,,85971,0,native SDK local metrics,
+2026-10-16T05:11:24.674505+00:00,cirq,1.7.0,bernoulli_0.25,0.25,4,ordinary_sdk,0.001007300044875592,1,26,0,26,0,,True,,60662,0,native SDK local metrics,
+2026-10-16T05:11:24.685002+00:00,cirq,1.7.0,bernoulli_0.25,0.25,4,ae_aware,0.0020136000239290297,1,26,0,26,0,,True,,60588,0,native SDK local metrics,
+2026-10-16T05:11:24.696281+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,4,naive_materialization,0.0017401999793946743,1,30,0,26,0,,True,,40952,0,native SDK local metrics,
+2026-10-16T05:11:24.705802+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,4,ordinary_sdk,0.0017518000095151365,1,30,0,26,0,,True,,40160,0,native SDK local metrics,
+2026-10-16T05:11:24.715024+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,4,ae_aware,0.003444999980274588,1,30,0,26,0,,True,,42299,0,native SDK local metrics,
+2026-10-16T05:11:24.725787+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,4,naive_materialization,0.007152100035455078,1,,,,,,True,,108094,0,native operation counts; QDK depth and gate counts unavailable,29
+2026-10-16T05:11:24.734787+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,4,ordinary_sdk,0.00395290000597015,1,,,,,,True,,95478,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:24.740731+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,4,ae_aware,0.0009586000232957304,,,,,,,False,ValueError: depth metric required,14362,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:24.742639+00:00,cirq,1.7.0,bernoulli_0.25,0.25,8,naive_materialization,0.004175499954726547,1,50,0,50,0,,True,,148266,0,native SDK local metrics,
+2026-10-16T05:11:24.762280+00:00,cirq,1.7.0,bernoulli_0.25,0.25,8,ordinary_sdk,0.00121189997298643,1,50,0,50,0,,True,,81768,0,native SDK local metrics,
+2026-10-16T05:11:24.778321+00:00,cirq,1.7.0,bernoulli_0.25,0.25,8,ae_aware,0.0024361999821849167,1,50,0,50,0,,True,,81675,0,native SDK local metrics,
+2026-10-16T05:11:24.795775+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,8,naive_materialization,0.003333800006657839,1,58,0,50,0,,True,,54076,0,native SDK local metrics,
+2026-10-16T05:11:24.811035+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,8,ordinary_sdk,0.003103499999269843,1,58,0,50,0,,True,,53761,0,native SDK local metrics,
+2026-10-16T05:11:24.825702+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,8,ae_aware,0.006514999957289547,1,58,0,50,0,,True,,55192,0,native SDK local metrics,
+2026-10-16T05:11:24.843459+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,8,naive_materialization,0.013082799967378378,1,,,,,,True,,211789,0,native operation counts; QDK depth and gate counts unavailable,57
+2026-10-16T05:11:24.859193+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,8,ordinary_sdk,0.006291800003964454,1,,,,,,True,,154881,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:24.868395+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,8,ae_aware,0.0009977000299841166,,,,,,,False,ValueError: depth metric required,14938,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:24.870422+00:00,cirq,1.7.0,bernoulli_0.25,0.25,16,naive_materialization,0.00799630000256002,1,98,0,98,0,,True,,248063,0,native SDK local metrics,
+2026-10-16T05:11:24.904944+00:00,cirq,1.7.0,bernoulli_0.25,0.25,16,ordinary_sdk,0.0017133000073954463,1,98,0,98,0,,True,,135835,0,native SDK local metrics,
+2026-10-16T05:11:24.933012+00:00,cirq,1.7.0,bernoulli_0.25,0.25,16,ae_aware,0.003162299981340766,1,98,0,98,0,,True,,136398,0,native SDK local metrics,
+2026-10-16T05:11:24.962271+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,16,naive_materialization,0.006174599984660745,1,114,0,98,0,,True,,85180,0,native SDK local metrics,
+2026-10-16T05:11:24.988655+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,16,ordinary_sdk,0.006444500002544373,1,114,0,98,0,,True,,83087,0,native SDK local metrics,
+2026-10-16T05:11:25.015264+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,16,ae_aware,0.012651099998038262,1,114,0,98,0,,True,,85961,0,native SDK local metrics,
+2026-10-16T05:11:25.047385+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,16,naive_materialization,0.026447600044775754,1,,,,,,True,,362325,0,native operation counts; QDK depth and gate counts unavailable,113
+2026-10-16T05:11:25.078249+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,16,ordinary_sdk,0.011205800052266568,1,,,,,,True,,290628,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:25.094738+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,16,ae_aware,0.0009879999561235309,,,,,,,False,ValueError: depth metric required,15322,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:25.096798+00:00,cirq,1.7.0,bernoulli_0.25,0.25,32,naive_materialization,0.01617459999397397,1,194,0,194,0,,True,,471981,0,native SDK local metrics,
+2026-10-16T05:11:25.160053+00:00,cirq,1.7.0,bernoulli_0.25,0.25,32,ordinary_sdk,0.002553700003772974,1,194,0,194,0,,True,,245502,0,native SDK local metrics,
+2026-10-16T05:11:25.209411+00:00,cirq,1.7.0,bernoulli_0.25,0.25,32,ae_aware,0.004711400019004941,1,194,0,194,0,,True,,246108,0,native SDK local metrics,
+2026-10-16T05:11:25.260341+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,32,naive_materialization,0.01207349996548146,1,226,0,194,0,,True,,149733,0,native SDK local metrics,
+2026-10-16T05:11:25.308994+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,32,ordinary_sdk,0.012483099999371916,1,226,0,194,0,,True,,142220,0,native SDK local metrics,
+2026-10-16T05:11:25.357173+00:00,pennylane,0.45.1,bernoulli_0.25,0.25,32,ae_aware,0.02503790002083406,1,226,0,194,0,,True,,149616,0,native SDK local metrics,
+2026-10-16T05:11:25.418662+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,32,naive_materialization,0.05851630005054176,1,,,,,,True,,673979,0,native operation counts; QDK depth and gate counts unavailable,225
+2026-10-16T05:11:25.485535+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,32,ordinary_sdk,0.01944930001627654,1,,,,,,True,,476315,0,native operation counts; QDK depth and gate counts unavailable,8
+2026-10-16T05:11:25.512871+00:00,qsharp,1.32.3,bernoulli_0.25,0.25,32,ae_aware,0.0010234999936074018,,,,,,,False,ValueError: depth metric required,16050,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:25.514975+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,0,naive_materialization,0.00034710002364590764,2,2,0,4,0,,True,,24916,0,native SDK local metrics,
+2026-10-16T05:11:25.520194+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,0,ordinary_sdk,0.0019455000292509794,2,2,0,4,0,,True,,31360,0,native SDK local metrics,
+2026-10-16T05:11:25.526761+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,0,ae_aware,0.000604800006840378,2,2,0,4,0,,True,,23799,0,native SDK local metrics,
+2026-10-16T05:11:25.531942+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,0,naive_materialization,0.00024720001965761185,2,4,0,4,0,,True,,29837,0,native SDK local metrics,
+2026-10-16T05:11:25.535872+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,0,ordinary_sdk,0.00021839997498318553,2,4,0,4,0,,True,,26442,0,native SDK local metrics,
+2026-10-16T05:11:25.539378+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,0,ae_aware,0.0005070000188425183,2,4,0,4,0,,True,,26685,0,native SDK local metrics,
+2026-10-16T05:11:25.543160+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,0,naive_materialization,0.016247700026724488,2,,,,,,True,,470660,0,native operation counts; QDK depth and gate counts unavailable,2
+2026-10-16T05:11:25.566157+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,0,ordinary_sdk,0.018237899988889694,2,,,,,,True,,490320,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:25.591374+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,0,ae_aware,0.000493900035507977,,,,,,,False,ValueError: depth metric required,6127,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:25.593176+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,1,naive_materialization,0.001750499999616295,2,8,1,13,0,,True,,90082,0,native SDK local metrics,
+2026-10-16T05:11:25.603736+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,1,ordinary_sdk,0.0017180999857373536,2,8,1,13,0,,True,,45517,0,native SDK local metrics,
+2026-10-16T05:11:25.612827+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,1,ae_aware,0.0036014000070281327,2,8,1,13,0,,True,,46385,0,native SDK local metrics,
+2026-10-16T05:11:25.623635+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,1,naive_materialization,0.0012438999838195741,2,15,1,13,0,,True,,51857,0,native SDK local metrics,
+2026-10-16T05:11:25.630896+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,1,ordinary_sdk,0.0011309999972581863,2,15,1,13,0,,True,,35869,0,native SDK local metrics,
+2026-10-16T05:11:25.637324+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,1,ae_aware,0.0023379999911412597,2,15,1,13,0,,True,,37981,0,native SDK local metrics,
+2026-10-16T05:11:25.644825+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,1,naive_materialization,0.018947699980344623,2,,,,,,True,,501616,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:25.670775+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,1,ordinary_sdk,0.02119430003222078,2,,,,,,True,,509350,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:25.700709+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,1,ae_aware,0.001343499985523522,,,,,,,False,ValueError: depth metric required,17749,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:25.703124+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,2,naive_materialization,0.003120600013062358,2,14,2,22,0,,True,,68511,0,native SDK local metrics,
+2026-10-16T05:11:25.716686+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,2,ordinary_sdk,0.0018379000248387456,2,14,2,22,0,,True,,52712,0,native SDK local metrics,
+2026-10-16T05:11:25.728556+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,2,ae_aware,0.0037573999725282192,2,14,2,22,0,,True,,52549,0,native SDK local metrics,
+2026-10-16T05:11:25.742309+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,2,naive_materialization,0.0019895999575965106,2,26,2,22,0,,True,,43722,0,native SDK local metrics,
+2026-10-16T05:11:25.751871+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,2,ordinary_sdk,0.0018773000338114798,2,26,2,22,0,,True,,42946,0,native SDK local metrics,
+2026-10-16T05:11:25.760922+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,2,ae_aware,0.004070099967066199,2,26,2,22,0,,True,,45963,0,native SDK local metrics,
+2026-10-16T05:11:25.771893+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,2,naive_materialization,0.023300500004552305,2,,,,,,True,,594092,0,native operation counts; QDK depth and gate counts unavailable,24
+2026-10-16T05:11:25.803222+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,2,ordinary_sdk,0.02085500000976026,2,,,,,,True,,545790,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:25.832183+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,2,ae_aware,0.0014211999950930476,,,,,,,False,ValueError: depth metric required,19215,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:25.834865+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,4,naive_materialization,0.005426899995654821,2,26,4,40,0,,True,,116066,0,native SDK local metrics,
+2026-10-16T05:11:25.855411+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,4,ordinary_sdk,0.0019129000138491392,2,26,4,40,0,,True,,67314,0,native SDK local metrics,
+2026-10-16T05:11:25.872177+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,4,ae_aware,0.003765600034967065,2,26,4,40,0,,True,,65977,0,native SDK local metrics,
+2026-10-16T05:11:25.890311+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,4,naive_materialization,0.0035103000118397176,2,48,4,40,0,,True,,58130,0,native SDK local metrics,
+2026-10-16T05:11:25.904396+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,4,ordinary_sdk,0.003469299990683794,2,48,4,40,0,,True,,56586,0,native SDK local metrics,
+2026-10-16T05:11:25.918556+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,4,ae_aware,0.008067200018558651,2,48,4,40,0,,True,,60722,0,native SDK local metrics,
+2026-10-16T05:11:25.937305+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,4,naive_materialization,0.029246400052215904,2,,,,,,True,,610983,0,native operation counts; QDK depth and gate counts unavailable,46
+2026-10-16T05:11:25.974767+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,4,ordinary_sdk,0.024305400031153113,2,,,,,,True,,597393,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:26.009562+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,4,ae_aware,0.0013458000030368567,,,,,,,False,ValueError: depth metric required,19683,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:26.011969+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,8,naive_materialization,0.010634200007189065,2,50,8,76,0,,True,,204466,0,native SDK local metrics,
+2026-10-16T05:11:26.048002+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,8,ordinary_sdk,0.0023279000306501985,2,50,8,76,0,,True,,93804,0,native SDK local metrics,
+2026-10-16T05:11:26.075657+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,8,ae_aware,0.004359700018540025,2,50,8,76,0,,True,,95142,0,native SDK local metrics,
+2026-10-16T05:11:26.105600+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,8,naive_materialization,0.006907999981194735,2,92,8,76,0,,True,,86952,0,native SDK local metrics,
+2026-10-16T05:11:26.130352+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,8,ordinary_sdk,0.007836400007363409,2,92,8,76,0,,True,,83352,0,native SDK local metrics,
+2026-10-16T05:11:26.155580+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,8,ae_aware,0.0144027000060305,2,92,8,76,0,,True,,91786,0,native SDK local metrics,
+2026-10-16T05:11:26.186953+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,8,naive_materialization,0.04103249998297542,2,,,,,,True,,748362,0,native operation counts; QDK depth and gate counts unavailable,90
+2026-10-16T05:11:26.238279+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,8,ordinary_sdk,0.027747100044507533,2,,,,,,True,,679980,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:26.275938+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,8,ae_aware,0.0014223000034689903,,,,,,,False,ValueError: depth metric required,19787,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:26.278674+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,16,naive_materialization,0.021371699986048043,2,98,16,148,0,,True,,373255,0,native SDK local metrics,
+2026-10-16T05:11:26.345305+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,16,ordinary_sdk,0.002564100024756044,2,98,16,148,0,,True,,152968,0,native SDK local metrics,
+2026-10-16T05:11:26.392153+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,16,ae_aware,0.0054487999877892435,2,98,16,148,0,,True,,147170,0,native SDK local metrics,
+2026-10-16T05:11:26.443508+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,16,naive_materialization,0.013474400038830936,2,180,16,148,0,,True,,129068,0,native SDK local metrics,
+2026-10-16T05:11:26.486574+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,16,ordinary_sdk,0.013365000020712614,2,180,16,148,0,,True,,126720,0,native SDK local metrics,
+2026-10-16T05:11:26.529526+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,16,ae_aware,0.028533499978948385,2,180,16,148,0,,True,,134388,0,native SDK local metrics,
+2026-10-16T05:11:26.587458+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,16,naive_materialization,0.07220529997721314,2,,,,,,True,,1012405,0,native operation counts; QDK depth and gate counts unavailable,178
+2026-10-16T05:11:26.672864+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,16,ordinary_sdk,0.03261890000430867,2,,,,,,True,,836423,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:26.718115+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,16,ae_aware,0.0013135999906808138,,,,,,,False,ValueError: depth metric required,19099,,native operation counts; QDK depth and gate counts unavailable,
+2026-10-16T05:11:26.720486+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,32,naive_materialization,0.04111910000210628,2,194,32,292,0,,True,,715473,0,native SDK local metrics,
+2026-10-16T05:11:26.847723+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,32,ordinary_sdk,0.00374839996220544,2,194,32,292,0,,True,,256059,0,native SDK local metrics,
+2026-10-16T05:11:26.935599+00:00,cirq,1.7.0,uniform_threshold_n2_k2,0.5,32,ae_aware,0.007016500050667673,2,194,32,292,0,,True,,257497,0,native SDK local metrics,
+2026-10-16T05:11:27.027387+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,32,naive_materialization,0.026654800050891936,2,356,32,292,0,,True,,258592,0,native SDK local metrics,
+2026-10-16T05:11:27.109837+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,32,ordinary_sdk,0.026376400026492774,2,356,32,292,0,,True,,258264,0,native SDK local metrics,
+2026-10-16T05:11:27.191588+00:00,pennylane,0.45.1,uniform_threshold_n2_k2,0.5,32,ae_aware,0.057383300038054585,2,356,32,292,0,,True,,265512,0,native SDK local metrics,
+2026-10-16T05:11:27.303513+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,32,naive_materialization,0.13627910002833232,2,,,,,,True,,1505405,0,native operation counts; QDK depth and gate counts unavailable,354
+2026-10-16T05:11:27.456565+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,32,ordinary_sdk,0.04452409996883944,2,,,,,,True,,1135890,0,native operation counts; QDK depth and gate counts unavailable,13
+2026-10-16T05:11:27.517724+00:00,qsharp,1.32.3,uniform_threshold_n2_k2,0.5,32,ae_aware,0.0013467000098899007,,,,,,,False,ValueError: depth metric required,20539,,native operation counts; QDK depth and gate counts unavailable,

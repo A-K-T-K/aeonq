@@ -204,7 +204,7 @@ def _faster_ae(
     from aeonq.algorithms.faster_ae import THETA_MAX, attenuated_problem
 
     n_first, n_second = solver.required_shots
-    iterations = solver.max_iterations
+    iterations = solver.iterations
     worst = {"shots": 0, "queries": 0, "evaluations": 0}
     powers: set[int] = set()
     # The stage switch happens after some first-stage iteration j0 < L, or never;

@@ -28,23 +28,131 @@
 0.01 lognormal_tail_n2_k2_flag mlqae
 0.01 lognormal_tail_n3_k5_flag iqae
 0.01 lognormal_tail_n3_k5_flag mlqae
-Traceback (most recent call last):
-  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\noise_study.py", line 166, in <module>
-    run(
-    ~~~^
-        Path(arguments.output),
-        ^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-        workers=arguments.workers,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\AKTK\Desktop\aeonq\benchmarks\noise_study.py", line 152, in run
-    validate_extended(read_records(output), "noise_study", repetitions)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 198, in validate_extended
-    keys, expected = extended_expected(study, repetitions)
-                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\AKTK\Desktop\aeonq\aeonq\benchmarks\validation.py", line 173, in extended_expected
-    from benchmarks import noise_study as noise
-ModuleNotFoundError: No module named 'benchmarks'
+qiskit none False {'operator': 0, 'measurement': 0, 'sampling': 0}
+qiskit drop_global_phase True {'operator': 13, 'measurement': 0, 'sampling': 0}
+qiskit global_phase_sign True {'operator': 1, 'measurement': 0, 'sampling': 0}
+qiskit drop_phase_under_control True {'operator': 7, 'measurement': 0, 'sampling': 0}
+qiskit rotation_sign True {'operator': 24, 'measurement': 0, 'sampling': 3}
+qiskit rotation_half_angle True {'operator': 25, 'measurement': 0, 'sampling': 15}
+qiskit rz_as_phase_gate True {'operator': 4, 'measurement': 0, 'sampling': 0}
+qiskit swap_cx_direction True {'operator': 5, 'measurement': 0, 'sampling': 3}
+qiskit invert_first_control True {'operator': 26, 'measurement': 0, 'sampling': 9}
+qiskit adjoint_ignored True {'operator': 20, 'measurement': 0, 'sampling': 9}
+qiskit grover_power_off_by_one True {'operator': 6, 'measurement': 0, 'sampling': 8}
+qiskit zero_reflection_about_ones True {'operator': 22, 'measurement': 0, 'sampling': 7}
+qiskit objective_reflection_negated True {'operator': 18, 'measurement': 0, 'sampling': 0}
+qiskit reverse_qubit_order True {'operator': 21, 'measurement': 4, 'sampling': 8}
+qiskit reverse_result_bits True {'operator': 0, 'measurement': 4, 'sampling': 8}
+qiskit drop_one_shot True {'operator': 0, 'measurement': 5, 'sampling': 18}
+cirq none False {'operator': 0, 'measurement': 0, 'sampling': 0}
+cirq drop_global_phase True {'operator': 13, 'measurement': 0, 'sampling': 0}
+cirq global_phase_sign True {'operator': 1, 'measurement': 0, 'sampling': 0}
+cirq drop_phase_under_control True {'operator': 7, 'measurement': 0, 'sampling': 0}
+cirq rotation_sign True {'operator': 24, 'measurement': 0, 'sampling': 3}
+cirq rotation_half_angle True {'operator': 25, 'measurement': 0, 'sampling': 15}
+cirq rz_as_phase_gate True {'operator': 4, 'measurement': 0, 'sampling': 0}
+cirq swap_cx_direction True {'operator': 5, 'measurement': 0, 'sampling': 3}
+cirq invert_first_control True {'operator': 26, 'measurement': 0, 'sampling': 9}
+cirq adjoint_ignored True {'operator': 20, 'measurement': 0, 'sampling': 9}
+cirq grover_power_off_by_one True {'operator': 6, 'measurement': 0, 'sampling': 8}
+cirq zero_reflection_about_ones True {'operator': 22, 'measurement': 0, 'sampling': 7}
+cirq objective_reflection_negated True {'operator': 18, 'measurement': 0, 'sampling': 0}
+cirq reverse_qubit_order True {'operator': 21, 'measurement': 4, 'sampling': 8}
+cirq reverse_result_bits True {'operator': 0, 'measurement': 4, 'sampling': 8}
+cirq drop_one_shot True {'operator': 0, 'measurement': 5, 'sampling': 18}
+pennylane none False {'operator': 0, 'measurement': 0, 'sampling': 0}
+pennylane drop_global_phase True {'operator': 13, 'measurement': 0, 'sampling': 0}
+pennylane global_phase_sign True {'operator': 1, 'measurement': 0, 'sampling': 0}
+pennylane drop_phase_under_control True {'operator': 7, 'measurement': 0, 'sampling': 0}
+pennylane rotation_sign True {'operator': 24, 'measurement': 0, 'sampling': 3}
+pennylane rotation_half_angle True {'operator': 25, 'measurement': 0, 'sampling': 15}
+pennylane rz_as_phase_gate True {'operator': 4, 'measurement': 0, 'sampling': 0}
+pennylane swap_cx_direction True {'operator': 5, 'measurement': 0, 'sampling': 3}
+pennylane invert_first_control True {'operator': 26, 'measurement': 0, 'sampling': 9}
+pennylane adjoint_ignored True {'operator': 20, 'measurement': 0, 'sampling': 9}
+pennylane grover_power_off_by_one True {'operator': 6, 'measurement': 0, 'sampling': 8}
+pennylane zero_reflection_about_ones True {'operator': 22, 'measurement': 0, 'sampling': 7}
+pennylane objective_reflection_negated True {'operator': 18, 'measurement': 0, 'sampling': 0}
+pennylane reverse_qubit_order True {'operator': 21, 'measurement': 4, 'sampling': 8}
+pennylane reverse_result_bits True {'operator': 0, 'measurement': 4, 'sampling': 8}
+pennylane drop_one_shot True {'operator': 0, 'measurement': 5, 'sampling': 18}
+qsharp none False {'operator': 0, 'measurement': 0, 'sampling': 0}
+qsharp drop_global_phase True {'operator': 13, 'measurement': 0, 'sampling': 0}
+qsharp global_phase_sign True {'operator': 1, 'measurement': 0, 'sampling': 0}
+qsharp drop_phase_under_control True {'operator': 7, 'measurement': 0, 'sampling': 0}
+qsharp rotation_sign True {'operator': 24, 'measurement': 0, 'sampling': 3}
+qsharp rotation_half_angle True {'operator': 25, 'measurement': 0, 'sampling': 15}
+qsharp rz_as_phase_gate True {'operator': 4, 'measurement': 0, 'sampling': 0}
+qsharp swap_cx_direction True {'operator': 5, 'measurement': 0, 'sampling': 3}
+qsharp invert_first_control True {'operator': 26, 'measurement': 0, 'sampling': 9}
+qsharp adjoint_ignored True {'operator': 20, 'measurement': 0, 'sampling': 9}
+qsharp grover_power_off_by_one True {'operator': 6, 'measurement': 0, 'sampling': 8}
+qsharp zero_reflection_about_ones True {'operator': 22, 'measurement': 0, 'sampling': 7}
+qsharp objective_reflection_negated True {'operator': 18, 'measurement': 0, 'sampling': 0}
+qsharp reverse_qubit_order True {'operator': 21, 'measurement': 4, 'sampling': 8}
+qsharp reverse_result_bits True {'operator': 0, 'measurement': 4, 'sampling': 8}
+qsharp drop_one_shot True {'operator': 0, 'measurement': 5, 'sampling': 18}
+none bernoulli_0.3 iqae 0.001537391562627216
+none bernoulli_0.3 canonical_qae 0.009038925290187159
+none lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+none lognormal_tail_n2_k2_flag canonical_qae 0.002496301623412714
+drop_global_phase bernoulli_0.3 iqae 0.001537391562627216
+drop_global_phase bernoulli_0.3 canonical_qae 0.3915173343085353
+drop_global_phase lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+drop_global_phase lognormal_tail_n2_k2_flag canonical_qae 0.11060813473534056
+global_phase_sign bernoulli_0.3 iqae 0.001537391562627216
+global_phase_sign bernoulli_0.3 canonical_qae 0.009038925290187159
+global_phase_sign lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+global_phase_sign lognormal_tail_n2_k2_flag canonical_qae 0.002496301623412714
+drop_phase_under_control bernoulli_0.3 iqae 0.001537391562627216
+drop_phase_under_control bernoulli_0.3 canonical_qae 0.3915173343085353
+drop_phase_under_control lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+drop_phase_under_control lognormal_tail_n2_k2_flag canonical_qae 0.11060813473534056
+rotation_sign bernoulli_0.3 iqae 0.001537391562627216
+rotation_sign bernoulli_0.3 canonical_qae 0.009038925290187159
+rotation_sign lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+rotation_sign lognormal_tail_n2_k2_flag canonical_qae 0.002496301623412714
+rotation_half_angle bernoulli_0.3 iqae 0.21844542650895632
+rotation_half_angle bernoulli_0.3 canonical_qae 0.21336347287618676
+rotation_half_angle lognormal_tail_n2_k2_flag iqae 0.31718776346474015
+rotation_half_angle lognormal_tail_n2_k2_flag canonical_qae 0.25584746395990765
+rz_as_phase_gate bernoulli_0.3 iqae 0.001537391562627216
+rz_as_phase_gate bernoulli_0.3 canonical_qae 0.009038925290187159
+rz_as_phase_gate lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+rz_as_phase_gate lognormal_tail_n2_k2_flag canonical_qae 0.002496301623412714
+swap_cx_direction bernoulli_0.3 iqae 0.001537391562627216
+swap_cx_direction bernoulli_0.3 canonical_qae 0.009038925290187159
+swap_cx_direction lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+swap_cx_direction lognormal_tail_n2_k2_flag canonical_qae 0.002496301623412714
+invert_first_control bernoulli_0.3 iqae 0.001537391562627216
+invert_first_control bernoulli_0.3 canonical_qae 0.6245252130441348
+invert_first_control lognormal_tail_n2_k2_flag iqae 0.057981768984119185
+invert_first_control lognormal_tail_n2_k2_flag canonical_qae 0.1073931125503256
+adjoint_ignored bernoulli_0.3 iqae 0.0493937878601489
+adjoint_ignored bernoulli_0.3 canonical_qae 0.3
+adjoint_ignored lognormal_tail_n2_k2_flag iqae 0.04143747544048883
+adjoint_ignored lognormal_tail_n2_k2_flag canonical_qae 0.35739049331480344
+grover_power_off_by_one bernoulli_0.3 iqae 0.05042132235285
+grover_power_off_by_one bernoulli_0.3 canonical_qae 0.2790944040332036
+grover_power_off_by_one lognormal_tail_n2_k2_flag iqae 0.07894490214894002
+grover_power_off_by_one lognormal_tail_n2_k2_flag canonical_qae 0.13668708971294838
+zero_reflection_about_ones bernoulli_0.3 iqae 0.001537391562627216
+zero_reflection_about_ones bernoulli_0.3 canonical_qae 0.3915173343085353
+zero_reflection_about_ones lognormal_tail_n2_k2_flag iqae 0.052784808719405406
+zero_reflection_about_ones lognormal_tail_n2_k2_flag canonical_qae 0.5450500523199893
+objective_reflection_negated bernoulli_0.3 iqae 0.001537391562627216
+objective_reflection_negated bernoulli_0.3 canonical_qae 0.3915173343085353
+objective_reflection_negated lognormal_tail_n2_k2_flag iqae 0.0020318621914200393
+objective_reflection_negated lognormal_tail_n2_k2_flag canonical_qae 0.11060813473534056
+reverse_qubit_order bernoulli_0.3 iqae 0.001537391562627216
+reverse_qubit_order bernoulli_0.3 canonical_qae 0.684151341878512
+reverse_qubit_order lognormal_tail_n2_k2_flag iqae 0.10431320458915812
+reverse_qubit_order lognormal_tail_n2_k2_flag canonical_qae 0.07413093932362226
+reverse_result_bits bernoulli_0.3 iqae 0.001537391562627216
+reverse_result_bits bernoulli_0.3 canonical_qae 0.684151341878512
+reverse_result_bits lognormal_tail_n2_k2_flag iqae 0.10431320458915812
+reverse_result_bits lognormal_tail_n2_k2_flag canonical_qae 0.07413093932362226
+drop_one_shot bernoulli_0.3 iqae None
+drop_one_shot bernoulli_0.3 canonical_qae None
+drop_one_shot lognormal_tail_n2_k2_flag iqae None
+drop_one_shot lognormal_tail_n2_k2_flag canonical_qae None

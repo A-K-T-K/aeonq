@@ -79,9 +79,15 @@ def test_faster_ae_bound_is_attained_when_budget_runs_out():
     # a = 0.5 does not converge in four iterations, so the run uses the bound.
     problem = bernoulli(0.5).problem
     report = estimate_resources(
-        problem, algorithm="faster_ae", backend=ReferenceAdapter()
+        problem, algorithm="faster_ae", backend=ReferenceAdapter(), max_iterations=4
     )
-    run = estimate(problem, algorithm="faster_ae", backend=ReferenceAdapter(), seed=1)
+    run = estimate(
+        problem,
+        algorithm="faster_ae",
+        backend=ReferenceAdapter(),
+        seed=1,
+        max_iterations=4,
+    )
     assert run.convergence_status == "INSUFFICIENT_BUDGET"
     assert _totals(report) == _totals(run)
 

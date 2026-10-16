@@ -1,12 +1,12 @@
 {
   "environment": {
-    "timestamp_utc": "2026-10-07T03:08:37.871793+00:00",
+    "timestamp_utc": "2026-10-16T05:11:09.122086+00:00",
     "python": "3.13.7",
     "platform": "Windows-11-10.0.26100-SP0",
     "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
-    "git_commit": null,
-    "source_snapshot_sha256": "cce87142202cb4c9d06127e6932f266a2f07f40cc631b2e39deb130b56857254",
-    "source_archive": "benchmarks/results/archives/source-cce87142202cb4c9d06127e6932f266a2f07f40cc631b2e39deb130b56857254.zip",
+    "git_commit": "2013fdcd37249f2e64acf166bd3c435a3ee61243",
+    "source_snapshot_sha256": "59d60b8a6ff9cc265edcef3ff14732172ef54a783e7561ef757db906c230ce0f",
+    "source_archive": "benchmarks/results/archives/source-59d60b8a6ff9cc265edcef3ff14732172ef54a783e7561ef757db906c230ce0f.zip",
     "seed_scheme": "sha256-condition-v1",
     "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
     "dependencies": {
@@ -21,14 +21,14 @@
       "qiskit-algorithms": "0.4.0"
     }
   },
-  "cached_reference_500_seconds": 0.011383800068870187,
-  "uncached_reference_500_seconds": 0.5186566000338644,
-  "reference_cache_speedup": 45.56093719988704,
-  "vectorized_grid_25_seconds": 0.004000799963250756,
-  "scalar_grid_25_seconds": 0.4638000000268221,
-  "grid_speedup": 115.9268157086195,
-  "serial_manifest_200_seconds": 0.9912640999536961,
-  "threaded_manifest_200_seconds": 0.6729877000907436,
-  "thread_speedup": 1.472930485683523,
+  "cached_reference_500_seconds": 0.010450300003867596,
+  "uncached_reference_500_seconds": 0.4904664999921806,
+  "reference_cache_speedup": 46.93324591740541,
+  "vectorized_grid_25_seconds": 0.003813799994532019,
+  "scalar_grid_25_seconds": 0.43739520001690835,
+  "grid_speedup": 114.68750344643595,
+  "serial_manifest_200_seconds": 0.625419799995143,
+  "threaded_manifest_200_seconds": 0.6273248000070453,
+  "thread_speedup": 0.9969632955497999,
   "threaded_backend_scope": "reference only"
 }

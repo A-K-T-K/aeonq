@@ -7,7 +7,9 @@ not rely on asymptotic likelihood-ratio theory or alias resolution.
 The maximum-likelihood search covers the whole phase range [0, pi/2], not only
 the k=0 interval, so the estimate is not pinned inside an interval that misses
 the true phase. The estimate can therefore lie outside the reported interval;
-the ``estimate_outside_interval`` diagnostic records when it does.
+the ``estimate_outside_interval`` diagnostic records when it does, and such a
+run is INCONCLUSIVE rather than CONVERGED, because the epsilon bound on the
+estimate holds only when it lies inside the interval.
 """
 
 from dataclasses import dataclass
@@ -121,16 +123,19 @@ class MLQAE:
             if optimum.success and -optimum.fun > best_value:
                 best_theta, best_value = float(optimum.x), float(-optimum.fun)
         estimate = sin(best_theta) ** 2
-        status = (
-            "CONVERGED"
-            if interval[1] - interval[0] <= self.epsilon
-            else "INSUFFICIENT_BUDGET"
-        )
+        outside = not interval[0] <= estimate <= interval[1]
+        # The point estimate is the MLE, not the midpoint, so the epsilon bound
+        # needs the full width <= epsilon and the estimate inside the interval.
+        # An MLE outside it means the k=0 interval missed or the MLE aliased.
+        if interval[1] - interval[0] > self.epsilon:
+            status = "INSUFFICIENT_BUDGET"
+        elif outside:
+            status = "INCONCLUSIVE"
+        else:
+            status = "CONVERGED"
         guarantee, warnings = qualified_guarantee(
             backend,
-            "THEORETICAL_GUARANTEE_SATISFIED"
-            if status == "CONVERGED"
-            else "INSUFFICIENT_BUDGET",
+            "THEORETICAL_GUARANTEE_SATISFIED" if status == "CONVERGED" else status,
         )
         return AEResult(
             estimate,
@@ -167,6 +172,6 @@ class MLQAE:
                 "log_likelihood": best_value,
                 "candidate_modes": mode_count,
                 "alias_risk": mode_count > 1,
-                "estimate_outside_interval": not interval[0] <= estimate <= interval[1],
+                "estimate_outside_interval": outside,
             },
         )

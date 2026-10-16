@@ -1,0 +1,23 @@
+python.exe : WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+At line:1 char:364
++ ... HREADS="1"; & $py benchmarks/translator_fidelity.py > benchmarks\resu ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:root:Gl...djust for phase:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+case bernoulli_0.25 done
+case uniform_threshold_n2_k1 done
+case distribution_0.1_0.2_0.3_0.4_marked_1_2 done
+case lognormal_tail_n2_k2_flag done
+case entangled_cx_n2 done
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+case asymmetric_rotations_n1 done
+case phase done
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+WARNING:root:Global phase is dependent on a symbolic parameter, so cannot adjust for phase
+native Qiskit sources done
+1098 programs, 159 probe gates

@@ -20,7 +20,8 @@
 ### Iterative Amplitude Estimation (IQAE)
 IQAE eliminates quantum phase estimation by querying powers $Q^k$ sequentially across rounds. In each round, feasible confidence intervals are contracted via exact Clopper--Pearson binomial bounds.
 - **Monotonicity**: The Grover power index $k$ advances only when the feasible confidence interval is guaranteed to lie within a monotonic branch of $\sin^2((2k+1)\theta)$.
-- **Error Budget**: Error probabilities are distributed across rounds via the union bound.
+- **Pooling**: Consecutive rounds at the same power, shot count and branch form a segment, and each round's interval uses every count in its segment. Without pooling, a repeated power (when `max_power` binds or a scheduler prefers it) can only intersect intervals no narrower than a single round's, and the estimate stalls however many rounds are allowed.
+- **Error Budget**: With at most $B$ = `max_rounds` $\times$ (`max_resamples_per_round` + 1) batches, the union bound spends $\alpha/(2B)$ on each fresh interval and $\alpha/(B(B-1))$ on each pooled one, at most $\alpha$ in total. A segment's power and shot count are fixed before its data arrive, so each pooled interval is an exact Clopper--Pearson interval for a fixed number of fresh shots.
 - **Midpoint Return**: Upon converging to an amplitude interval width of at most $2\epsilon$, the interval midpoint is returned.
 
 ```python
@@ -39,7 +40,7 @@ result = estimate(
 MLQAE samples from a predefined, non-adaptive power schedule (e.g., $k \in \{0, 1, 2, 4, 8\}$):
 - **Point Estimate**: Computed via numerical optimization over the complete phase domain $[0, \pi/2]$ to avoid restricting the estimator inside an incorrect branch.
 - **Interval Guarantee**: In contrast to asymptotic Fisher information approximations (which can collapse near boundary probabilities $a \approx 0$ or $a \approx 1$), `aeonq` constructs an exact Clopper--Pearson interval derived from the unamplified ($k=0$) evaluation shots.
-- **Convergence**: Reports `CONVERGED` when the full $k=0$ interval width is at most $\epsilon$; otherwise reports `INSUFFICIENT_BUDGET`.
+- **Convergence**: Reports `CONVERGED` when the full $k=0$ interval width is at most $\epsilon$ and the point estimate lies inside it, and `INSUFFICIENT_BUDGET` while the width is not yet reached. The width criterion is $\epsilon$ rather than $2\epsilon$ because the point estimate is the MLE, not the midpoint: an estimate inside a width-$\epsilon$ interval is within $\epsilon$ of $a$ whenever the interval covers. An MLE outside the interval means the interval missed or the MLE aliased, so that run reports `INCONCLUSIVE` and no guarantee.
 
 ```python
 result = estimate(
@@ -58,7 +59,7 @@ result = estimate(
 Canonical estimation couples powers of $Q$ with quantum phase estimation over $m$ evaluation qubits followed by an inverse Quantum Fourier Transform (QFT).
 - **Point Estimate**: Maximum-likelihood amplitude under the exact phase estimation outcome distribution (modeled as a mixture of Fejér kernels).
 - **Interval**: Likelihood-ratio confidence interval calibrated by the $\chi^2_1$ approximation.
-- **Guarantees**: Annotated as asymptotic (carrying no finite-sample coverage guarantees).
+- **Guarantees**: Annotated as asymptotic (carrying no finite-sample coverage guarantees). With few evaluation qubits and shots the coverage can fall below nominal: on the exact reference backend, $m=3$ and 256 shots covered $a=0.1$ in 91.7% of 1000 runs at $\alpha=0.05$. Use IQAE or Faster AE when a finite-sample interval is required.
 
 ```python
 result = estimate(
@@ -75,6 +76,7 @@ result = estimate(
 Implements the two-stage cosine reconstruction of Nakaji (2020):
 - **Amplitude Attenuation**: Uses an additional ancilla qubit to attenuate the amplitude by a factor of 5 ($a' = a / 5$), ensuring that the effective phase $\theta \le \arcsin(1/5) < 0.252$ falls inside the required initial domain.
 - **Two-Stage Cosine Reconstruction**: Evaluates first-stage and second-stage cosine circuits to achieve quadratic quantum speedup with minimal constant factors.
+- **Iteration Count**: By default `max_iterations` is derived from $\epsilon$ as the fewest iterations whose final second-stage interval is at most $2\epsilon$ wide in the worst case. Iteration $l$ leaves a phase window of $(2\pi/3)/(2^{l+1}+2)$, and the attenuation stretches phase widths by up to $25\sin(2\arcsin(1/5)) = 2\sqrt{24}$ in amplitude, so $\epsilon = 0.01$ needs $l = 10$. Passing a smaller `max_iterations` caps circuit depth at the cost of `INSUFFICIENT_BUDGET` for larger amplitudes.
 
 ```python
 result = estimate(
@@ -83,7 +85,6 @@ result = estimate(
     backend=backend,
     epsilon=0.01,
     alpha=0.05,
-    max_iterations=4,
     seed=1,
 )
 ```

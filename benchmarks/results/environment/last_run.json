@@ -1,23 +1,23 @@
 {
   "profile": "publication_reference",
   "raw_files": [
-    "raw_results\\publication_reference.jsonl",
-    "raw_results\\publication_cross_sdk.jsonl",
-    "raw_results\\publication_scheduler_qiskit.jsonl",
-    "raw_results\\publication_case_study.jsonl",
-    "raw_results\\publication_case_study_sdk.jsonl",
-    "raw_results\\publication_case_study_qsharp.jsonl"
+    "results\\raw\\publication_reference.jsonl",
+    "results\\raw\\publication_cross_sdk.jsonl",
+    "results\\raw\\publication_scheduler_qiskit.jsonl",
+    "results\\raw\\publication_case_study.jsonl",
+    "results\\raw\\publication_case_study_sdk.jsonl",
+    "results\\raw\\publication_case_study_qsharp.jsonl"
   ],
   "trial_count": 28695,
   "failed_trials": 0,
   "environment": {
-    "timestamp_utc": "2026-10-07T04:18:36.311401+00:00",
+    "timestamp_utc": "2026-10-16T06:38:58.867040+00:00",
     "python": "3.13.7",
     "platform": "Windows-11-10.0.26100-SP0",
     "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
-    "git_commit": null,
-    "source_snapshot_sha256": "ef9082523a5e20f7e8db63ebecdea7ca68a8c6741cebc739868845f46bffc721",
-    "source_archive": "benchmarks/results/archives/source-ef9082523a5e20f7e8db63ebecdea7ca68a8c6741cebc739868845f46bffc721.zip",
+    "git_commit": "2013fdcd37249f2e64acf166bd3c435a3ee61243",
+    "source_snapshot_sha256": "59d60b8a6ff9cc265edcef3ff14732172ef54a783e7561ef757db906c230ce0f",
+    "source_archive": "benchmarks/results/archives/source-59d60b8a6ff9cc265edcef3ff14732172ef54a783e7561ef757db906c230ce0f.zip",
     "seed_scheme": "sha256-condition-v1",
     "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
     "dependencies": {

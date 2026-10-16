@@ -1,8 +1,20 @@
-"""Branch-safe iterative AE with exact per-round binomial intervals.
+"""Branch-safe iterative AE with exact pooled binomial intervals.
 
-The simultaneous confidence statement follows from alpha spending and the
-union bound under ideal independent Bernoulli shots. Power selection uses only
-previous observations, so conditional binomial coverage applies each round.
+Consecutive batches at the same power, shot count and branch form a *segment*,
+and each round's Clopper-Pearson interval uses every count in its segment, as
+in Grinko et al. Without pooling, repeating a power (when ``max_power`` binds or
+a scheduler prefers it) only intersects intervals no narrower than one batch's,
+so the estimate stalls however many rounds are allowed.
+
+The simultaneous confidence statement holds under ideal independent Bernoulli
+shots. With at most B = max_rounds * (max_resamples_per_round + 1) batches, a
+segment's index s and its depth j (batches pooled so far) satisfy
+s + j - 1 <= B. A segment's power and shot count N are fixed from earlier data
+before it starts, so its j-batch interval is the Clopper-Pearson interval of the
+first jN draws of a fresh i.i.d. stream, whether or not the segment actually
+continues that long. Fresh intervals (j = 1, at most B of them) get alpha/(2B)
+each, and pooled ones (j >= 2, at most B(B-1)/2 of them) get alpha/(B(B-1)) each,
+so the union bound spends at most alpha.
 """
 
 from dataclasses import dataclass
@@ -24,6 +36,18 @@ from aeonq.runtime.checkpoint import (
 )
 from aeonq.scheduling.base import Schedule, ScheduleState
 from pathlib import Path
+
+
+def interval_levels(alpha: float, batch_budget: int) -> tuple[float, float]:
+    """Per-interval error levels (fresh, pooled) whose union bound is alpha."""
+    if batch_budget < 1:
+        raise ValueError("batch budget must be positive")
+    if batch_budget == 1:
+        return alpha, 0.0
+    return (
+        alpha / (2 * batch_budget),
+        alpha / (batch_budget * (batch_budget - 1)),
+    )
 
 
 @dataclass(frozen=True)
@@ -65,6 +89,8 @@ class IQAE:
         branch_history: list[int] = []
         alias_history: list[dict[str, Any]] = []
         observation_history: list[dict[str, int]] = []
+        # Counts pooled over the current segment: power, shots, branch, totals.
+        segment: dict[str, int] | None = None
         resampling_triggered = False
         status = "INSUFFICIENT_BUDGET"
         elapsed_before_resume = 0.0
@@ -80,7 +106,7 @@ class IQAE:
                 "scheduler": repr(self.scheduler),
                 "shot_options": self.shot_options,
                 "seed": self.seed,
-                "algorithm_version": 1,
+                "algorithm_version": 2,
             }
             checkpoint_identity = identity(problem, backend, "IQAE", configuration)
             if Path(self.checkpoint).exists():
@@ -97,6 +123,20 @@ class IQAE:
                     branch_history = list(map(int, state["branch_history"]))
                     alias_history = list(state["alias_history"])
                     observation_history = list(state["observation_history"])
+                    segment = (
+                        None
+                        if state["segment"] is None
+                        else {
+                            key: int(state["segment"][key])
+                            for key in (
+                                "power",
+                                "shots",
+                                "branch",
+                                "successes",
+                                "total",
+                            )
+                        }
+                    )
                     resampling_triggered = bool(state["resampling_triggered"])
                     status = str(state["status"])
                     experiment.shots = int(state["total_shots"])
@@ -119,6 +159,10 @@ class IQAE:
                     or experiment.shots < 0
                     or experiment.evaluations < 0
                     or experiment.oracle_queries < 0
+                    or (
+                        segment is not None
+                        and not 0 <= segment["successes"] <= segment["total"]
+                    )
                 ):
                     raise IncompatibleCheckpoint("inconsistent IQAE checkpoint state")
 
@@ -135,6 +179,7 @@ class IQAE:
                     "branch_history": branch_history,
                     "alias_history": alias_history,
                     "observation_history": observation_history,
+                    "segment": segment,
                     "resampling_triggered": resampling_triggered,
                     "status": status,
                     "total_shots": experiment.shots,
@@ -150,6 +195,9 @@ class IQAE:
                 },
             )
 
+        fresh_alpha, pooled_alpha = interval_levels(
+            self.alpha, self.max_rounds * (self.max_resamples_per_round + 1)
+        )
         if status not in ("CONVERGED", "INCONCLUSIVE"):
             iterations = range(len(branch_history), self.max_rounds)
         else:
@@ -207,21 +255,34 @@ class IQAE:
                 )
                 powers.append(power)
                 per_power[power] = per_power.get(power, 0) + round_shots
+                # A retry starts a fresh segment; otherwise an unchanged power,
+                # shot count and branch extends the current one.
+                pooled = (
+                    attempt == 0
+                    and segment is not None
+                    and (segment["power"], segment["shots"], segment["branch"])
+                    == (power, round_shots, branch)
+                )
+                if pooled:
+                    assert segment is not None
+                    successes = segment["successes"] + observed
+                    total = segment["total"] + round_shots
+                else:
+                    successes, total = observed, round_shots
                 observation_history.append(
                     {
                         "power": power,
                         "shots": round_shots,
                         "successes": observed,
+                        "pooled_shots": total,
+                        "pooled_successes": successes,
                         "seed": self.seed
                         + iteration * (self.max_resamples_per_round + 1)
                         + attempt,
                     }
                 )
-                # Finite-horizon Bonferroni allocation includes possible retries.
                 p_interval = clopper_pearson(
-                    observed,
-                    round_shots,
-                    self.alpha / (self.max_rounds * (self.max_resamples_per_round + 1)),
+                    successes, total, pooled_alpha if pooled else fresh_alpha
                 )
                 candidate = phase_interval(p_interval, power, branch)
                 proposed = (max(theta[0], candidate[0]), min(theta[1], candidate[1]))
@@ -235,7 +296,15 @@ class IQAE:
                         )
                         proposed = (middle, middle)
                     updated = proposed
+                    segment = {
+                        "power": power,
+                        "shots": round_shots,
+                        "branch": branch,
+                        "successes": successes,
+                        "total": total,
+                    }
                     break
+                segment = None
                 if attempt < self.max_resamples_per_round:
                     resampling_triggered = True
             branch_history.append(branch)
@@ -302,5 +371,6 @@ class IQAE:
                 "branch_confidence": 1 - self.alpha,
                 "resampling_triggered": resampling_triggered,
                 "observation_history": tuple(observation_history),
+                "interval_alpha": {"fresh": fresh_alpha, "pooled": pooled_alpha},
             },
         )
