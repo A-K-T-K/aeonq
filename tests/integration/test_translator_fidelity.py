@@ -3,7 +3,7 @@
 The ``observed`` tests pin what the pinned third-party converters did when the
 study was run (benchmarks/results/processed/translator_fidelity.md). If one
 fails after a dependency change, the converter changed: rerun the study and
-update the manuscript rather than this test.
+update the stored results rather than this test.
 """
 
 from math import pi

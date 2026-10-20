@@ -42,6 +42,7 @@ jobs:
       - name: Build VitePress documentation
         run: |
           npm ci
+          npm audit --audit-level=moderate
           npm run docs:build
       - name: Executable examples
         run: python scripts/validate_examples.py

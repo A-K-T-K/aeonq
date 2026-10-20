@@ -77,7 +77,7 @@ class QSharpAdapter(BackendAdapter):
 
     def capabilities(self) -> BackendCapabilities:
         return BackendCapabilities(
-            True,
+            False,
             True,
             True,
             False,

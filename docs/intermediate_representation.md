@@ -78,7 +78,7 @@ from aeonq.synthesis import threshold_cubes
 # Disjoint cubes for x >= 5 on 3 qubits
 cubes = threshold_cubes(qubits=(0, 1, 2), value=5)
 print(cubes)
-# Output: [((0, 1), (1, 1), (2, 1)), ((0, 0), (1, 1), (2, 1)), ((0, 1), (1, 0), (2, 1))]
+# Output: [((1, 1), (2, 1)), ((0, 1), (1, 0), (2, 1))]
 ```
 
 This ensures linear scaling in register width for arithmetic threshold objectives (commonly used in financial tail-risk quantification and option pricing).

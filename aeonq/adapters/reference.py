@@ -79,6 +79,11 @@ class ReferenceAdapter(BackendAdapter):
         self.validate(ir)
         return matrix(ir)
 
+    def statevector(self, ir: Operator) -> NDArray[np.complex128]:
+        """Return A|0> in logical little-endian order."""
+        self.validate(ir)
+        return statevector(ir)
+
     def resource_metrics(
         self, compiled_program: Operator
     ) -> dict[str, int | float | None]:

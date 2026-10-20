@@ -17,7 +17,7 @@ hero:
       link: /capabilities
     - theme: alt
       text: View on GitHub
-      link: https://github.com/username/aeonq
+      link: https://github.com/A-K-T-K/aeonq
 
 features:
   - icon: ⚛️

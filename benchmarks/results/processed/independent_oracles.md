@@ -1,6 +1,6 @@
 # Independent oracle checks
 
-Generated 2026-10-16T10:34:43.424452+00:00 by `benchmarks/independent_oracles.py`. Oracles come from `aeonq.oracles`, which imports no aeonq IR, synthesis, reference or adapter code. Closed forms: amplitude a, Q as a rotation by 2θ on the good/bad plane (global phase included), Q² by 4θ, controlled Q as identity ⊕ rotation, and P_good(Q^k A|0>) = sin²((2k+1)θ) for k = 0..4.
+Generated 2026-10-20T05:34:17.926842+00:00 by `benchmarks/independent_oracles.py`. Oracles come from `aeonq.oracles`, which imports no aeonq IR, synthesis, reference or adapter code. Closed forms: amplitude a, Q as a rotation by 2θ on the good/bad plane (global phase included), Q² by 4θ, controlled Q as identity ⊕ rotation, and P_good(Q^k A|0>) = sin²((2k+1)θ) for k = 0..4.
 
 | source | closed-form passed | entrywise vs NumPy oracle passed | worst closed-form error | worst entrywise error |
 |---|---|---|---|---|

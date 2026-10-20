@@ -10,7 +10,7 @@ Each adapter wraps a specific target SDK and declares its operational capabiliti
 
 | Adapter | SDK Version | Declared Tolerance | Optional Capabilities | Max Qubits | Conformance Passed |
 | :--- | :--- | :---: | :--- | :---: | :---: |
-| **ReferenceAdapter** | Native NumPy | $10^{-9}$ | `unitary` | 10 | 66/66 |
+| **ReferenceAdapter** | Native NumPy | $10^{-9}$ | `unitary`, `statevector` | 10 | 66/66 |
 | **QiskitAdapter** | Qiskit 2.5.2 | $10^{-9}$ | `unitary`, `statevector` | Unbounded | 66/66 |
 | **CirqAdapter** | Cirq 1.7.0 | $10^{-9}$ | `unitary`, `statevector` | Unbounded | 66/66 |
 | **PennyLaneAdapter** | PennyLane 0.45.1 | $10^{-9}$ | `unitary`, `statevector` | Unbounded | 66/66 |

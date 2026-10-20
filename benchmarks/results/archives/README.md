@@ -9,7 +9,9 @@ does not include raw data.
 
 Timing and statistical studies can reference different source snapshots.
 Each statistical population is required to have one consistent snapshot.
-Some statistical runs began before a final import-path change to the
-validator. Their records were validated with the updated validator without
-changing their sampling code, seeds, or archived source identifiers; the
-regeneration log retains the original failure logs and recovery details.
+Historical archives are retained when results are regenerated. In the v0.0.5
+campaign, some statistical runs began before an import-path change to the
+validator. Those records were validated with the updated validator without
+changing their sampling code, seeds, or archived source identifiers; that
+release's regeneration log retains the failure and recovery details. Each later
+campaign records its own source identifiers and regeneration log.

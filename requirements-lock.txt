@@ -1,4 +1,4 @@
-﻿# Editable install with no version control (aeonq==0.1.0.dev0)
+﻿# Editable install with no version control (aeonq==0.0.6)
 -e .
 appdirs==1.4.4
 attrs==26.1.0

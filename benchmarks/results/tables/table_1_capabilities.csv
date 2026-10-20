@@ -2,4 +2,4 @@ backend,sdk_version,semantic_A,exact_adjoint,S0,Schi,Q,Q_power,controlled_Q,cano
 qiskit,2.5.2,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,local metrics,True,True,True,True,True,True,True,False,,
 cirq,1.7.0,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,local metrics,True,True,True,True,True,True,True,False,,
 pennylane,0.45.1,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,local metrics,True,True,True,True,False,False,True,False,,
-qsharp,1.32.3,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,partial,True,True,True,False,False,False,False,False,12,
+qsharp,1.32.3,True,True,True,True,True,True,True,True,True,True,True,algorithm layer; not tested on this SDK,partial,False,True,True,False,False,False,False,False,12,

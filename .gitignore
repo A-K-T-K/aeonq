@@ -11,10 +11,7 @@ coverage.xml
 pytest.xml
 benchmarks/results/environment/regeneration_state.json
 
-# Local-only manuscript materials and secrets
-paper/
-paper_build/
-manuscript*
+# Local secrets
 token.txt
 
 # Node and VitePress

@@ -10,7 +10,7 @@
 | :--- | :--- | :---: | :--- | :--- |
 | **Canonical QAE** | `"canonical_qae"` | Yes (QPE) | Asymptotic likelihood-ratio ($\chi^2_1$) | Fixed evaluation qubits |
 | **Iterative QAE (IQAE)** | `"iqae"` | No | Exact Clopper--Pearson + union bound | Full width $\le 2\epsilon$ |
-| **Maximum Likelihood (MLQAE)** | `"mlqae"` | No | Exact Clopper--Pearson ($k=0$ shots) | Full width $\le \epsilon$ |
+| **Maximum Likelihood (MLQAE)** | `"mlqae"` | No | Exact Clopper--Pearson ($k=0$ shots) | Full width $\le \epsilon$ and MLE inside interval |
 | **Faster AE (FAE)** | `"faster_ae"` | No | Multi-stage trigonometric intersection | Stage budget / width $\le 2\epsilon$ |
 
 ---
@@ -94,7 +94,7 @@ result = estimate(
 
 ## 3. Standardized Oracle Query Accounting
 
-Different SDKs account oracle queries inconsistently:
+The evaluated native estimator implementations use different query conventions:
 - Some report only the Grover power exponent $k$.
 - Canonical implementations often report only $2^m - 1$ controlled iterations.
 

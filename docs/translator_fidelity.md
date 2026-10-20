@@ -1,12 +1,12 @@
 # Translator Fidelity & Independent Oracles
 
-The conformance battery and mutation analysis ([Conformance Testing](conformance_testing.md)) show that *seeded* convention faults are invisible to count-based tests. Two further studies ask whether this happens with **real converters**, and whether aeonq's own checks can be trusted **without** relying on aeonq's own reference semantics.
+The conformance battery and mutation analysis ([Conformance Testing](conformance_testing.md)) show that some *seeded* convention faults pass the battery's evaluated count-based checks. Two further studies ask whether this happens with **real converters**, and whether aeonq's own checks agree with references derived **without** aeonq's semantic core.
 
 ---
 
 ## 1. Translator-Fidelity Study
 
-`benchmarks/translator_fidelity.py` lowers every amplitude-estimation operator of the battery cases ($A$, $A^\dagger$, $S_0$, $S_\chi$, $Q$, $Q^2$, controlled $Q$, and the measured circuits $A Q^k$ for $k = 0, 1, 2$), plus a controlled global phase, natively in Qiskit, Cirq or PennyLane. It then passes each program through an **existing third-party conversion path**. aeonq takes no part in the conversion:
+`benchmarks/translator_fidelity.py` lowers every amplitude-estimation operator of the battery cases ($A$, $A^\dagger$, $S_0$, $S_\chi$, $Q$, $Q^2$, controlled $Q$, and the measured circuits $Q^k A$ for $k = 0, 1, 2$), plus a controlled global phase, natively in Qiskit, Cirq or PennyLane. It then passes each program through an **existing third-party conversion path**. aeonq takes no part in the conversion:
 
 | Source | Conversion | Target |
 |:---|:---|:---|
@@ -36,7 +36,7 @@ The full tables are regenerated into `benchmarks/results/processed/translator_fi
 - 118 failed once controlled in the target SDK;
 - **152 passed the count check while failing an operator check.**
 
-Of the 1,037 programs on available paths, the other 335 failed at export (72), import (166), or unitary evaluation (97). The qubit-order summary distinguishes actual nonidentity permutations from operators that cannot be reconciled by any permutation: none were permuted, and 15 were unmatched.
+Of the 1,037 programs on available paths, the other 335 failed at export (72), import (166), or unitary evaluation (97). The qubit-order summary distinguishes actual nonidentity permutations from operators that cannot be reconciled by any permutation: no discrepancy was explained solely by a permutation, and 15 operators were unmatched.
 
 Qubit order was preserved wherever the operators agreed up to phase, and data-carrying angles survived to $\approx10^{-15}$ (Cirq's exporter: $1.4\times10^{-10}$). The faults trace to five converter behaviours:
 
@@ -50,7 +50,7 @@ Qubit order was preserved wherever the operators agreed up to phase, and data-ca
 
 **The omitted $-1$ is not an aeonq artifact.** Grover operators built by Qiskit's own `grover_operator` and by `qiskit-algorithms`' `EstimationProblem` carry it too, and 29 of their 33 translations lost it while passing the count check; the other four reached the QDK, where the angle reduction restored the sign by coincidence. (`grover_operator` itself also discards any global phase of the oracle circuit, so an oracle written as $-S_0$ loses its sign before any conversion.)
 
-39 of the 58 translated Grover operators change the modal canonical grid estimate. In the Bernoulli case ($a = 0.25$), a Qiskit QASM round trip changes this grid estimate from approximately $0.22$ to $0.78$ (five evaluation qubits). The dropped $-1$ shifts every eigenphase by $\pi$, turns the underlying ideal parameter $a$ into $1-a$, and maps the grid estimate $\hat a$ to $1-\hat a$.
+39 of the 58 translated Grover operators change the modal canonical grid estimate. In the Bernoulli case ($a = 0.25$), a Qiskit QASM round trip changes this grid estimate from approximately $0.22$ to $0.78$ (five evaluation qubits). Dropping $-1$ shifts every eigenphase by $\pi$ and changes the amplitude inferred by the canonical eigenphase relation from $a$ to $1-a$, mapping the grid estimate $\hat a$ to $1-\hat a$. The original preparation probability remains unchanged.
 
 ::: info Unavailable path
 `qml.from_qiskit` / `qml.from_qasm` need `pennylane-qiskit` 0.45.0, which requires Qiskit 2.3.0, while the pinned stack uses 2.5.2. It is reported as unavailable rather than silently skipped. PennyLane's native `qml.from_qasm3` rejects the `include "stdgates.inc"` line that every exporter writes, so a second path deletes that line, as a user would.
@@ -75,7 +75,7 @@ The battery compares adapters with `aeonq.reference`, which evaluates the same I
 |:---|:---|
 | **Analytic amplitudes** (`aeonq.oracles.cases`) | $a$, the good-state predicate and every rotation angle derived from the problem's probabilities, including an independent re-derivation of the log-normal grid. |
 | **Hand-written circuits** (`aeonq.oracles.handwritten`) | $A$, $Q$, $Q^2$ and controlled $Q$ written natively in Qiskit, Cirq, PennyLane and Q#, with deliberately different constructions where an exact one exists (e.g. the $x\in\{1,2\}$ oracle as $Z\otimes Z$, Q#'s $-1$ as $ZXZX$). |
-| **Second simulator** (`aeonq.oracles.numpy_sim`, `sdk_import`) | A NumPy statevector simulator on basis-index arithmetic with textbook gate matrices. It also reads each adapter's *native program* gate by gate (Qiskit via `{u, cx}`, Cirq and PennyLane via their own decompositions), bypassing every SDK simulator. |
+| **Second simulator** (`aeonq.oracles.numpy_sim`, `sdk_import`) | A NumPy statevector simulator on basis-index arithmetic with textbook gate matrices. It also reads native Qiskit, Cirq, and PennyLane programs gate by gate (Qiskit via `{u, cx}`, Cirq and PennyLane via their own decompositions), bypassing those SDK simulators. Q# is checked through independently written native circuits and SDK-exported matrices. |
 
 Every source is held to closed forms, with the global phase of $Q$ not free:
 

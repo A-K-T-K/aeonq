@@ -1,16 +1,16 @@
 {
   "environment": {
-    "timestamp_utc": "2026-10-16T09:04:28.382491+00:00",
+    "timestamp_utc": "2026-10-20T04:03:48.726806+00:00",
     "python": "3.13.7",
     "platform": "Windows-11-10.0.26100-SP0",
     "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
-    "git_commit": "469516b86b7af7f1e37c3814e88dcfd51e0d9268",
-    "source_snapshot_sha256": "aa80eb53108e52c63de5472172d12edca2f0ae950f34038957aca7b3055a1149",
-    "source_archive": "benchmarks/results/archives/source-aa80eb53108e52c63de5472172d12edca2f0ae950f34038957aca7b3055a1149.zip",
+    "git_commit": "1be03a4e6b4d88d4b2080ef728e4555822a79f60",
+    "source_snapshot_sha256": "ac63bc9bc90643fa281e6609cd76958068e205adf250296bf65f3d356220fef2",
+    "source_archive": "benchmarks/results/archives/source-ac63bc9bc90643fa281e6609cd76958068e205adf250296bf65f3d356220fef2.zip",
     "seed_scheme": "sha256-condition-v1",
-    "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
+    "requirements_lock_sha256": "c18e88a8bc261117e8f56f1bcd050b08a488ea30d961a32318bc3a35bf75f82e",
     "dependencies": {
-      "aeonq": "0.1.0.dev0",
+      "aeonq": "0.0.6",
       "numpy": "2.3.3",
       "scipy": "1.18.1",
       "qiskit": "2.5.2",
@@ -21,14 +21,14 @@
       "qiskit-algorithms": "0.4.0"
     }
   },
-  "cached_reference_500_seconds": 0.010619600012432784,
-  "uncached_reference_500_seconds": 0.4988613000023179,
-  "reference_cache_speedup": 46.97552633039675,
-  "vectorized_grid_25_seconds": 0.0037641999660991132,
-  "scalar_grid_25_seconds": 0.4517898000194691,
-  "grid_speedup": 120.02279477401527,
-  "serial_manifest_200_seconds": 0.6167331999749877,
-  "threaded_manifest_200_seconds": 0.6323250000132248,
-  "thread_speedup": 0.9753421104053912,
+  "cached_reference_500_seconds": 0.010991099989041686,
+  "uncached_reference_500_seconds": 0.5010079000057885,
+  "reference_cache_speedup": 45.58305360749169,
+  "vectorized_grid_25_seconds": 0.003747299997485243,
+  "scalar_grid_25_seconds": 0.4431024000077741,
+  "grid_speedup": 118.24577704083835,
+  "serial_manifest_200_seconds": 0.6433537999982946,
+  "threaded_manifest_200_seconds": 0.6318792999954894,
+  "thread_speedup": 1.0181593225207521,
   "threaded_backend_scope": "reference only"
 }

@@ -1,15 +1,15 @@
 {
-  "timestamp_utc": "2026-10-16T10:34:35.793122+00:00",
+  "timestamp_utc": "2026-10-20T05:34:09.860637+00:00",
   "python": "3.13.7",
   "platform": "Windows-11-10.0.26100-SP0",
   "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
-  "git_commit": "469516b86b7af7f1e37c3814e88dcfd51e0d9268",
-  "source_snapshot_sha256": "aa80eb53108e52c63de5472172d12edca2f0ae950f34038957aca7b3055a1149",
-  "source_archive": "benchmarks/results/archives/source-aa80eb53108e52c63de5472172d12edca2f0ae950f34038957aca7b3055a1149.zip",
+  "git_commit": "1be03a4e6b4d88d4b2080ef728e4555822a79f60",
+  "source_snapshot_sha256": "ac63bc9bc90643fa281e6609cd76958068e205adf250296bf65f3d356220fef2",
+  "source_archive": "benchmarks/results/archives/source-ac63bc9bc90643fa281e6609cd76958068e205adf250296bf65f3d356220fef2.zip",
   "seed_scheme": "sha256-condition-v1",
-  "requirements_lock_sha256": "f5479edbdd9d4ede811df9debc3d3afb3235e4dc5412813c3292fa4960201cd4",
+  "requirements_lock_sha256": "c18e88a8bc261117e8f56f1bcd050b08a488ea30d961a32318bc3a35bf75f82e",
   "dependencies": {
-    "aeonq": "0.1.0.dev0",
+    "aeonq": "0.0.6",
     "numpy": "2.3.3",
     "scipy": "1.18.1",
     "qiskit": "2.5.2",
@@ -32,5 +32,5 @@
     "pytket-cirq": "0.43.0",
     "pennylane-qiskit": null
   },
-  "seconds": 206.51331910002045
+  "seconds": 228.88159360000282
 }

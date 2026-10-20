@@ -122,6 +122,10 @@ PHASE_C = [
         "publication_reference",
         "--reuse-raw",
     ],
+    ["benchmarks/translator_fidelity.py"],
+    ["benchmarks/independent_oracles.py"],
+    ["analysis/reproduce_tables.py"],
+    ["analysis/reproduce_figures.py"],
     ["benchmarks/pipeline/audit_reproducibility.py"],
 ]
 

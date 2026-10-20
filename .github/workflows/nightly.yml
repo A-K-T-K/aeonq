@@ -1,4 +1,4 @@
-name: Nightly research validation
+name: Weekly research validation
 
 on:
   schedule:
@@ -17,6 +17,8 @@ jobs:
           cache: pip
       - name: Install pinned dependencies
         run: python -m pip install -r requirements-lock.txt
+      - name: Install third-party circuit converters
+        run: python -m pip install -r requirements-translators.txt
       - name: Complete local test suite
         run: python -m pytest -q
       - name: Compiler comparison
@@ -34,6 +36,7 @@ jobs:
         with:
           name: research-artifacts
           path: |
+            benchmarks/results/archives/
             benchmarks/results/raw/
             benchmarks/results/processed/
             benchmarks/results/tables/

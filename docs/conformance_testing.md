@@ -1,6 +1,6 @@
 # Conformance & Mutation Testing
 
-Traditional testing of quantum programs relies primarily on projective measurement counts. However, measurement distributions discard phase data, rendering convention discrepancies (such as global phase sign flips or controlled-phase omissions) undetectable by count comparisons.
+Counts from an uncontrolled circuit cannot distinguish operators differing only by global phase. Coherently controlled or interferometric measurement tests can expose that difference. The conformance battery therefore combines operator comparisons with measurement and sampling checks, and reports which evaluated checks detect each fault.
 
 `aeonq` introduces a rigorous conformance testing battery and mutation analysis suite specifically designed to validate lowering layers and detect convention-induced semantic defects.
 
@@ -12,7 +12,7 @@ The shared battery consists of **66 standardized conformance checks** evaluated 
 
 - **43 Operator Checks**: Compare lowering unitaries entry-wise against exact state-tensor reference matrices for operators $A$, $A^\dagger$, $S_0$, $S_\chi$, $Q$, $Q^2$, and controlled $Q$.
 - **5 Measurement Checks**: Validate deterministic bitstring normalization and multi-qubit register maps across basic and asymmetric state preparations.
-- **18 Sampling Checks**: Statistically test empirical measurement distributions against exact analytic state probabilities across multiple powers and non-commuting rotation gates.
+- **18 Sampling Checks**: Use 4,000 shots per circuit and a likelihood-ratio G-test against the exact outcome distribution, with a passing threshold of p >= 0.001 and an exact shot-count check. This differs from the separate cross-SDK equivalence study, which uses 200,000 shots and a distribution-free TVD upper bound.
 
 ### Running the Conformance Battery on an Adapter
 
@@ -54,7 +54,7 @@ To evaluate fault-detection sensitivity, `aeonq` implements fifteen mutation ope
 | **Omit one shot record** | Readout Alteration | 0 | 5 | 18 | No |
 
 ### The 5 Count-Invisible Faults
-Five faults (*Drop global phase*, *Invert global phase sign*, *Omit phase under control*, *Lower $R_Z$ as phase gate*, and *Negate objective reflection $S_\chi$*) yield **zero measurement and zero sampling failures** because they preserve the projective probability distribution of $Q^k A|0\rangle$. They are isolated exclusively through entry-wise operator comparison.
+Five faults (*Drop global phase*, *Invert global phase sign*, *Omit phase under control*, *Lower $R_Z$ as phase gate*, and *Negate objective reflection $S_\chi$*) yield **zero measurement and zero sampling failures** because they preserve the projective probability distribution of $Q^k A|0\rangle$. Within the evaluated battery, they are detected by entry-wise operator comparisons.
 
 The same fault classes occur in real converters: see [Translator Fidelity & Independent Oracles](translator_fidelity.md) for what the OpenQASM exporters and importers and pytket's Qiskit/Cirq bridges do to these operators, and for checks that do not rely on aeonq's own reference semantics.
 

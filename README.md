@@ -27,7 +27,7 @@
 
 **aeonq** runs quantum amplitude estimation (QAE) on **Qiskit**, **Cirq**, **PennyLane**, and **Microsoft Q# (QDK)** without changing its meaning between them.
 
-Porting a quantum algorithm is usually treated as gate-level translation. For amplitude estimation that is not enough. The Grover iterate $Q = -A S_0 A^\dagger S_\chi$ carries a global phase that becomes observable once $Q$ is controlled, and SDKs differ in endianness, phase conventions, query accounting, and how confidence intervals are derived. A translation can leave every measured distribution unchanged and still corrupt the estimate.
+Porting a quantum algorithm is usually treated as gate-level translation. Amplitude estimation also requires preserving phase and register conventions and carrying the assumptions behind its statistical guarantees. The Grover iterate $Q = -A S_0 A^\dagger S_\chi$ carries a global phase that becomes observable once $Q$ is controlled. SDKs differ in circuit conventions; the evaluated estimator implementations also differ in query accounting and interval construction. A translation can preserve an uncontrolled circuit's measurement distribution while changing its controlled phase-estimation behavior.
 
 aeonq represents amplitude estimation in a semantic intermediate representation (IR) and lowers it to each SDK through adapters that are checked entry by entry against exact reference semantics. At runtime it decides which statistical guarantees apply to the backend in use.
 
@@ -203,6 +203,8 @@ python benchmarks/independent_oracles.py
 
 ### Reproducibility
 
+The pinned SDK versions identify the evaluated research environment, rather than a promise to track the newest SDK releases.
+
 Every archived benchmark trial records its seed, a SHA-256 snapshot of the source that produced it (stored under [`benchmarks/results/archives/`](benchmarks/results/archives/README.md)), and the hash of `requirements-lock.txt`. The audit re-validates all records against the experiment manifest:
 
 ```bash
@@ -210,6 +212,17 @@ python -m benchmarks.pipeline.audit_reproducibility
 ```
 
 The lockfile and the files under `benchmarks/results/` are stored byte-for-byte (see [`.gitattributes`](.gitattributes)); editing or re-encoding them invalidates the recorded hashes.
+
+To rerun every study, including translator fidelity and independent oracles, and
+regenerate the tables and figures:
+
+```bash
+python benchmarks/pipeline/regenerate_everything.py --max-workers 12
+```
+
+The command resumes an interrupted campaign; add `--fresh` to discard its
+checkpoint and start again. Timing studies run sequentially before the
+statistical studies. Keep the machine otherwise idle during the timing phase.
 
 ## Examples
 

@@ -8,7 +8,7 @@ To develop or build the documentation locally:
 
 ```bash
 # Install dependencies
-npm install
+npm ci
 
 # Start local development server with hot module reloading
 npm run docs:dev

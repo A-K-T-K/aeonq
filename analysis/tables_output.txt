@@ -122,19 +122,20 @@ Baseline comparison and equivalence
 ===================================
 
 Comparison with qiskit-algorithms (15 problems, 200 trials each) and cross-SDK equivalence
---------------------------------------------------------------------------------------------------------------------------------
-Estimator                                 Mean queries  Mean abs. error  Mean int. width  Lowest coverage  Cases sig. below 0.95
---------------------------------------------------------------------------------------------------------------------------------
-Iterative, aeonq                                 7,591           0.0032             0.01            1.000                      0
-Iterative, qiskit-algorithms                     6,913          0.00082           0.0054            0.980                      0
-Maximum likelihood, aeonq                       17,920          0.00035            0.038            0.940                      0
-Maximum likelihood, qiskit-algorithms           17,920          0.00036           0.0017            0.195                      3
-  Likelihood-ratio interval, same trials        17,920          0.00036           0.0018            0.000                      1
-Faster, aeonq                                  373,052           0.0027            0.062            1.000                      0
-Faster, qiskit-algorithms                      264,829           0.0017             0.26            1.000                      0
-Canonical, aeonq                                15,872          0.00066           0.0041            0.920                      0
-Canonical, qiskit-algorithms                    15,872            0.024           0.0041            0.925                      0
---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+Estimator                                        Mean queries  Mean abs. error  Mean int. width  Lowest coverage  Cases sig. below 0.95
+---------------------------------------------------------------------------------------------------------------------------------------
+Iterative, aeonq                                        7,591           0.0032             0.01            1.000                      0
+Iterative, qiskit-algorithms                            6,913          0.00082           0.0054            0.980                      0
+Maximum likelihood, aeonq                              17,920          0.00035            0.038            0.940                      0
+Maximum likelihood, qiskit-algorithms                  17,920          0.00036           0.0017            0.195                      3
+  Likelihood-ratio interval, same trials               17,920          0.00036           0.0018            0.000                      1
+Faster, aeonq                                         373,052           0.0027            0.062            1.000                      0
+Faster, qiskit-algorithms                             264,829           0.0017             0.26            1.000                      0
+Canonical, aeonq                                       15,872          0.00066           0.0041            0.920                      0
+Canonical, qiskit-algorithms (grid estimate)           15,872            0.024           0.0041            0.925                      0
+Canonical, qiskit-algorithms (MLE, same trials)        15,872          0.00065           0.0041            0.925                      0
+---------------------------------------------------------------------------------------------------------------------------------------
 Equivalence (margins met): sampling 40/40, coverage 16/16, error 16/16
 
   Problems on which iterative aeonq stops after one round: bernoulli_0, bernoulli_1e-06, bernoulli_0.999999, bernoulli_1
@@ -202,22 +203,22 @@ Median wall-clock time and share spent in aeonq outside SDK compilation and exec
 -----------------------------------------------------------------------------------------
 SDK, case, estimator                      Evaluations  Median wall (ms)  Median share (%)
 -----------------------------------------------------------------------------------------
-cirq, bernoulli_0.3, iqae                          20              11.6                17
-cirq, bernoulli_0.3, mlqae                         20              24.4                39
-cirq, lognormal_tail_n3_flag, iqae                 20              86.2               2.1
-cirq, lognormal_tail_n3_flag, mlqae                20             104.4               9.5
-pennylane, bernoulli_0.3, iqae                     20               5.4                23
-pennylane, bernoulli_0.3, mlqae                    20              22.3                43
-pennylane, lognormal_tail_n3_flag, iqae            20             121.1               1.6
-pennylane, lognormal_tail_n3_flag, mlqae           20             126.8               7.8
-qiskit, bernoulli_0.3, iqae                        20             293.0               1.2
-qiskit, bernoulli_0.3, mlqae                       20             510.3               3.5
-qiskit, lognormal_tail_n3_flag, iqae               20             468.5              0.84
-qiskit, lognormal_tail_n3_flag, mlqae              20             711.4               2.3
-qsharp, bernoulli_0.3, iqae                        20             284.3              0.82
-qsharp, bernoulli_0.3, mlqae                       20             559.4               1.9
-qsharp, lognormal_tail_n3_flag, iqae               20            3676.6             0.071
-qsharp, lognormal_tail_n3_flag, mlqae              20            4550.1              0.23
+cirq, bernoulli_0.3, iqae                          20               8.8                16
+cirq, bernoulli_0.3, mlqae                         20              24.5                39
+cirq, lognormal_tail_n3_flag, iqae                 20              86.6               1.9
+cirq, lognormal_tail_n3_flag, mlqae                20             104.3               9.2
+pennylane, bernoulli_0.3, iqae                     20               5.2                22
+pennylane, bernoulli_0.3, mlqae                    20              21.8                44
+pennylane, lognormal_tail_n3_flag, iqae            20             120.8               1.4
+pennylane, lognormal_tail_n3_flag, mlqae           20             126.6               7.6
+qiskit, bernoulli_0.3, iqae                        20             294.8               1.1
+qiskit, bernoulli_0.3, mlqae                       20             510.3               3.3
+qiskit, lognormal_tail_n3_flag, iqae               20             463.8              0.75
+qiskit, lognormal_tail_n3_flag, mlqae              20             703.4               2.3
+qsharp, bernoulli_0.3, iqae                        20             277.7              0.79
+qsharp, bernoulli_0.3, mlqae                       20             561.7               1.9
+qsharp, lognormal_tail_n3_flag, iqae               20            3676.2             0.068
+qsharp, lognormal_tail_n3_flag, mlqae              20            4586.2              0.23
 -----------------------------------------------------------------------------------------
 
 Optimization pipeline
@@ -238,10 +239,10 @@ Seconds to lower, compile and execute 1000 shots of Q^16 A on a uniform threshol
 Backend                         4 qubits       8 qubits       12 qubits
 -----------------------------------------------------------------------
 Reference simulator        0.003 ± 0.000  0.005 ± 0.000              --
-Qiskit 2.5.2               0.093 ± 0.001  0.128 ± 0.001   0.191 ± 0.001
-Cirq 1.7.0                 0.035 ± 0.001  0.086 ± 0.001   0.175 ± 0.001
-PennyLane 0.45.1           0.035 ± 0.000  0.113 ± 0.002   8.536 ± 0.020
-Microsoft Q# (QDK 1.32.3)  1.157 ± 0.009  6.925 ± 0.027  84.232 ± 0.122
+Qiskit 2.5.2               0.093 ± 0.001  0.127 ± 0.000   0.190 ± 0.001
+Cirq 1.7.0                 0.035 ± 0.000  0.087 ± 0.001   0.175 ± 0.001
+PennyLane 0.45.1           0.036 ± 0.000  0.117 ± 0.002   8.370 ± 0.045
+Microsoft Q# (QDK 1.32.3)  1.124 ± 0.009  6.758 ± 0.034  83.048 ± 0.189
 -----------------------------------------------------------------------
 
 Phase-oracle synthesis

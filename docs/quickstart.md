@@ -10,7 +10,7 @@ This guide covers installing `aeonq`, constructing amplitude estimation problems
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/aeonq.git
+git clone https://github.com/A-K-T-K/aeonq.git
 cd aeonq
 
 # Create and activate a virtual environment
@@ -142,8 +142,8 @@ result.interval_type                      # str: description of statistical inte
 
 # Convergence & Guarantees
 result.convergence_status                 # "CONVERGED", "INSUFFICIENT_BUDGET", "INCONCLUSIVE"
-result.guarantee_status                   # "THEORETICAL_GUARANTEE_SATISFIED", "NOT_APPLICABLE"
-result.assumptions                        # tuple[str]: theoretical assumptions verified
+result.guarantee_status                   # "THEORETICAL_GUARANTEE_SATISFIED", "THEORETICAL_GUARANTEE_NOT_APPLICABLE"
+result.assumptions                        # tuple[str]: assumptions required by the estimator
 
 # Resource Accounting
 result.total_shots                        # int: total physical circuit shots executed

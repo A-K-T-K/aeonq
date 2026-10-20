@@ -56,7 +56,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/username/aeonq' },
+      { icon: 'github', link: 'https://github.com/A-K-T-K/aeonq' },
     ],
     footer: {
       message: 'Released under the MIT License.',

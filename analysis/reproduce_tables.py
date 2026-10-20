@@ -93,6 +93,7 @@ LIBRARIES = (
     ("aeonq", "aeonq"),
     ("qiskit_algorithms", "qiskit-algorithms"),
     ("qiskit_algorithms_lr", "Likelihood-ratio interval, same trials"),
+    ("qiskit_algorithms_mle", "qiskit-algorithms (MLE, same trials)"),
 )
 MUTANTS = (
     ("drop_global_phase", "Drop global phase"),
@@ -251,7 +252,9 @@ def baseline_cells() -> dict[tuple[str, str, str], dict]:
     estimator configuration.
     """
     groups: dict[tuple[str, str, str], list[dict]] = defaultdict(list)
-    for row in read_jsonl(RAW / "native_baselines.jsonl"):
+    for row in _pipeline.native_point_estimate_rows(
+        read_jsonl(RAW / "native_baselines.jsonl")
+    ):
         if row["error"] is None:
             groups[(row["method"], row["library"], row["case_id"])].append(row)
     cells = {}
@@ -751,6 +754,8 @@ def baseline_section() -> Section:
                 if library == "qiskit_algorithms_lr"
                 else f"{method_name}, {library_name}"
             )
+            if method == "canonical_qae" and library == "qiskit_algorithms":
+                label += " (grid estimate)"
             rows.append(
                 (
                     label,
@@ -1101,14 +1106,9 @@ def print_section(section: Section) -> None:
 
 
 def regenerate() -> None:
-    python = sys.executable
-    for command in (
-        ["benchmarks/pipeline/regenerate_everything.py", "--fresh"],
-        ["benchmarks/translator_fidelity.py"],
-        ["benchmarks/independent_oracles.py"],
-    ):
-        print("running", " ".join(command), flush=True)
-        subprocess.run([python, *command], cwd=ROOT, check=True)
+    command = ["benchmarks/pipeline/regenerate_everything.py", "--fresh"]
+    print("running", " ".join(command), flush=True)
+    subprocess.run([sys.executable, *command], cwd=ROOT, check=True)
 
 
 def main() -> None:
@@ -1128,6 +1128,7 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8")
     if arguments.regenerate:
         regenerate()
+        return  # The full pipeline already prints the derived tables and checks.
     builders = [
         mutation_section,
         translator_section,

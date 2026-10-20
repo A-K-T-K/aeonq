@@ -48,9 +48,25 @@ def _errors(rows: list[dict]) -> dict:
     }
 
 
+def native_point_estimate_rows(raw: list[dict]) -> list[dict]:
+    """Include Qiskit's canonical MLE without inventing additional trials.
+
+    Its interval, samples, seed, queries and timing are identical to the native
+    grid row; only the reported point estimate changes to the saved MLE.
+    """
+    derived = [
+        {**row, "library": "qiskit_algorithms_mle", "estimate": row["mle"]}
+        for row in raw
+        if row["method"] == "canonical_qae"
+        and row["library"] == "qiskit_algorithms"
+        and row["error"] is None
+    ]
+    return [*raw, *derived]
+
+
 def native_baseline_rows(raw: list[dict]) -> list[dict]:
     groups: dict[tuple, list[dict]] = {}
-    for row in raw:
+    for row in native_point_estimate_rows(raw):
         groups.setdefault((row["case_id"], row["method"], row["library"]), []).append(
             row
         )
@@ -87,7 +103,12 @@ def native_summary_rows(detail: list[dict]) -> list[dict]:
     output = []
     for method in sorted({r["method"] for r in detail}):
         # The likelihood-ratio MLAE series is a sensitivity check on one method.
-        for library in ("aeonq", "qiskit_algorithms", "qiskit_algorithms_lr"):
+        for library in (
+            "aeonq",
+            "qiskit_algorithms",
+            "qiskit_algorithms_lr",
+            "qiskit_algorithms_mle",
+        ):
             if not any(
                 r["method"] == method and r["library"] == library for r in detail
             ):
